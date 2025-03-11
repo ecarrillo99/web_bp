@@ -7,10 +7,12 @@ const Contacto = () => {
     return (
         <div>
             <Navbar activo={4}/>
-            <ContactoForm/>
-            <Footer/>
-        </div>
-    );
-};
+            <div className="pt-16">
+                <ContactoForm/>
+                <Footer/>
+            </div>
+            </div>
+            );
+            };
 
-export default Contacto;
+            export default Contacto;

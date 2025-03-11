@@ -1,50 +1,150 @@
 import { DonutChart, Legend } from '@tremor/react';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
+const SegmentacionDashboard = () => {
+    const [isVisible, setIsVisible] = useState(false);
 
+    useEffect(() => {
+        // Trigger animation after component mounts
+        const timer = setTimeout(() => setIsVisible(true), 300);
+        return () => clearTimeout(timer);
+    }, []);
 
-const SegmentacionGenero = () => {
-    const segmentos = [
+    // Datos de género
+    const datosGenero = [
         {
             name: 'Hombre',
             percent: 58.78,
+            icon: "👨",
         },
         {
             name: 'Mujer',
             percent: 38.48,
+            icon: "👩",
         },
         {
             name: 'Desconocido',
             percent: 2.74,
+            icon: "❓",
         },
-    ]
-    
-    const valueFormatter = (number) => `${Intl.NumberFormat('us').format(number).toString()} %`;
+    ];
+
+    // Datos de ciudades
+    const datosCiudades = [
+        {
+            name: 'Ciudad de México',
+            percent: 32.5,
+            icon: "🏙️",
+        },
+        {
+            name: 'Guadalajara',
+            percent: 18.3,
+            icon: "🌆",
+        },
+        {
+            name: 'Monterrey',
+            percent: 15.7,
+            icon: "🌃",
+        },
+        {
+            name: 'Puebla',
+            percent: 10.2,
+            icon: "🏛️",
+        },
+        {
+            name: 'Otras',
+            percent: 23.3,
+            icon: "🌐",
+        },
+    ];
+
+    const colorMapGenero = {
+        'Hombre': '#3b82f6',
+        'Mujer': '#ec4899',
+        'Desconocido': '#9ca3af'
+    };
+
+    const colorMapCiudades = {
+        'Ciudad de México': '#0ea5e9',
+        'Guadalajara': '#10b981',
+        'Monterrey': '#8b5cf6',
+        'Puebla': '#f59e0b',
+        'Otras': '#6b7280'
+    };
+
+    const valueFormatter = (number) => `${Intl.NumberFormat('es-MX').format(number).toString()} %`;
+
+    // Componente reutilizable para cada sección de donut
+    const DonutSection = ({ title, data, colorMap, totalLabel }) => (
+        <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg mb-6">
+            <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 text-center mb-4">
+                    {title}
+                </h3>
+
+                <div className={`flex flex-col md:flex-row items-center justify-between gap-6 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+                    <div className="w-full md:w-1/2 max-w-xs mx-auto">
+                        <DonutChart
+                            data={data}
+                            category="percent"
+                            index="name"
+                            valueFormatter={valueFormatter}
+                            showAnimation={true}
+                            colors={['blue','emerald', 'purple', 'amber', 'gray' ]}
+                            className="h-48"
+                        />
+                    </div>
+
+                    <div className="w-full md:w-1/2">
+                        {data.map((item, index) => (
+                            <div
+                                key={item.name}
+                                className="flex items-center justify-between py-3 border-b border-gray-100 last:border-0"
+                                style={{
+                                    animation: `fadeInUp ${0.3 + index * 0.1}s ease-out forwards`
+                                }}
+                            >
+                                <div className="flex items-center gap-2">
+                                    <div className="w-4 h-4 rounded-sm"
+                                         style={{ backgroundColor: colorMap[item.name] }}></div>
+                                    <span className="mr-1">{item.icon}</span>
+                                    <span className="font-medium">{item.name}</span>
+                                </div>
+                                <div className="text-lg font-semibold" style={{ color: colorMap[item.name] }}>
+                                    {item.percent}%
+                                </div>
+                            </div>
+                        ))}
+
+                        <div className="mt-4 pt-4 border-t border-gray-200">
+                            <div className="flex justify-between text-sm text-gray-500">
+                                <span>{totalLabel}:</span>
+                                <span className="font-medium">247.188K personas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 
     return (
-        <div className='flex flex-col gap-6 w-1/2 p-10 items-center'>
-            <label className='font-semibold text-xl'>Distribución por Género</label>
-            <div className="flex flex-col items-center justify-center ">
-                <DonutChart 
-                    data={segmentos} 
-                    category="percent" 
-                    index="name" 
-                    valueFormatter={valueFormatter} 
-                    showAnimation={true}
-                    colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia']} 
-                    className="w-40" />        
-                <Legend 
-                    categories ={segmentos.map((segmento, index) => (
-                        <div className='w-56 flex justify-between'>
-                            <label>{segmento.name}</label>
-                            <label>{segmento.percent} %</label>
-                        </div>
-                      ))}
-                    colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia']}
-                    className="w-64 " />      
-                </div>
+        <div className="space-y-6">
+            <DonutSection
+                title="Distribución por Género"
+                data={datosGenero}
+                colorMap={colorMapGenero}
+                totalLabel="Total analizados"
+            />
+
+            <DonutSection
+                title="Distribución por Ciudad"
+                data={datosCiudades}
+                colorMap={colorMapCiudades}
+                totalLabel="Total ubicación"
+            />
         </div>
     );
 };
 
-export default SegmentacionGenero;
+export default SegmentacionDashboard;

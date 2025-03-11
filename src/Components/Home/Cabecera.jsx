@@ -15,7 +15,7 @@ const Cabecera = () => {
                 <p className='text-justify text-sm text-gray-600'>Bernardo Polo Andrade empresario cuencano de 53 años. Hombre visionario, con más de 26 años de experiencia en la promoción de la hotelería, turismo y negociación en el Ecuador y Latinoamérica.</p>
                 <div className='flex mt-3 items-center w-full'>
                     <img className='h-10 cursor-pointer' src='./images/galeria_icon.png'/>
-                    <label className='cursor-pointer'>Fotografías memorables</label>
+                    <label className='cursor-pointer' >Fotografías memorables</label>
                 </div>
                 <div className='flex mt-3 items-center w-full cursor-pointer'>
                     <img className='h-10' src='./images/entrevistas_icon.png'/>

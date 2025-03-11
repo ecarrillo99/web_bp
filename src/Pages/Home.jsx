@@ -7,10 +7,12 @@ const Home = () => {
     return (
         <div>
             <Navbar activo={0}/>
-            <Cabecera/>
-            <FooterHome/>
-        </div>
-    );
-};
+            <div className="pt-16">
+                <Cabecera/>
+                <FooterHome/>
+            </div>
+            </div>
+            );
+            };
 
-export default Home;
+            export default Home;

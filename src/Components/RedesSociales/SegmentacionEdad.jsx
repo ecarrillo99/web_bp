@@ -1,68 +1,239 @@
 import { BarChart } from '@tremor/react';
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 const SegmentacionEdad = () => {
+    const [activeRange, setActiveRange] = useState(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const [hoverRange, setHoverRange] = useState(null);
+
+    useEffect(() => {
+        // Trigger animation after component mounts
+        const timer = setTimeout(() => setIsVisible(true), 300);
+        return () => clearTimeout(timer);
+    }, []);
+
     const segmentos = [
         {
             range: '13-17',
             porcentaje: 0.17,
+            audienciaEstimada: '1,150',
+            emoji: "🧒",
+            color: "#60a5fa"
         },
         {
             range: '18-24',
             porcentaje: 3.22,
+            audienciaEstimada: '14,000',
+            emoji: "🧑",
+            color: "#3b82f6"
         },
         {
             range: '25-34',
             porcentaje: 16.37,
+            audienciaEstimada: '50,510',
+            emoji: "👨",
+            color: "#2563eb"
         },
         {
             range: '35-44',
             porcentaje: 31.49,
+            audienciaEstimada: '70,539',
+            emoji: "👨‍💼",
+            color: "#1d4ed8"
         },
         {
             range: '45-54',
             porcentaje: 29.3,
+            audienciaEstimada: '58,189',
+            emoji: "👨‍🦱",
+            color: "#1e40af"
         },
         {
             range: '55-64',
             porcentaje: 13.2,
+            audienciaEstimada: '40,385',
+            emoji: "👴",
+            color: "#1e3a8a"
         },
         {
             range: '65+',
             porcentaje: 6.25,
+            audienciaEstimada: '12,415',
+            emoji: "🧓",
+            color: "#172554"
         },
-    ]
-    
-    const valueFormatter = (number) => `${Intl.NumberFormat('us').format(number).toString()} %`;
+    ];
+
+    const maxPorcentaje = useMemo(() => Math.max(...segmentos.map(item => item.porcentaje)), []);
+
+    const audienciaTotal = useMemo(() => {
+        return segmentos.reduce((sum, item) => {
+            const numero = parseFloat(item.audienciaEstimada.replace(/,/g, ''));
+            return sum + numero;
+        }, 0);
+    }, []);
+
+    const formattedAudienciaTotal = useMemo(() => {
+        return new Intl.NumberFormat('es-MX').format(audienciaTotal);
+    }, [audienciaTotal]);
+
+    const valueFormatter = (number) => `${number.toFixed(2)}%`;
+
+    const getSegmentGradient = (index) => {
+        const colors = ['#60a5fa', '#3b82f6', '#2563eb', '#1d4ed8', '#1e40af', '#1e3a8a', '#172554'];
+        return colors[index % colors.length];
+    };
+
+    const handleCardHover = (range) => {
+        setHoverRange(range);
+    };
+
+    const handleCardLeave = () => {
+        setHoverRange(null);
+    };
+
+    const activeSegment = useMemo(() => {
+        return segmentos.find(s => s.range === activeRange);
+    }, [activeRange]);
 
     return (
-        <div className='flex flex-col gap-6 w-1/2 p-10 items-center'>
-            <label className='font-semibold text-xl'>Distribución por Edad</label>
-            <div className='h-32 mb-3 w-full'>
-                <BarChart    
-                    className='h-40 w-full'
-                    data={segmentos}    
-                    showLegend={false}
-                    showGridLines={false}
-                    showAnimation={true}
-                    index="range"    
-                    categories={['porcentaje']}    
-                    colors={['blue']}    
-                    valueFormatter={valueFormatter}    
-                />
-            </div>
-            <div className='flex flex-wrap text-sm text-gray-500'>
-                {
-                    segmentos.map((item)=>(
-                        <div className='w-1/2 flex justify-between px-4'>
-                            <div className='flex gap-2 items-center'>
-                                <div className='h-3 w-3 bg-blue-500 rounded-sm'/>
-                                <label >{item.range} años</label>
+        <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+            <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-gray-800">
+                        Distribución por Edad
+                    </h3>
+                    <div className="text-sm text-gray-500 font-medium">
+                        Total: {formattedAudienciaTotal} personas
+                    </div>
+                </div>
+
+                <div className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+                    <div className="mb-6">
+                        <BarChart
+                            className="h-60"
+                            data={segmentos}
+                            showLegend={false}
+                            showGridLines={true}
+                            showAnimation={true}
+                            index="range"
+                            categories={['porcentaje']}
+                            colors={['blue']}
+                            valueFormatter={valueFormatter}
+                            onValueChange={(v) => setActiveRange(v?.range || null)}
+                            yAxisWidth={48}
+                            customTooltip={({ payload }) => {
+                                if (!payload?.length) return null;
+                                const data = payload[0].payload;
+                                return (
+                                    <div className="p-2 bg-white shadow-lg rounded-lg border border-gray-200">
+                                        <div className="flex items-center gap-2">
+                                            <span>{data.emoji}</span>
+                                            <span className="font-semibold">{data.range} años</span>
+                                        </div>
+                                        <div className="font-bold text-blue-600">{data.porcentaje}%</div>
+                                        <div className="text-sm text-gray-600">~{data.audienciaEstimada} personas</div>
+                                    </div>
+                                );
+                            }}
+                        />
+                    </div>
+
+                    {activeSegment && (
+                        <div className="mb-4 p-4 bg-blue-50 rounded-lg border border-blue-100 flex justify-between items-center animate-pulse">
+                            <div className="flex items-center">
+                                <span className="text-3xl mr-3">
+                                    {activeSegment.emoji}
+                                </span>
+                                <div>
+                                    <div className="font-semibold text-lg text-blue-800">
+                                        {activeSegment.range} años
+                                    </div>
+                                    <div className="text-sm text-gray-600">
+                                        {parseFloat(activeSegment.audienciaEstimada.replace(/,/g, '')) / audienciaTotal * 100 > 1
+                                            ? `${(parseFloat(activeSegment.audienciaEstimada.replace(/,/g, '')) / audienciaTotal * 100).toFixed(1)}% del total`
+                                            : "Menos del 1% del total"}
+                                    </div>
+                                </div>
                             </div>
-                            <label >{item.porcentaje} %</label>
+                            <div className="text-right">
+                                <div className="text-2xl font-bold text-blue-600">
+                                    {activeSegment.porcentaje}%
+                                </div>
+                                <div className="text-sm text-gray-500">
+                                    ~{activeSegment.audienciaEstimada} personas
+                                </div>
+                            </div>
                         </div>
-                    ))
-                }
+                    )}
+
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                        {segmentos.map((item, index) => {
+                            const isHighest = item.porcentaje === maxPorcentaje;
+                            const isActive = activeRange === item.range;
+                            const isHovered = hoverRange === item.range;
+
+                            return (
+                                <div
+                                    key={item.range}
+                                    className={`p-3 rounded-lg cursor-pointer transition-all duration-300 
+                                        ${isActive ? 'bg-blue-100 scale-105 shadow-md' : 'hover:bg-gray-50'} 
+                                        ${isHighest ? 'ring-2 ring-blue-300' : ''}
+                                        ${isHovered && !isActive ? 'bg-gray-50' : ''}`}
+                                    onClick={() => setActiveRange(isActive ? null : item.range)}
+                                    onMouseEnter={() => handleCardHover(item.range)}
+                                    onMouseLeave={handleCardLeave}
+                                    style={{
+                                        animation: `fadeIn ${0.3 + index * 0.1}s ease-out forwards`
+                                    }}
+                                >
+                                    <div className="flex items-center mb-2 justify-between">
+                                        <div className="flex items-center">
+                                            <span className="mr-2 text-xl">{item.emoji}</span>
+                                            <span className="font-medium">{item.range} años</span>
+                                        </div>
+                                        {isHighest && (
+                                            <span className="text-xs bg-yellow-400 text-yellow-800 px-2 py-1 rounded-full font-medium">
+                                                Mayor
+                                            </span>
+                                        )}
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <div className="flex justify-between items-center mb-1">
+                                            <div className="text-sm font-semibold" style={{ color: item.color }}>
+                                                {item.porcentaje}%
+                                            </div>
+                                            <div className="text-xs text-gray-500">
+                                                ~{item.audienciaEstimada}
+                                            </div>
+                                        </div>
+                                        <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                                            <div
+                                                className="h-full rounded-full transition-all duration-500"
+                                                style={{
+                                                    width: `${(item.porcentaje / maxPorcentaje) * 100}%`,
+                                                    backgroundColor: item.color,
+                                                    transition: 'width 1s ease-in-out'
+                                                }}
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    <div className="mt-4 pt-4 border-t border-gray-200">
+                        <div className="text-sm text-gray-600">
+                            <p className="font-medium mb-1">Insights:</p>
+                            <ul className="list-disc list-inside space-y-1 pl-2">
+                                <li>El grupo predominante es de <span className="font-medium text-blue-700">35-44 años</span> ({segmentos.find(s => s.range === '35-44')?.porcentaje}%)</li>
+                                <li>Los adultos de <span className="font-medium text-blue-700">35-54 años</span> representan el <span className="font-medium">{(segmentos.find(s => s.range === '35-44')?.porcentaje + segmentos.find(s => s.range === '45-54')?.porcentaje).toFixed(1)}%</span> de la audiencia</li>
+                                <li>La audiencia joven (<span className="font-medium text-blue-700">13-24 años</span>) es solo el <span className="font-medium">{(segmentos.find(s => s.range === '13-17')?.porcentaje + segmentos.find(s => s.range === '18-24')?.porcentaje).toFixed(1)}%</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -1,9 +1,10 @@
-import React, { act, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 
 const Navbar = ({ activo }) => {
     const [subSobremi, setSubSobreMi] = useState(false)
     const [subSocial, setSubSocial] = useState(false)
+    const [subProyectos, setSubProyectos] = useState(false)
     const rutas = [
         "/",
         "/sobre-mi",
@@ -18,66 +19,84 @@ const Navbar = ({ activo }) => {
             navigation(rutas[id]);
         }
     }
+
+    const handleC = () => {
+        navigation("/")
+    }
+
+    const handleSectionClick = (route, section) => {
+        navigation(`${route}`, { state: { scrollTo: section } });
+    }
+
     return (
-        <div className='flex bg-[#92B509] h-16 items-center'>
+        <div className='fixed top-0 left-0 right-0 z-50 flex bg-[#92B509] h-16 items-center shadow-md'>
             <div className='flex flex-col md:flex-row mx-auto max-w-6xl py-6 sm:px-6 lg:px-8 w-full'>
-                <img src='./images/logo_horizontal.png' />
+                <img src='./images/logo_horizontal.png' onClick={handleC} className="cursor-pointer" />
                 <div className='flex gap-10 justify-end w-full font-bold text-lg'>
-                    <div className={`${activo == 0 ? "bg-[#6e8b00] text-white" : ""} border border-transparent  rounded-full px-3 cursor-pointer`} onClick={() => hanldeClick(0)}>Inicio</div>
-                    <div onMouseEnter={() => setSubSobreMi(true)} onMouseLeave={() => setSubSobreMi(false)} className={`${activo == 1 ? "bg-[#6e8b00] text-white" : ""} border border-transparent  rounded-full px-3 cursor-pointer`} onClick={() => hanldeClick(1)}>Sobre Mí
+                    <div className={`${activo == 0 ? " text-white" : ""} border border-transparent rounded-full px-3 cursor-pointer`} onClick={() => hanldeClick(0)}>Inicio</div>
+                    <div onMouseEnter={() => setSubSobreMi(true)} onMouseLeave={() => setSubSobreMi(false)} className={`${activo == 1 ? " text-white" : ""} border border-transparent rounded-full px-3 cursor-pointer`} onClick={() => hanldeClick(1)}>Sobre Mí
                         {
                             subSobremi ?
                                 <div className='absolute -ml-9 pt-2'>
                                     <div className='bg-[#6e8b00] text-gray-500 font-light text-xs flex flex-col gap-1 px-2 py-2 rounded-xl'>
-                                        <a href='/sobre-mi#biografia' className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200'>
+                                        <div onClick={() => handleSectionClick("/sobre-mi", "introduccion")} className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200 cursor-pointer'>
                                             <span className="icon-[fluent--document-person-16-regular]"></span>
                                             <label className='cursor-pointer'>Biografía</label>
-                                        </a>
-                                        <a href='/sobre-mi#logros' className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200'>
+                                        </div>
+                                        <div onClick={() => handleSectionClick("/sobre-mi", "logros")} className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200 cursor-pointer'>
                                             <span className="icon-[solar--cup-star-linear]"></span>
                                             <label className='cursor-pointer'>Logros</label>
-                                        </a>
-                                        <a href='/sobre-mi#reconocimientos' className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200'>
-                                            <span className="icon-[ph--medal-light]"></span>
-                                            <label className='cursor-pointer'>Reconocimientos</label>
-                                        </a>
-                                        <a href='/sobre-mi#entrevistas' className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200'>
-                                            <span className="icon-[ph--chats-light]"></span>
-                                            <label className='cursor-pointer'>Entrevistas</label>
-                                        </a>
-                                        <a href='/sobre-mi#galeria' className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200'>
+                                        </div>
+                                        <div onClick={() => handleSectionClick("/sobre-mi", "galeria")} className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200 cursor-pointer'>
                                             <span className="icon-[solar--gallery-round-line-duotone]"></span>
                                             <label className='cursor-pointer'>Galeria</label>
-                                        </a>
-                                        <a href='/sobre-mi#blog' className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200'>
+                                        </div>
+                                        <div onClick={() => handleSectionClick("/sobre-mi", "blog")} className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200 cursor-pointer'>
                                             <span className="icon-[carbon--blog]"></span>
                                             <label className='cursor-pointer'>Blog</label>
-                                        </a>
+                                        </div>
                                     </div>
                                 </div>
                                 : <></>
                         }
                     </div>
-                    <div onMouseEnter={() => setSubSocial(true)} onMouseLeave={() => setSubSocial(false)}  className={`${activo == 2 ? "bg-[#6e8b00] text-white" : ""} border border-transparent  rounded-full px-3 cursor-pointer`} onClick={() => hanldeClick(2)}>Redes Sociales
-                    {
+                    <div onMouseEnter={() => setSubSocial(true)} onMouseLeave={() => setSubSocial(false)} className={`${activo == 2 ? " text-white" : ""} border border-transparent rounded-full px-3 cursor-pointer`} onClick={() => hanldeClick(2)}>Redes Sociales
+                        {
                             subSocial ?
-                                <div className='absolute -ml-1.5  pt-2'>
+                                <div className='absolute -ml-1.5 pt-2'>
                                     <div className='bg-[#6e8b00] text-gray-500 font-light text-xs flex flex-col gap-1 px-2 py-2 rounded-xl'>
-                                        <a href='/redes-sociales#explora' className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200'>
+                                        <div onClick={() => handleSectionClick("/redes-sociales", "contenido")} className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200 cursor-pointer'>
                                             <span className="icon-[material-symbols--search-insights-rounded]"></span>
                                             <label className='cursor-pointer'>Explora</label>
-                                        </a>
-                                        <a href='/redes-sociales#metricas' className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200'>
+                                        </div>
+                                        <div onClick={() => handleSectionClick("/redes-sociales", "metricas")} className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200 cursor-pointer'>
                                             <span className="icon-[nimbus--stats]"></span>
                                             <label className='cursor-pointer'>Metricas</label>
-                                        </a>
+                                        </div>
                                     </div>
                                 </div>
                                 : <></>
                         }
                     </div>
-                    <div className={`${activo == 3 ? "bg-[#6e8b00] text-white" : ""} border border-transparent  rounded-full px-3 cursor-pointer`} onClick={() => hanldeClick(3)}>Proyectos</div>
-                    <div className={`${activo == 4 ? "bg-[#6e8b00] text-white" : ""} border border-transparent  rounded-full px-3 cursor-pointer`} onClick={() => hanldeClick(4)}>Contacto</div>
+                    <div onMouseEnter={() => setSubProyectos(true)} onMouseLeave={() => setSubProyectos(false)} className={`${activo == 3 ? " text-white" : ""} border border-transparent rounded-full px-3 cursor-pointer`} onClick={() => hanldeClick(3)}>Proyectos
+                        {
+                            subProyectos ?
+                                <div className='absolute -ml-1.5 pt-2'>
+                                    <div className='bg-[#6e8b00] text-gray-500 font-light text-xs flex flex-col gap-1 px-2 py-2 rounded-xl'>
+                                        <div onClick={() => handleSectionClick("/proyectos", "Social")} className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200 cursor-pointer'>
+                                            <span className="icon-[material-symbols--search-insights-rounded]"></span>
+                                            <label className='cursor-pointer'>Impacto Social</label>
+                                        </div>
+                                        <div onClick={() => handleSectionClick("/proyectos", "Influencers")} className='bg-white flex gap-1 items-center w-32 py-1 rounded-full px-2 hover:bg-gray-200 cursor-pointer'>
+                                            <span className="icon-[nimbus--stats]"></span>
+                                            <label className='cursor-pointer'>Influencers</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                : <></>
+                        }
+                    </div>
+                    <div className={`${activo == 4 ? " text-white" : ""} border border-transparent rounded-full px-3 cursor-pointer`} onClick={() => hanldeClick(4)}>Contacto</div>
                 </div>
             </div>
         </div>
