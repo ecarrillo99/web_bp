@@ -9,7 +9,7 @@ const Introduccion = () => {
             <div className='w-1/2 flex flex-col gap-2 justify-center'>
                 <label className='text-2xl font-semibold'>Sobre Mí</label>
                 <label className='text-2xl font-bold italic text-[#769842]'>"Se cuenta una historia, que debe ser interesante, atractiva y que perdure con los años."</label>
-                <p className='text-justify'>Bernardo Polo Andrade empresario cuencano de 53 años. Hombre visionario, con más de 26 años de experiencia en la promoción de la hotelería, turismo y negocios en el Ecuador y Latinoamérica.
+                <p className='text-justify'>Bernardo Polo Andrade empresario cuencano de 56 años. Hombre visionario, con más de 26 años de experiencia en la promoción de la hotelería, turismo y negocios en el Ecuador y Latinoamérica.
                     <div className='h-3'/>
                     Reconocido por su habilidad disruptiva para identificar oportunidades innovadoras y sostenibles que busquen promover el turismo en diferentes destinos del Ecuador.
                     <div className='h-3'/>
