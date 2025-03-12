@@ -6,24 +6,33 @@ const ProyectoItem = ({ imagen, enlace, mensaje, ubicacion }) => {
     };
 
     return (
-        <div className="w-full md:w-full p-4">
-            <div className="flex flex-col rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105 h-full">
+        <div className="h-full">
+            <div className="flex flex-col rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105 h-full bg-white">
                 <div className="relative">
                     <img
                         src={imagen}
                         alt={mensaje}
-                        className="h-80 w-full object-cover cursor-pointer"
+                        className="h-48 sm:h-56 md:h-64 lg:h-72 w-full object-cover cursor-pointer"
                         onClick={handleClick}
+                        onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = 'https://via.placeholder.com/300x200?text=Imagen+no+disponible';
+                        }}
                     />
+                    <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="bg-white bg-opacity-90 px-3 py-1 rounded-full">
+                            <span className="text-sm font-medium text-gray-800">Ver contenido</span>
+                        </div>
+                    </div>
                 </div>
-                <div className="p-6 bg-white flex-grow flex flex-col justify-between">
-                    <p className="text-lg font-medium mb-3">{mensaje}</p>
-                    <div className="flex items-center mt-3">
-                        <svg className="w-5 h-5 text-gray-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <div className="p-4 sm:p-5 flex-grow flex flex-col justify-between">
+                    <p className="text-base sm:text-lg font-medium mb-3 line-clamp-3">{mensaje}</p>
+                    <div className="flex items-center mt-2">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
-                        <p className="text-sm text-gray-600">{ubicacion}</p>
+                        <p className="text-xs sm:text-sm text-gray-600">{ubicacion}</p>
                     </div>
                 </div>
             </div>

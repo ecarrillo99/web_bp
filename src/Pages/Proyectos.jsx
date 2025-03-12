@@ -1,10 +1,9 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useLocation } from "react-router-dom";
 import Navbar from '../Components/Global/Navbar';
 import Footer from '../Components/Global/Footer';
 import ImpactoSocial from '../Components/Proyectos/ImpactoSocial';
-import ContenidoPrincipal from "../Components/Proyectos/ImpactoSocial";
 import Influencers from "../Components/Proyectos/Influencers";
-import {useLocation} from "react-router-dom";
 
 const Proyectos = () => {
     const location = useLocation();
@@ -14,7 +13,7 @@ const Proyectos = () => {
     useEffect(() => {
         if (location.state && location.state.scrollTo) {
             const section = location.state.scrollTo;
-            setTimeout( () => {
+            setTimeout(() => {
                 if (section === 'Social' && socialRef.current) {
                     const yOffset = -80;
                     const element = socialRef.current;
@@ -29,20 +28,21 @@ const Proyectos = () => {
             }, 100);
         }
     }, [location]);
-    return (
-        <div>
-            <Navbar activo={3}/>
-            <div className="pt-16">
-                <div ref={socialRef}>
-                    <ImpactoSocial/>
-                </div>
-                <div ref={influencerRef}>
-                    <Influencers/>
-                </div>
-                <Footer/>
-            </div>
-            </div>
-            );
-            };
 
-            export default Proyectos;
+    return (
+        <div className="min-h-screen flex flex-col">
+            <Navbar activo={3} />
+            <main className="flex-grow pt-16">
+                <div ref={socialRef} className="w-full">
+                    <ImpactoSocial />
+                </div>
+                <div ref={influencerRef} className="w-full">
+                    <Influencers />
+                </div>
+            </main>
+            <Footer />
+        </div>
+    );
+};
+
+export default Proyectos;

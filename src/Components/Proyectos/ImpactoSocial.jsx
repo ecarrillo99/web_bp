@@ -24,11 +24,11 @@ import imgP20 from '../../imagenes/img_19.png'
 
 const ImpactoSocial = () => {
     return (
-        <div className="mx-auto px-4 py-12" style={{ maxWidth: 'calc(100% - 440px)' }}>
-            <div className="text-center mb-12">
-                <h1 className='text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#005F6B] to-[#96c121]'>Proyecto de Impacto Social</h1>
-                <h2 className="text-2xl mb-4">Trascendiendo números: el alma de nuestra comunidad digital</h2>
-                <p className="text-lg mb-8 mx-auto">
+        <div className="w-full mx-auto px-4 py-8 sm:py-12 lg:px-8">
+            <div className="text-center mb-8 sm:mb-12">
+                <h1 className='text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#005F6B] to-[#96c121]'>Proyecto de Impacto Social</h1>
+                <h2 className="text-xl sm:text-2xl mb-3 sm:mb-4">Trascendiendo números: el alma de nuestra comunidad digital</h2>
+                <p className="text-base sm:text-lg mb-6 sm:mb-8 mx-auto max-w-3xl">
                     En "Impactos Sociales", vamos más allá de las métricas. Cada interacción, comentario y gesto es una
                     semilla de conexión genuina.
                     En la comunidad de Bernardo Polo, el valor reside en el impacto humano, no en los números.
@@ -79,6 +79,7 @@ const ImpactoSocial = () => {
                 ]}
             />
 
+            {/* El resto de las secciones mantienen la misma estructura pero con sus respectivos proyectos */}
             <ProyectoSection
                 titulo="La Sazón De"
                 proyectos={[
