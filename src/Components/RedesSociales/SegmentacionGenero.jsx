@@ -32,27 +32,27 @@ const SegmentacionDashboard = () => {
     // Datos de ciudades
     const datosCiudades = [
         {
-            name: 'Ciudad de México',
+            name: 'Cuenca',
             percent: 32.5,
             icon: "🏙️",
         },
         {
-            name: 'Guadalajara',
+            name: 'Guayaquil',
             percent: 18.3,
             icon: "🌆",
         },
         {
-            name: 'Monterrey',
+            name: 'Manabi',
             percent: 15.7,
             icon: "🌃",
         },
         {
-            name: 'Puebla',
+            name: 'Quito',
             percent: 10.2,
             icon: "🏛️",
         },
         {
-            name: 'Otras',
+            name: 'Loja',
             percent: 23.3,
             icon: "🌐",
         },
@@ -65,11 +65,11 @@ const SegmentacionDashboard = () => {
     };
 
     const colorMapCiudades = {
-        'Ciudad de México': '#0ea5e9',
-        'Guadalajara': '#10b981',
-        'Monterrey': '#8b5cf6',
-        'Puebla': '#f59e0b',
-        'Otras': '#6b7280'
+        'Cuenca': '#0ea5e9',
+        'Guayaquil': '#10b981',
+        'Manabi': '#8b5cf6',
+        'Quito': '#f59e0b',
+        'Loja': '#6b7280'
     };
 
     const valueFormatter = (number) => `${Intl.NumberFormat('es-MX').format(number).toString()} %`;
