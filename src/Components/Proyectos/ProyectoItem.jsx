@@ -19,11 +19,6 @@ const ProyectoItem = ({ imagen, enlace, mensaje, ubicacion }) => {
                             e.target.src = 'https://via.placeholder.com/300x200?text=Imagen+no+disponible';
                         }}
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="bg-white bg-opacity-90 px-3 py-1 rounded-full">
-                            <span className="text-sm font-medium text-gray-800">Ver contenido</span>
-                        </div>
-                    </div>
                 </div>
                 <div className="p-4 sm:p-5 flex-grow flex flex-col justify-between">
                     <p className="text-base sm:text-lg font-medium mb-3 line-clamp-3">{mensaje}</p>

@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Destacado from './Destacado';
 import imgP from '../../imagenes/instas.png';
+import imgP1 from '../../imagenes/img_1.png'
+import imgP4 from '../../imagenes/img_3.png'
+import imgP7 from '../../imagenes/img_6.png'
+import imgP20 from '../../imagenes/img_20.png'
+import imgP21 from '../../imagenes/img_21.png'
+import imgP22 from '../../imagenes/img_22.png'
+import imgP23 from '../../imagenes/img_23.png'
+import imgP24 from '../../imagenes/img_24.png'
 
 const Contenido = () => {
     const [activeTab, setActiveTab] = useState('all');
     const [visiblePosts, setVisiblePosts] = useState([]);
 
     const allPosts = [
+
+        //FACEBOOK
         {
             id: 1,
             fecha: "08 de junio de 2022",
@@ -19,6 +29,34 @@ const Contenido = () => {
             platform: "facebook"
         },
         {
+            id: 8,
+            fecha: "07 de marzo de 2025",
+            iconoRed: <span className="icon-[ri--facebook-fill] h-6 w-6 text-[#3b5998]"></span>,
+            colorRed: "#3b5998",
+            linkPost: "https://www.facebook.com/bernardopolopolito/videos/972486391672261",
+            linkPerfil: "https://www.facebook.com/bernardopolopolito",
+            imagePost: imgP20,
+            mensajePost: "Peugeot NUNCA MÁS !!\n" +
+                "3 Razones por las que jamás volvería a comprar un Peugeot\n" +
+                "#BernardoPolo #VisitaEcuador #Peugeot #marca #NuncaMas #autos #falla Bernardo Polo",
+            platform: "facebook"
+        },
+        {
+            id: 9,
+            fecha: "07 de marzo de 2025",
+            iconoRed: <span className="icon-[ri--facebook-fill] h-6 w-6 text-[#3b5998]"></span>,
+            colorRed: "#3b5998",
+            linkPost: "https://www.facebook.com/bernardopolopolito/videos/1265249671208902",
+            linkPerfil: "https://www.facebook.com/bernardopolopolito",
+            imagePost: imgP7,
+            mensajePost: "Así se ve un cojudo pidiendo comida para llevar !! 🤪 #BernardoPolo #VisitaEcuador #McMary #food #fastfood #hamburgesas #delivery #ComidaParaLlevar #CojudoYContento #DeliveryFail #ComiendoComoCojudo #RisaYComida\n" +
+                "#CojudoYHambriento #Cuenca #viral #humor #contenido #Ecuador Mac Mary Cuenca Bernardo Polo",
+            platform: "facebook"
+        },
+
+
+        //INS/FANPAGE
+        {
             id: 2,
             fecha: "28 de octubre de 2024",
             iconoRed: <span className="icon-[mdi--instagram] h-6 w-6 text-[#dd2a7b]"></span>,
@@ -30,7 +68,32 @@ const Contenido = () => {
             platform: "instagram"
         },
         {
-            id: 3,
+            id: 15,
+            fecha: "10 de marzo de 2025",
+            iconoRed: <span className="icon-[mdi--instagram] h-6 w-6 text-[#dd2a7b]"></span>,
+            colorRed: "#dd2a7b",
+            linkPost: "https://www.instagram.com/reel/DHAImayp2an/",
+            linkPerfil: "https://www.instagram.com/bernardopolopolito/",
+            imagePost: imgP23,
+            mensajePost: "Que buen seco por santa. 🐷🐽 #cuenca #ecuador #seco #cuchara #juguito #jugo #extra #puroamor #santo #santa #secos #fyp #parati #foryou #rico #riquisimo #cerdo #chancho #azuay",
+            platform: "instagram"
+        },
+        {
+            id: 16,
+            fecha: "10 de marzo de 2025",
+            iconoRed: <span className="icon-[mdi--instagram] h-6 w-6 text-[#dd2a7b]"></span>,
+            colorRed: "#dd2a7b",
+            linkPost: "https://www.instagram.com/reel/DE3PTbnpw55/",
+            linkPerfil: "https://www.instagram.com/bernardopolopolito/",
+            imagePost: imgP24,
+            mensajePost: "En ésta cafetería puedes crear tu obra de arte con café en mano TE VA A ENCANTAR !! 😍👩🏻‍🎨☕️🎨 #bernardopolo #visitaecuador #CafeteriaPicaMaria #turismo #arte #huecas #arte #cafe #cuenca",
+            platform: "instagram"
+        },
+
+
+        //TIKTOK
+        {
+            id: 10,
             fecha: "03 de enero de 2024",
             iconoRed: <span className="icon-[mingcute--tiktok-fill] h-6 w-6 text-black"></span>,
             colorRed: "#000000",
@@ -40,6 +103,31 @@ const Contenido = () => {
             mensajePost: "Explorando la CASA EMBRUJADA de Cuenca..misterios PARANORMALES🧟‍🦇 @clau_ullauri @abigailjaramillo003 @phojg #cuenca #ecuador #visitaecuador #viral #Ecuador #PoliTo #visitaecuador #bernardopolo #emprendedoresdeexito #VISITANOS #viral #virals #tour #TERROR #CASAEMBRUJADA #EMBRUJADA #PARANORMAL",
             platform: "tiktok"
         },
+        {
+            id: 11,
+            fecha: "02 de febrero de 2025",
+            iconoRed: <span className="icon-[mingcute--tiktok-fill] h-6 w-6 text-black"></span>,
+            colorRed: "#000000",
+            linkPost: "https://www.tiktok.com/@bernardopolopolito/video/7468804195064335622",
+            linkPerfil: "https://www.tiktok.com/@bernardopolopolito",
+            imagePost: imgP4,
+            mensajePost: "Güecaquil: Un restaurante costeño bacán con el puro sabor ecuatoriano. 🇪🇨🦞🍤 #BernardoPolo #VisitaEcuador #Güecaquil #food #seafood #ComidaCosteña #Moro #cremosito #ceviche #Ecuatoriano #cuencanas #viral #huecas #PrecioDeCarretilla #Cuenca #Ecuador @Güecaquil",
+            platform: "tiktok"
+        },
+        {
+            id: 12,
+            fecha: "01 de enero de 2020",
+            iconoRed: <span className="icon-[mingcute--tiktok-fill] h-6 w-6 text-black"></span>,
+            colorRed: "#000000",
+            linkPost: "https://www.tiktok.com/@bernardopolopolito/video/7462123776205966597",
+            linkPerfil: "https://www.tiktok.com/@bernardopolopolito",
+            imagePost: imgP1,
+            mensajePost: "¡TODO CON MIEL! Productos Naturales hechos con mucho pero mucho AMOR. 🐝🍯 #BernardoPolo #VisitaEcuador #Apimel #Turismo #Huecas #Productos #Turron #abejas #miel #Cuenca@Michelle Maldonado",
+            platform: "tiktok"
+        },
+
+
+        //YOUTUBE
         {
             id: 4,
             fecha: "05 de marzo de 2024",
@@ -52,6 +140,38 @@ const Contenido = () => {
             platform: "youtube"
         },
         {
+            id: 13,
+            fecha: "02 de septiembre de 2022",
+            iconoRed: <span className="icon-[mdi--youtube] h-6 w-6 text-[#c4302b]"></span>,
+            colorRed: "#c4302b",
+            linkPost: "https://www.youtube.com/watch?v=BlUzarq9ZXw",
+            linkPerfil: "https://www.youtube.com/@bernardopolopolito",
+            imagePost: imgP21,
+            mensajePost: "#HackerDelTurismo #EmpresarioDisruptivo #Bloguero\n" +
+                "¿quieres saber dónde comer el mejor encebollado de Guayaquil? Mira éste video y entérate junto a Holbach Muñetón, presidente de la Federación de Cámaras de Turismo del Ecuador FENACAPTUR.",
+            platform: "youtube"
+        },
+        {
+            id: 14,
+            fecha: "19 de junio de 2024",
+            iconoRed: <span className="icon-[mdi--youtube] h-6 w-6 text-[#c4302b]"></span>,
+            colorRed: "#c4302b",
+            linkPost: "https://www.youtube.com/watch?v=xSksCVoN0-c",
+            linkPerfil: "https://www.youtube.com/@bernardopolopolito",
+            imagePost: imgP22,
+            mensajePost: "Las alitas más PICANTES del Cuenca 🥵 / Atención‼️ Video PICANTE y con SORPRESA 😳🤩\n" +
+                "\n" +
+                "🔋Pilas Pilas Pilasssss, mira todo el video y GANATE 1 de estas deliciosas ordenes de hamburgesas y alitas😋\n" +
+                "\n" +
+                "Requisitos? Participar, compartir, seguir a Bernardo Polo Polito y Alasas Cuenca 🔝\n" +
+                "\n" +
+                "#cuenca #alasascuenca #ecuador #politoinvita #Ecuador #PoliTo #alaitas #viral #virals #emprendedoresdeexito #PolitoRecomienda #picante #bebida #restaurante",
+            platform: "youtube"
+        },
+
+
+        //LINKEIND
+        {
             id: 5,
             fecha: "03 de mayo de 2024",
             iconoRed: <span className="icon-[akar-icons--linkedinv2-fill] h-6 w-6 text-[#0e76a8]"></span>,
@@ -62,6 +182,9 @@ const Contenido = () => {
             mensajePost: "Acabando con los SAYA-JEANS en la Feria Libre 👖🤣 PayPhone #cuenca #ferialibre#visitaecuador #PoliTo #visitaecuador #bernardopolo #emprendedoresdeexito #PolitoRecomienda #fashion #jeans #moda",
             platform: "linkedin"
         },
+
+
+        //X
         {
             id: 6,
             fecha: "01 de mayo de 2024",
@@ -73,6 +196,9 @@ const Contenido = () => {
             mensajePost: "Mis SEGUIDORES me dejan CHIRO por regalarles LANGOSTINOS del Abogado tírate un paso 🥲🦐 Dolger Velasquez PayPhone #dolgervelasquez#cuenca #cangrejoscuenca#ecuador #visitaecuador #PoliTo #visitaecuador #emprendedoresdeexito #VISITANOS #PolitoRecomienda #ElPadrinoPolito #politoteinvita #cangrejo #abogadotirateunpaso",
             platform: "twitter"
         },
+
+
+        //INS/PERSONAL
         {
             id: 7,
             fecha: "06 de marzo de 2025",

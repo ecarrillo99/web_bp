@@ -137,7 +137,7 @@ const Reconocimientos = () => {
             imagenes: ["https://traveler.marriott.com/es/wp-content/uploads/sites/2/2019/05/GI_200440484-001_SanAntonio_Riverwalk.jpg", "https://digital.ihg.com/is/image/ihg/intercontinental-san-antonio-9528480000-2x1", "https://res.cloudinary.com/simpleview/image/upload/v1706826303/clients/sanantoniotx/River_Walk_Daytime_VSA_Real_True_2022_5551229a-7671-432f-9f31-72e7e4e4bb7d.jpg"],
             historia: "En 2018, Bernardo Polo recibió el prestigioso reconocimiento de San Antonio por su destacada contribución al desarrollo turístico sostenible. Este galardón reconoce su visión innovadora y compromiso con la preservación cultural mientras promueve el crecimiento económico de la región.",
             fecha: "Abril 2018",
-            lugar: "San Antonio, Venezuela"
+            lugar: "Cuenca, Ecuador"
         },
         {
             id: 2,
@@ -146,16 +146,16 @@ const Reconocimientos = () => {
             imagenes: ["https://lh5.googleusercontent.com/p/AF1QipNqXwjOJZDXtq4n43YYNFGgLdX3xP17TXcWXF_a=w675-h390-n-k-no", "https://lh5.googleusercontent.com/p/AF1QipO5SfLw8ysB6_x8AR5rPsYYuDdh6PZJyi707K9e=w675-h390-n-k-no", "https://lh5.googleusercontent.com/p/AF1QipOE8Pa9Kz27qnWYLSjLoA2AtjrnqLDUNkBoU4II=w675-h390-n-k-no"],
             historia: "La Prefectura Regional otorgó a Bernardo Polo la Medalla de Honor por su liderazgo excepcional en el desarrollo de iniciativas que han transformado la industria turística local y generado oportunidades de empleo para cientos de familias en la región.",
             fecha: "Noviembre 2020",
-            lugar: "Caracas, Venezuela"
+            lugar: "Cuenca, Ecuador"
         },
         {
             id: 3,
             icono: "./images/infotour-icon.png",
             titulo: "Premio Infotour a la Excelencia",
-            imagenes: ["./images/infotour-1.jpg", "./images/infotour-2.jpg"],
+            imagenes: ["https://infoturlatam.com/wp-content/uploads/2024/01/fitur-ecuador-1.jpg", "https://infoturlatam.com/wp-content/uploads/2023/02/ecuador-cuenca.jpg"],
             historia: "El Premio Infotour a la Excelencia fue otorgado a Bernardo Polo en reconocimiento a sus innovadores programas de promoción turística que han posicionado a Venezuela como un destino de clase mundial, implementando estrategias digitales pioneras en el sector.",
             fecha: "Julio 2019",
-            lugar: "Maracaibo, Venezuela"
+            lugar: "Cuenca, Ecuador"
         },
         {
             id: 4,
@@ -164,16 +164,16 @@ const Reconocimientos = () => {
             imagenes: ["https://gk.city/wp-content/uploads/2024/03/ministro-turismo-niels-olsen.webp", "https://imagenes.primicias.ec/files/image_480_270/uploads/2024/05/26/6653484cf40a3.jpeg", "https://www.turismo.gob.ec/wp-content/uploads/2025/01/ROTATIVO-campan%CC%83a%20nacional%2013%2001%202025.png"],
             historia: "La Organización Mundial de Turismo reconoció a Bernardo Polo por su visión global y enfoque colaborativo que ha fortalecido las relaciones internacionales y ha atraído inversiones significativas al sector turístico venezolano.",
             fecha: "Septiembre 2021",
-            lugar: "Madrid, España"
+            lugar: "Cuenca, Ecuador"
         },
         {
             id: 5,
             icono: "./images/mintur-icon.png",
             titulo: "Condecoración Ministerio de Turismo",
-            imagenes: ["./images/mintur-1.jpg", "./images/mintur-2.jpg"],
+            imagenes: ["https://www.visitaecuador.com/ve/img/contenido/informacion/hall/ministerio-turismo_02.jpg", "https://www.turismo.gob.ec/wp-content/uploads/2019/10/cuenca-tw22.jpg", "https://imagenes.primicias.ec/files/image_480_270/uploads/2024/05/26/6653484cf40a3.jpeg"],
             historia: "El Ministerio de Turismo otorgó a Bernardo Polo su más alta condecoración por su contribución extraordinaria al desarrollo de políticas públicas que han revitalizado destinos históricos y creado nuevas rutas turísticas de gran impacto cultural y económico.",
-            fecha: "Febrero 2022",
-            lugar: "Mérida, Venezuela"
+            fecha: "Semptiembre del 2007",
+            lugar: "Cuenca, Ecuador"
         },
         {
             id: 6,
