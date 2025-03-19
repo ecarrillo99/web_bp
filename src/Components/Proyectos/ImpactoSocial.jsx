@@ -1,5 +1,5 @@
 import React from 'react';
-import ProyectoSection from './ProyectoSection'; // Componente actualizado con carrusel
+import ProyectoSection from './ProyectoSection';
 import imgP from '../../imagenes/instas.png'
 import imgP1 from '../../imagenes/img_1.png'
 import imgP2 from '../../imagenes/img.png'
@@ -21,6 +21,9 @@ import imgP17 from '../../imagenes/img_16.png'
 import imgP18 from '../../imagenes/img_17.png'
 import imgP19 from '../../imagenes/img_18.png'
 import imgP20 from '../../imagenes/img_19.png'
+import imgP21 from '../../imagenes/img_25.png'
+import imgP22 from '../../imagenes/img_26.png'
+import imgP23 from '../../imagenes/img_27.png'
 
 const ImpactoSocial = () => {
     return (
@@ -61,23 +64,23 @@ const ImpactoSocial = () => {
                         },
                         // Duplicados para tener 6 proyectos
                         {
-                            imagen: imgP,
-                            enlace: "https://www.instagram.com/reel/DFoCU7uJ71F/",
-                            mensaje: "Iniciativas comunitarias con impacto social",
-                            ubicacion: "Quito, Ecuador"
-                        },
-                        {
-                            imagen: imgP1,
-                            enlace: "https://www.instagram.com/reel/DFEPsKIJByR/",
-                            mensaje: "Startups que transforman la economía local",
+                            imagen: imgP21,
+                            enlace: "https://www.instagram.com/reel/DDIilJvphKf/",
+                            mensaje: "Nos pegamos un platanazo en Guayaquil",
                             ubicacion: "Guayaquil, Ecuador"
                         },
                         {
-                            imagen: imgP2,
-                            enlace: "https://ejemplo.com/emprendedores3",
-                            mensaje: "Proyectos sostenibles para el futuro del Ecuador",
+                            imagen: imgP23,
+                            enlace: "https://www.instagram.com/reel/DBuJt6mJZjs/",
+                            mensaje: "El jugueteo del Garañón en fiestas de Cuenca ❤️💛",
                             ubicacion: "Cuenca, Ecuador"
-                        }
+                        },
+                        {
+                            imagen: imgP22,
+                            enlace: "https://www.instagram.com/reel/DEgHsrkJCQ3/",
+                            mensaje: "ALERTA DE DULCE!! Mochi-licioso 😋",
+                            ubicacion: "Cuenca, Ecuador"
+                        },
                     ]}
                 />
 

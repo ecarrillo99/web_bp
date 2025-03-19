@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Footer = () => {
-
     return (
         <div className='relative bg-gradient-to-b from-[#00182b] to-[#002d4d] pt-8 pb-6'>
             <div className="absolute top-0 left-0 w-full overflow-hidden">
@@ -11,7 +10,6 @@ const Footer = () => {
             </div>
 
             <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
-
                 <div className="text-center mb-10">
                     <h2 className="text-2xl font-bold text-white mb-2">Bernardo Polo Andrade</h2>
                     <p className="text-blue-300 text-sm italic">Inspirando a través de mis experiencias</p>
@@ -46,7 +44,6 @@ const Footer = () => {
                                         Proyectos
                                     </a>
                                 </li>
-
                                 <li className='hover:text-blue-300 transition-colors duration-300'>
                                     <a href="/#/contacto" className='text-sm flex items-center'>
                                         <span className="icon-[heroicons--chat-bubble-left-right-solid] w-4 h-4 mr-2"></span>
@@ -61,14 +58,36 @@ const Footer = () => {
                         <div>
                             <h3 className='font-semibold text-lg mb-4 border-b border-blue-500 pb-2'>Sígueme</h3>
                             <div className='grid grid-cols-3 gap-4'>
-                                <a href="https://www.facebook.com/bernardopolopolito" className='flex flex-col items-center justify-center bg-gradient-to-br from-blue-800 to-blue-900 p-3 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:-translate-y-1'>
-                                    <span className="icon-[mdi--facebook] h-6 w-6"></span>
-                                    <span className="text-xs mt-1">Facebook</span>
-                                </a>
-                                <a href="https://www.instagram.com/bernardopolopolito" className='flex flex-col items-center justify-center bg-gradient-to-br from-purple-800 to-pink-600 p-3 rounded-lg hover:from-purple-700 hover:to-pink-500 transition-all duration-300 transform hover:-translate-y-1'>
-                                    <span className="icon-[mage--instagram-circle] h-6 w-6"></span>
-                                    <span className="text-xs mt-1">Instagram</span>
-                                </a>
+                                <div className='relative rounded-lg overflow-hidden transition-transform duration-300 transform hover:-translate-y-1'>
+
+                                    <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700"></div>
+
+                                    <div className="absolute top-0 bottom-0 left-1/2 w-px bg-white bg-opacity-20 z-10"></div>
+
+                                    <div className="relative z-2 flex flex-col items-center justify-center p-3">
+                                        <span className="icon-[mdi--facebook] h-6 w-6 text-white"></span>
+                                        <span className="text-xs mt-1 text-white">Facebook</span>
+                                    </div>
+
+                                    <a href="https://www.facebook.com/bernardopolopolito" className="absolute top-0 left-0 w-1/2 h-full z-20 hover:bg-blue-800 hover:bg-opacity-50 transition-colors duration-300"></a>
+                                    <a href="https://www.facebook.com/@bernardo.polo.94" className="absolute top-0 right-0 w-1/2 h-full z-20 hover:bg-blue-800 hover:bg-opacity-50 transition-colors duration-300"></a>
+                                </div>
+
+                                <div className='relative rounded-lg overflow-hidden transition-transform duration-300 transform hover:-translate-y-1'>
+
+                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-pink-600"></div>
+
+                                    <div className="absolute top-0 bottom-0 left-1/2 w-px bg-white bg-opacity-20 z-10"></div>
+
+                                    <div className="relative z-2 flex flex-col items-center justify-center p-3">
+                                        <span className="icon-[mage--instagram-circle] h-6 w-6 text-white"></span>
+                                        <span className="text-xs mt-1 text-white">Instagram</span>
+                                    </div>
+
+                                    <a href="https://www.instagram.com/bernardopolopolito" className="absolute top-0 left-0 w-1/2 h-full z-20 hover:bg-purple-700 hover:bg-opacity-50 transition-colors duration-300"></a>
+                                    <a href="https://www.instagram.com/bernardopoloa/" className="absolute top-0 right-0 w-1/2 h-full z-20 hover:bg-pink-500 hover:bg-opacity-50 transition-colors duration-300"></a>
+                                </div>
+
                                 <a href="https://x.com/bernardopolo10" className='flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-gray-600 p-3 rounded-lg hover:from-gray-700 hover:to-gray-500 transition-all duration-300 transform hover:-translate-y-1'>
                                     <span className="icon-[mage--x] h-6 w-6"></span>
                                     <span className="text-xs mt-1">X</span>
@@ -88,8 +107,6 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
 
                 <div className="border-t border-blue-900 my-8 opacity-30"></div>

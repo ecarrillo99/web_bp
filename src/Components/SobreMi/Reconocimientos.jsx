@@ -2,13 +2,21 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, { useState, useRef, useEffect } from 'react';
 import Slider from "react-slick";
+import imgP from "../../imagenes/img_28.png"
+import imgP1 from "../../imagenes/the bizz 2012.png"
+import imgP2 from "../../imagenes/galardon.png"
+import imgP3 from "../../imagenes/turismo ecuador 2008.png"
+import imgP4 from "../../imagenes/diario lideres.png"
+import imgP5 from "../../imagenes/sabe2008.png"
+import imgP6 from "../../imagenes/sabe2009.png"
+import imgP7 from "../../imagenes/afiliado.png"
+import imgP8 from "../../imagenes/fuckup.png"
 
-// Componente de Modal
 const ReconocimientoModal = ({ isOpen, onClose, reconocimiento }) => {
-    // Ref para el contenido del modal
+
     const modalContentRef = useRef(null);
 
-    // Efecto para manejar el cierre al hacer clic fuera del modal
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (isOpen && modalContentRef.current && !modalContentRef.current.contains(event.target)) {
@@ -16,21 +24,20 @@ const ReconocimientoModal = ({ isOpen, onClose, reconocimiento }) => {
             }
         };
 
-        // Añadir evento de click al documento cuando el modal está abierto
+
         if (isOpen) {
             document.addEventListener('mousedown', handleClickOutside);
         }
 
-        // Limpiar evento al desmontar
+
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [isOpen, onClose]);
 
-    // Si no está abierto o no hay un reconocimiento seleccionado, no renderizar nada
+
     if (!isOpen || !reconocimiento) return null;
 
-    // Configuración para el slider principal de imágenes
     const modalSettings = {
         dots: true,
         infinite: true,
@@ -47,6 +54,12 @@ const ReconocimientoModal = ({ isOpen, onClose, reconocimiento }) => {
             <div ref={modalContentRef} className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
                 <div className="flex justify-between items-center p-4 border-b">
                     <h3 className="text-xl font-semibold text-gray-800">{reconocimiento.titulo}</h3>
+                    <button
+                        onClick={onClose}
+                        className="text-gray-500 hover:text-gray-700 transition-colors"
+                    >
+                        <span className="icon-[material-symbols--close] h-6 w-6"></span>
+                    </button>
                 </div>
 
                 <div className="p-4">
@@ -183,6 +196,87 @@ const Reconocimientos = () => {
             historia: "La ciudad de Chordeleg entregó a Bernardo Polo la Llave de la Ciudad, el máximo honor otorgado a un ciudadano, por su dedicación a la promoción de la artesanía local y el desarrollo de programas de capacitación que han preservado técnicas tradicionales mientras abren nuevos mercados internacionales.",
             fecha: "Mayo 2023",
             lugar: "Chordeleg, Ecuador"
+        },
+        {
+            id: 7,
+            icono: imgP,
+            titulo: "Certificado Empresarial - Mucho Mejor",
+            imagenes: ["https://traveler.marriott.com/es/wp-content/uploads/sites/2/2019/05/GI_200440484-001_SanAntonio_Riverwalk.jpg", "https://digital.ihg.com/is/image/ihg/intercontinental-san-antonio-9528480000-2x1", "https://res.cloudinary.com/simpleview/image/upload/v1706826303/clients/sanantoniotx/River_Walk_Daytime_VSA_Real_True_2022_5551229a-7671-432f-9f31-72e7e4e4bb7d.jpg"],
+            historia: "En 2018, Bernardo Polo recibió el prestigioso reconocimiento de San Antonio por su destacada contribución al desarrollo turístico sostenible. Este galardón reconoce su visión innovadora y compromiso con la preservación cultural mientras promueve el crecimiento económico de la región.",
+            fecha: "Abril 2018",
+            lugar: "Cuenca, Ecuador"
+        },
+        {
+            id: 8,
+            icono: imgP1,
+            titulo: "World Business Leader",
+            imagenes: ["https://lh5.googleusercontent.com/p/AF1QipNqXwjOJZDXtq4n43YYNFGgLdX3xP17TXcWXF_a=w675-h390-n-k-no", "https://lh5.googleusercontent.com/p/AF1QipO5SfLw8ysB6_x8AR5rPsYYuDdh6PZJyi707K9e=w675-h390-n-k-no", "https://lh5.googleusercontent.com/p/AF1QipOE8Pa9Kz27qnWYLSjLoA2AtjrnqLDUNkBoU4II=w675-h390-n-k-no"],
+            historia: "La Prefectura Regional otorgó a Bernardo Polo la Medalla de Honor por su liderazgo excepcional en el desarrollo de iniciativas que han transformado la industria turística local y generado oportunidades de empleo para cientos de familias en la región.",
+            fecha: "Noviembre 2012",
+            lugar: "Cuenca, Ecuador"
+        },
+        {
+            id: 9,
+            icono: imgP2,
+            titulo: "Galardon--EcuaEmpresas",
+            imagenes: ["https://infoturlatam.com/wp-content/uploads/2024/01/fitur-ecuador-1.jpg", "https://infoturlatam.com/wp-content/uploads/2023/02/ecuador-cuenca.jpg"],
+            historia: "El Premio Infotour a la Excelencia fue otorgado a Bernardo Polo en reconocimiento a sus innovadores programas de promoción turística que han posicionado a Venezuela como un destino de clase mundial, implementando estrategias digitales pioneras en el sector.",
+            fecha: "Septiembre 2017",
+            lugar: "Cuenca, Ecuador"
+        },
+        {
+            id: 10,
+            icono: imgP3,
+            titulo: "Expositor--VI feria",
+            imagenes: ["https://gk.city/wp-content/uploads/2024/03/ministro-turismo-niels-olsen.webp", "https://imagenes.primicias.ec/files/image_480_270/uploads/2024/05/26/6653484cf40a3.jpeg", "https://www.turismo.gob.ec/wp-content/uploads/2025/01/ROTATIVO-campan%CC%83a%20nacional%2013%2001%202025.png"],
+            historia: "La Organización Mundial de Turismo reconoció a Bernardo Polo por su visión global y enfoque colaborativo que ha fortalecido las relaciones internacionales y ha atraído inversiones significativas al sector turístico venezolano.",
+            fecha: "Junio 2008",
+            lugar: "Cuenca, Ecuador"
+        },
+        {
+            id: 11,
+            icono: imgP4,
+            titulo: "Condecoración Ministerio de Turismo",
+            imagenes: ["https://www.visitaecuador.com/ve/img/contenido/informacion/hall/ministerio-turismo_02.jpg", "https://www.turismo.gob.ec/wp-content/uploads/2019/10/cuenca-tw22.jpg", "https://imagenes.primicias.ec/files/image_480_270/uploads/2024/05/26/6653484cf40a3.jpeg"],
+            historia: "El Ministerio de Turismo otorgó a Bernardo Polo su más alta condecoración por su contribución extraordinaria al desarrollo de políticas públicas que han revitalizado destinos históricos y creado nuevas rutas turísticas de gran impacto cultural y económico.",
+            fecha: "Semptiembre del 2007",
+            lugar: "Cuenca, Ecuador"
+        },
+        {
+            id: 12,
+            icono: imgP5,
+            titulo: "Sabe--Auspiciante",
+            imagenes: ["https://lh5.googleusercontent.com/p/AF1QipMh7qqspV48tCfQHftbVYCY4V4Y1q7nJwnO4Nda=w540-h312-n-k-no", "https://lh5.googleusercontent.com/p/AF1QipP_SivlPesJ50XWFEpXOC1hUwg3pMXlhjyvKH62=w540-h312-n-k-no", "https://lh5.googleusercontent.com/p/AF1QipONnIFwmSRkOcqnF7hAs0dLL_NSipxHxASwcLrC=w540-h312-n-k-no"],
+            historia: "La ciudad de Chordeleg entregó a Bernardo Polo la Llave de la Ciudad, el máximo honor otorgado a un ciudadano, por su dedicación a la promoción de la artesanía local y el desarrollo de programas de capacitación que han preservado técnicas tradicionales mientras abren nuevos mercados internacionales.",
+            fecha: "Octubre 2008",
+            lugar: "Chordeleg, Ecuador"
+        },
+        {
+            id: 13,
+            icono: imgP6,
+            titulo: "Sabe--Auspiciante",
+            imagenes: ["https://traveler.marriott.com/es/wp-content/uploads/sites/2/2019/05/GI_200440484-001_SanAntonio_Riverwalk.jpg", "https://digital.ihg.com/is/image/ihg/intercontinental-san-antonio-9528480000-2x1", "https://res.cloudinary.com/simpleview/image/upload/v1706826303/clients/sanantoniotx/River_Walk_Daytime_VSA_Real_True_2022_5551229a-7671-432f-9f31-72e7e4e4bb7d.jpg"],
+            historia: "En 2018, Bernardo Polo recibió el prestigioso reconocimiento de San Antonio por su destacada contribución al desarrollo turístico sostenible. Este galardón reconoce su visión innovadora y compromiso con la preservación cultural mientras promueve el crecimiento económico de la región.",
+            fecha: "Octubre 2009",
+            lugar: "Cuenca, Ecuador"
+        },
+        {
+            id: 14,
+            icono: imgP7,
+            titulo: "Certifacado--Camara del Comercio",
+            imagenes: ["https://lh5.googleusercontent.com/p/AF1QipNqXwjOJZDXtq4n43YYNFGgLdX3xP17TXcWXF_a=w675-h390-n-k-no", "https://lh5.googleusercontent.com/p/AF1QipO5SfLw8ysB6_x8AR5rPsYYuDdh6PZJyi707K9e=w675-h390-n-k-no", "https://lh5.googleusercontent.com/p/AF1QipOE8Pa9Kz27qnWYLSjLoA2AtjrnqLDUNkBoU4II=w675-h390-n-k-no"],
+            historia: "La Prefectura Regional otorgó a Bernardo Polo la Medalla de Honor por su liderazgo excepcional en el desarrollo de iniciativas que han transformado la industria turística local y generado oportunidades de empleo para cientos de familias en la región.",
+            fecha: "Mayo 1994",
+            lugar: "Cuenca, Ecuador"
+        },
+        {
+            id: 15,
+            icono: imgP8,
+            titulo: "Fuckup",
+            imagenes: ["https://infoturlatam.com/wp-content/uploads/2024/01/fitur-ecuador-1.jpg", "https://infoturlatam.com/wp-content/uploads/2023/02/ecuador-cuenca.jpg"],
+            historia: "El Premio Infotour a la Excelencia fue otorgado a Bernardo Polo en reconocimiento a sus innovadores programas de promoción turística que han posicionado a Venezuela como un destino de clase mundial, implementando estrategias digitales pioneras en el sector.",
+            fecha: "Julio 2019",
+            lugar: "Cuenca, Ecuador"
         }
     ];
 

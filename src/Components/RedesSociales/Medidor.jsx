@@ -22,7 +22,7 @@ const Medidor = () => {
                     <div className="flex items-end gap-2">
                         <div className="relative">
                             <span className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#005F6B] to-[#96c121]">
-                                247,188 K
+                                253,832 K
                             </span>
                             <div className="absolute -top-4 right-0 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-full text-gray-800 transform rotate-12">
                                 ¡Récord!
@@ -41,40 +41,47 @@ const Medidor = () => {
                                 className="bg-[#db5781] flex items-center justify-center text-white font-semibold text-sm transition-all duration-1000"
                                 style={{width: animate ? '50%' : '0%'}}
                             >
-                                56.64%
+                                55.15%
                             </div>
                             <div
                                 className="bg-[#e33f72] flex items-center justify-center text-white font-semibold text-sm transition-all duration-1000 delay-200"
                                 style={{width: animate ? '25%' : '0%'}}
                             >
-                                18.73%
+                                18.24%
                             </div>
                             <div
                                 className="bg-[#3e8ba4] flex items-center justify-center text-white font-semibold text-sm transition-all duration-1000 delay-100"
                                 style={{width: animate ? '15%' : '0%'}}
                             >
-                                13.75%
+                                13.39%
+                            </div>
+                            <div
+                                className="bg-[#35758a] flex items-center justify-center text-white font-semibold text-sm transition-all duration-1000 delay-100"
+                                style={{width: animate ? '7%' : '0%'}}
+                            >
+                                2.60%
                             </div>
                             <div
                                 className="bg-[#60605f] flex items-center justify-center text-white font-semibold text-sm transition-all duration-1000 delay-200"
                                 style={{width: animate ? '13%' : '0%'}}
                             >
-                                10.44%
+                                10.16%
                             </div>
                             <div
                                 className="bg-[#e6231c] flex items-center justify-center text-white font-semibold text-sm transition-all duration-1000 delay-200"
                                 style={{width: animate ? '7%' : '0%'}}
                             >
-                                0.76%
+                                0.74%
                             </div>
 
                         </div>
-                        <div className="flex justify-between mt-2 text-xs text-gray-500">
+                        <div className="flex justify-end mt-2 text-xs text-gray-500 gap-2">
                             <div>Inst/FanPage</div>
                             <div>Inst/Personal</div>
-                            <div>Facebook</div>
-                            <div>TikTok</div>
-                            <div>Youtube</div>
+                            <div>FK/Fanpage</div>
+                            <div>FK/Personal</div>
+                            <div className="">TikTok</div>
+                            <div className="">Youtube</div>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,14 @@ import React, { useState } from 'react';
 import Slider from "react-slick";
 import Logo from "../../imagenes/logo_verde.png";
 import { motion, AnimatePresence } from "framer-motion";
+import imgP1 from "../../imagenes/the bizz 2012.png"
+import imgP2 from "../../imagenes/galardon.png"
+import imgP3 from "../../imagenes/turismo ecuador 2008.png"
+import imgP4 from "../../imagenes/diario lideres.png"
+import imgP5 from "../../imagenes/sabe2008.png"
+import imgP6 from "../../imagenes/sabe2009.png"
+import imgP7 from "../../imagenes/afiliado.png"
+import imgP8 from "../../imagenes/fuckup.png"
 
 const CustomNextArrow = (props) => {
     return (
@@ -62,48 +70,96 @@ const settings = {
 };
 
 const achievementsData = {
-    2000: {
-        type: "video",
-        videoId: "P2t4zP4ugPo",
-        description: "En el año 2000 bajo el nombre de Ecuaventura.com, la ministra Rocío Vásquez lo oficializó como el Portal Oficial de Turismo del Ecuador (2000-2004), estableciendo un precedente en la digitalización del sector turístico en el país.",
-        lab: "Nombramiento como el Portal Oficial de Turismo del Ecuador.",
-        icon: "icon-[material-symbols--travel-explore-rounded]"
+    "May 1994": {
+        image: imgP7,
+        description: "En mayo de 1994, El Ing. Bernardo Polo una vez más demuestra su presencia en el país al recibir un reconocimiento por lograr fomentar el turismo en nuestro país, este reconocimiento dado por el alcalde de Chordeleg el Dr. Flavio Barros Reinoso.",
+        lab: "Certificado de la Camara del Comercio.",
+        icon: "icon-[material-symbols--badge]"
     },
-    2006: {
+    "Dic 2004": {
         type: "icon",
         image: Logo,
         description: "En diciembre de 2006, durante la gestión de la ministra María Isabel Salvador, Ecuaventura.com cambia su nombre a VistaEcuador.com, reflejando un enfoque más amplio para promover el país a nivel internacional. Este cambio no solo representó un cambio de nombre, sino una transformación en la manera en que Ecuador se proyectaba al mundo.",
         lab: "Una historia más sobre nuestra marca impactando al mundo.",
         icon: "icon-[material-symbols--branding-watermark]"
     },
-    2007: {
+    "Dic 2006": {
+        type: "video",
+        videoId: "P2t4zP4ugPo",
+        description: "En diciembre del 2006 bajo el nombre de Ecuaventura.com, la ministra Rocío Vásquez lo oficializó como el Portal Oficial de Turismo del Ecuador (2000-2004), estableciendo un precedente en la digitalización del sector turístico en el país.",
+        lab: "Nombramiento como el Portal Oficial de Turismo del Ecuador.",
+        icon: "icon-[material-symbols--travel-explore-rounded]"
+    },
+    "Mar 2007": {
         image: "https://www.visitaecuador.com/ve/img/contenido/informacion/hall/ministerio-turismo_02.jpg",
-        description: "En 2007, El Portal Visita Ecuador recibe un reconocimiento por fomentar el turismo en Ecuador. Este reconocimiento dado al Ing. Bernardo Polo consolidó su trayectoria como pionero turístico, habiendo contribuido significativamente al desarrollo del turismo en Ecuador.",
+        description: "En marzo de 2007, El Portal Visita Ecuador recibe un reconocimiento por fomentar el turismo en Ecuador. Este reconocimiento dado al Ing. Bernardo Polo consolidó su trayectoria como pionero turístico, habiendo contribuido significativamente al desarrollo del turismo en Ecuador.",
         lab: "Reconoce al Pionero en Turismo de nuestro Ecuador.",
         icon: "icon-[material-symbols--award-star-rounded]"
     },
-    2009: {
+    "Jun 2008": {
+        image: imgP3,
+        description: "En junio de 2008, El Ing. Bernardo Polo una vez más demuestra su presencia en el país al recibir un reconocimiento por lograr fomentar el turismo en nuestro país, este reconocimiento dado por el alcalde de Chordeleg el Dr. Flavio Barros Reinoso.",
+        lab: "Exporsitor de VI feria.",
+        icon: "icon-[material-symbols--strategy]"
+    },
+    "Oct 2008": {
+        image: imgP5,
+        description: "En noviembre de 2008, El Ing. Bernardo Polo una vez más demuestra su presencia en el país al recibir un reconocimiento por lograr fomentar el turismo en nuestro país, este reconocimiento dado por el alcalde de Chordeleg el Dr. Flavio Barros Reinoso.",
+        lab: "Reconocimiento de Sabe.",
+        icon: "icon-[material-symbols--emoji-food-beverage]"
+    },
+    "Oct 2009": {
+        image: imgP6,
+        description: "En noviembre de 2009, El Ing. Bernardo Polo una vez más demuestra su presencia en el país al recibir un reconocimiento por lograr fomentar el turismo en nuestro país, este reconocimiento dado por el alcalde de Chordeleg el Dr. Flavio Barros Reinoso.",
+        lab: "Reconocimiento de Sabe.",
+        icon: "icon-[material-symbols--emoji-food-beverage]"
+    },
+    "Abr 2009": {
         image: "https://www.visitaecuador.com/ve/img/contenido/informacion/hall/municipio-chordeleg-org.jpg",
-        description: "En 2009, El Ing. Bernardo Polo una vez más demuestra su presencia en el país al recibir un reconocimiento por una vez más lograr fomentar el turismo en nuestro país, este reconocimiento dado por el alcalde de Chordeleg el Dr. Flavio Barros Reinoso.",
+        description: "En febrero de 2009, El Ing. Bernardo Polo una vez más demuestra su presencia en el país al recibir un reconocimiento por una vez más lograr fomentar el turismo en nuestro país, este reconocimiento dado por el alcalde de Chordeleg el Dr. Flavio Barros Reinoso.",
         lab: "Reconocimiento de la alcaldía de Chordeleg.",
         icon: "icon-[material-symbols--location-city]"
     },
-    2017: {
+    "Jul 2012": {
+        image: imgP1,
+        description: "En julio de 2012, El Ing. Bernardo Polo recibe prestigioso reconocimiento internacional 'The Bizz Awards' como líder empresarial por su contribución al sector turístico y su visión innovadora que ha posicionado a VistaEcuador.com como referente en la promoción digital del turismo ecuatoriano.",
+        lab: "World Business Leader.",
+        icon: "icon-[material-symbols--language]"
+    },
+    "May 2017": {
         type: "video1",
         videoId: "QaL6cG4LCNU",
-        description: "En 2017, En su búsqueda constante de innovación, VistaEcuador.com desarrolló la primera APP de reservas hoteleras en Ecuador, permitiendo a los usuarios acceder a descuentos y realizar reservas directas desde sus dispositivos móviles. Esta tecnología fue tan exitosa que sirvió de inspiración para Disney Concierge, una aplicación utilizada en los parques de Disney para gestionar la experiencia de los visitantes.",
+        description: "En mayo de 2017, En su búsqueda constante de innovación, VistaEcuador.com desarrolló la primera APP de reservas hoteleras en Ecuador, permitiendo a los usuarios acceder a descuentos y realizar reservas directas desde sus dispositivos móviles. Esta tecnología fue tan exitosa que sirvió de inspiración para Disney Concierge, una aplicación utilizada en los parques de Disney para gestionar la experiencia de los visitantes.",
         lab: "Conoce mi app, y disfruta de viajar con VistaEcuador.",
         icon: "icon-[material-symbols--smartphone]"
     },
-    2018: {
+    "Sept 2017": {
+        image: imgP2,
+        description: "En septiembre de 2017, VistaEcuador.com recibe el galardón de EcuaEmpresas por su destacada labor en la promoción digital del turismo ecuatoriano y su constante innovación tecnológica que ha permitido conectar a miles de turistas con los destinos más emblemáticos del país.",
+        lab: "Galardón de EcuaEmpresas.",
+        icon: "icon-[material-symbols--handshake]"
+    },
+    "Abr 2018": {
         image: "https://www.visitaecuador.com/ve/img/contenido/informacion/hall/mmecuador-org.jpg",
-        description: "En 2018, Vista Ecuador fue reconocida como una empresa triple A por mucho mejor ecuador quien hoy es la garantía y el respaldo de las empresas Ecuatorianas, así demostrando una vez más la calidad que tiene VistaEcuador.",
+        description: "En abril de 2018, Vista Ecuador fue reconocida como una empresa triple A por Mucho Mejor Ecuador quien hoy es la garantía y el respaldo de las empresas Ecuatorianas, así demostrando una vez más la calidad que tiene VistaEcuador.",
         lab: "Reconocimiento como empresa Triple A.",
         icon: "icon-[material-symbols--verified]"
+    },
+    "Sep 2022": {
+        image: imgP4,
+        description: "En septiembre de 2022, Diario Líderes destaca a VistaEcuador.com como caso de éxito empresarial en el sector turístico digital, resaltando su trayectoria de más de dos décadas y su capacidad de adaptación a las nuevas tecnologías para seguir promoviendo los destinos ecuatorianos.",
+        lab: "Reconocimiento en Diario Líderes.",
+        icon: "icon-[material-symbols--newspaper]"
+    },
+    "Jun 2023": {
+        image: imgP8,
+        description: "En junio de 2023, El Ing. Bernardo Polo participa como ponente destacado en el evento Fuckup Nights, compartiendo valiosas lecciones aprendidas durante su trayectoria empresarial y cómo los desafíos enfrentados se convirtieron en oportunidades de crecimiento para VistaEcuador.com.",
+        lab: "Participación en Fuckup Nights.",
+        icon: "icon-[material-symbols--event-note]"
     }
 };
 
-const YearCard = ({ year, data, isSelected, onClick }) => {
+const YearCard = ({ yearMonth, data, isSelected, onClick }) => {
     return (
         <motion.div
             whileHover={{ scale: 1.05 }}
@@ -116,7 +172,7 @@ const YearCard = ({ year, data, isSelected, onClick }) => {
             }`}
         >
             <span className={`${data.icon} text-2xl mb-2`}></span>
-            <div className="font-bold text-xl mb-1">{year}</div>
+            <div className="font-bold text-xl mb-1">{yearMonth}</div>
             <div className="text-xs text-center font-medium line-clamp-2">{data.lab}</div>
         </motion.div>
     );
@@ -187,13 +243,13 @@ const Historia = () => {
             <div className="relative">
                 <div className="overflow-hidden rounded-xl">
                     <Slider {...settings}>
-                        {timelineYears.map((year) => (
+                        {Object.keys(achievementsData).map((yearMonth) => (
                             <YearCard
-                                key={year}
-                                year={year}
-                                data={achievementsData[year]}
-                                isSelected={selectedYear === year}
-                                onClick={() => openModal(year)}
+                                key={yearMonth}
+                                yearMonth={yearMonth}
+                                data={achievementsData[yearMonth]}
+                                isSelected={selectedYear === yearMonth}
+                                onClick={() => openModal(yearMonth)}
                             />
                         ))}
                     </Slider>

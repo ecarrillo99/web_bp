@@ -3,6 +3,7 @@ import Medidor from './Medidor';
 import SeguidoresRed from './SeguidoresRed';
 import SegmentacionGenero from './SegmentacionGenero';
 import SegmentacionEdad from './SegmentacionEdad';
+import SegmentacionGeografica from './SegmentacionGeografica';
 
 const Metricas = () => {
     return (
@@ -27,34 +28,44 @@ const Metricas = () => {
                         seguidores={"140 K"}
                     />
                     <SeguidoresRed
-                        red={"FACEBOOK"}
+                        red={"FK/FANPAGE"}
                         color={"#3e8ba4"}
                         icono={"./images/facebook_icon.png"}
-                        seguidores={"33 K"}
+                        seguidores={"34 K"}
                     />
                     <SeguidoresRed
                         red={"TIK TOK"}
                         color={"#60605f"}
                         icono={"./images/tiktok_icon.png"}
-                        seguidores={"25,6 K"}
+                        seguidores={"25,8 K"}
                     />
                     <SeguidoresRed
                         red={"YOUTUBE"}
                         color={"#e6231c"}
                         icono={"./images/youtube_icon.png"}
-                        seguidores={"1,87 k"}
+                        seguidores={"1,88 k"}
                     />
                     <SeguidoresRed
                         red={"INST/PERSONAL"}
                         color={"#e33f72"}
                         icono={"./images/instagram_icon.png"}
-                        seguidores={"40 K"}
+                        seguidores={"46.3 K"}
+                    />
+                    <SeguidoresRed
+                        red={"FK/PERSONAL"}
+                        color={"#35758a"}
+                        icono={"./images/facebook_icon.png"}
+                        seguidores={"6.6 K"}
                     />
                 </div>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-2'>
                     <SegmentacionGenero />
                     <SegmentacionEdad />
+                </div>
+
+                <div className='mt-2'>
+                    <SegmentacionGeografica />
                 </div>
             </div>
         </div>

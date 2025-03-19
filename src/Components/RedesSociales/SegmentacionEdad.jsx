@@ -16,49 +16,49 @@ const SegmentacionEdad = () => {
         {
             range: '13-17',
             porcentaje: 0.17,
-            audienciaEstimada: '1,150',
+            audienciaEstimada: '431.5144',
             emoji: "🧒",
             color: "#60a5fa"
         },
         {
             range: '18-24',
             porcentaje: 3.22,
-            audienciaEstimada: '14,000',
+            audienciaEstimada: '8,173.3904',
             emoji: "🧑",
             color: "#3b82f6"
         },
         {
             range: '25-34',
             porcentaje: 16.37,
-            audienciaEstimada: '50,510',
+            audienciaEstimada: '41,552.2984',
             emoji: "👨",
             color: "#2563eb"
         },
         {
             range: '35-44',
             porcentaje: 31.49,
-            audienciaEstimada: '70,539',
+            audienciaEstimada: '79,931.6968',
             emoji: "👨‍💼",
             color: "#1d4ed8"
         },
         {
             range: '45-54',
             porcentaje: 29.3,
-            audienciaEstimada: '58,189',
+            audienciaEstimada: '74,372.776',
             emoji: "👨‍🦱",
             color: "#1e40af"
         },
         {
             range: '55-64',
             porcentaje: 13.2,
-            audienciaEstimada: '40,385',
+            audienciaEstimada: '33,505.824',
             emoji: "👴",
             color: "#1e3a8a"
         },
         {
             range: '65+',
             porcentaje: 6.25,
-            audienciaEstimada: '12,415',
+            audienciaEstimada: '15,864.5',
             emoji: "🧓",
             color: "#172554"
         },
@@ -223,16 +223,7 @@ const SegmentacionEdad = () => {
                         })}
                     </div>
 
-                    <div className="mt-4 pt-4 border-t border-gray-200">
-                        <div className="text-sm text-gray-600">
-                            <p className="font-medium mb-1">Insights:</p>
-                            <ul className="list-disc list-inside space-y-1 pl-2">
-                                <li>El grupo predominante es de <span className="font-medium text-blue-700">35-44 años</span> ({segmentos.find(s => s.range === '35-44')?.porcentaje}%)</li>
-                                <li>Los adultos de <span className="font-medium text-blue-700">35-54 años</span> representan el <span className="font-medium">{(segmentos.find(s => s.range === '35-44')?.porcentaje + segmentos.find(s => s.range === '45-54')?.porcentaje).toFixed(1)}%</span> de la audiencia</li>
-                                <li>La audiencia joven (<span className="font-medium text-blue-700">13-24 años</span>) es solo el <span className="font-medium">{(segmentos.find(s => s.range === '13-17')?.porcentaje + segmentos.find(s => s.range === '18-24')?.porcentaje).toFixed(1)}%</span></li>
-                            </ul>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>

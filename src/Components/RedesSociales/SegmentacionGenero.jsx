@@ -10,7 +10,6 @@ const SegmentacionDashboard = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    // Datos de género
     const datosGenero = [
         {
             name: 'Hombre',
@@ -29,34 +28,6 @@ const SegmentacionDashboard = () => {
         },
     ];
 
-    // Datos de ciudades
-    const datosCiudades = [
-        {
-            name: 'Cuenca',
-            percent: 32.5,
-            icon: "🏙️",
-        },
-        {
-            name: 'Guayaquil',
-            percent: 18.3,
-            icon: "🌆",
-        },
-        {
-            name: 'Manabi',
-            percent: 15.7,
-            icon: "🌃",
-        },
-        {
-            name: 'Quito',
-            percent: 10.2,
-            icon: "🏛️",
-        },
-        {
-            name: 'Loja',
-            percent: 23.3,
-            icon: "🌐",
-        },
-    ];
 
     const colorMapGenero = {
         'Hombre': '#3b82f6',
@@ -64,17 +35,9 @@ const SegmentacionDashboard = () => {
         'Desconocido': '#9ca3af'
     };
 
-    const colorMapCiudades = {
-        'Cuenca': '#0ea5e9',
-        'Guayaquil': '#10b981',
-        'Manabi': '#8b5cf6',
-        'Quito': '#f59e0b',
-        'Loja': '#6b7280'
-    };
 
     const valueFormatter = (number) => `${Intl.NumberFormat('es-MX').format(number).toString()} %`;
 
-    // Componente reutilizable para cada sección de donut
     const DonutSection = ({ title, data, colorMap, totalLabel }) => (
         <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg mb-6">
             <div className="p-6">
@@ -82,7 +45,7 @@ const SegmentacionDashboard = () => {
                     {title}
                 </h3>
 
-                <div className={`flex flex-col md:flex-row items-center justify-between gap-6 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+                <div className={`flex flex-col  items-center justify-between gap-6 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
                     <div className="w-full md:w-1/2 max-w-xs mx-auto">
                         <DonutChart
                             data={data}
@@ -90,7 +53,7 @@ const SegmentacionDashboard = () => {
                             index="name"
                             valueFormatter={valueFormatter}
                             showAnimation={true}
-                            colors={['blue','emerald', 'purple', 'amber', 'gray' ]}
+                            colors={['blue', 'pink', 'gray' ]}
                             className="h-48"
                         />
                     </div>
@@ -119,7 +82,7 @@ const SegmentacionDashboard = () => {
                         <div className="mt-4 pt-4 border-t border-gray-200">
                             <div className="flex justify-between text-sm text-gray-500">
                                 <span>{totalLabel}:</span>
-                                <span className="font-medium">247.188K personas</span>
+                                <span className="font-medium">253,832K personas</span>
                             </div>
                         </div>
                     </div>
@@ -135,13 +98,6 @@ const SegmentacionDashboard = () => {
                 data={datosGenero}
                 colorMap={colorMapGenero}
                 totalLabel="Total analizados"
-            />
-
-            <DonutSection
-                title="Distribución por Ciudad"
-                data={datosCiudades}
-                colorMap={colorMapCiudades}
-                totalLabel="Total ubicación"
             />
         </div>
     );
