@@ -1,29 +1,29 @@
 import React from 'react';
 import ProyectoSection from './ProyectoSection';
-import imgP from '../../imagenes/instas.png'
-import imgP1 from '../../imagenes/img_1.png'
-import imgP2 from '../../imagenes/img.png'
-import imgP3 from '../../imagenes/img_2.png'
-import imgP4 from '../../imagenes/img_3.png'
-import imgP5 from '../../imagenes/img_4.png'
-import imgP6 from '../../imagenes/img_5.png'
-import imgP7 from '../../imagenes/img_6.png'
-import imgP8 from '../../imagenes/img_7.png'
-import imgP9 from '../../imagenes/img_8.png'
-import imgP10 from '../../imagenes/img_9.png'
-import imgP11 from '../../imagenes/img_10.png'
-import imgP12 from '../../imagenes/img_11.png'
-import imgP13 from '../../imagenes/img_12.png'
-import imgP14 from '../../imagenes/img_13.png'
-import imgP15 from '../../imagenes/img_14.png'
-import imgP16 from '../../imagenes/img_15.png'
-import imgP17 from '../../imagenes/img_16.png'
-import imgP18 from '../../imagenes/img_17.png'
-import imgP19 from '../../imagenes/img_18.png'
-import imgP20 from '../../imagenes/img_19.png'
-import imgP21 from '../../imagenes/img_25.png'
-import imgP22 from '../../imagenes/img_26.png'
-import imgP23 from '../../imagenes/img_27.png'
+import imgP from '../../imagenes/Social/instas.png'
+import imgP1 from '../../imagenes/Social/img_1.png'
+import imgP2 from '../../imagenes/Social/img.png'
+import imgP3 from '../../imagenes/Social/img_2.png'
+import imgP4 from '../../imagenes/Social/img_3.png'
+import imgP5 from '../../imagenes/Social/img_4.png'
+import imgP6 from '../../imagenes/Social/img_5.png'
+import imgP7 from '../../imagenes/Social/img_6.png'
+import imgP8 from '../../imagenes/Social/img_7.png'
+import imgP9 from '../../imagenes/Social/img_8.png'
+import imgP10 from '../../imagenes/Social/img_9.png'
+import imgP11 from '../../imagenes/Social/img_10.png'
+import imgP12 from '../../imagenes/Social/img_11.png'
+import imgP13 from '../../imagenes/Social/img_12.png'
+import imgP14 from '../../imagenes/Social/img_13.png'
+import imgP15 from '../../imagenes/Social/img_14.png'
+import imgP16 from '../../imagenes/Social/img_15.png'
+import imgP17 from '../../imagenes/Social/img_16.png'
+import imgP18 from '../../imagenes/Social/img_17.png'
+import imgP19 from '../../imagenes/Social/img_18.png'
+import imgP20 from '../../imagenes/Social/img_19.png'
+import imgP21 from '../../imagenes/Social/img_25.png'
+import imgP22 from '../../imagenes/Social/img_26.png'
+import imgP23 from '../../imagenes/Social/img_27.png'
 
 const ImpactoSocial = () => {
     return (
@@ -47,22 +47,21 @@ const ImpactoSocial = () => {
                         {
                             imagen: imgP,
                             enlace: "https://www.instagram.com/reel/DFoCU7uJ71F/",
-                            mensaje: "Transformando ideas en soluciones para la comunidad",
-                            ubicacion: "Quito, Ecuador"
+                            mensaje: "PONLE TÚ SELLO PERSONAL !! Así crean tu estilo único en Zombie Kater",
+                            ubicacion: "Cuenca, Ecuador"
                         },
                         {
                             imagen: imgP1,
                             enlace: "https://www.instagram.com/reel/DFEPsKIJByR/",
-                            mensaje: "Innovación con propósito para el desarrollo local",
-                            ubicacion: "Guayaquil, Ecuador"
+                            mensaje: "¡TODO CON MIEL! Productos Naturales hechos con mucho pero mucho AMOR.",
+                            ubicacion: "Cuenca, Ecuador"
                         },
                         {
                             imagen: imgP2,
-                            enlace: "https://ejemplo.com/emprendedores3",
-                            mensaje: "Creando oportunidades para los jóvenes talentos",
+                            enlace: "https://www.instagram.com/reel/DDF-zB9xz8d/",
+                            mensaje: "Morochos del fantasma, sabor paranormal! 👻🥤",
                             ubicacion: "Cuenca, Ecuador"
                         },
-                        // Duplicados para tener 6 proyectos
                         {
                             imagen: imgP21,
                             enlace: "https://www.instagram.com/reel/DDIilJvphKf/",
@@ -84,45 +83,47 @@ const ImpactoSocial = () => {
                     ]}
                 />
 
-                {/* El resto de las secciones mantienen la misma estructura pero con sus respectivos proyectos */}
                 <ProyectoSection
                     titulo="La Sazón De"
                     proyectos={[
                         {
                             imagen: imgP3,
                             enlace: "https://www.instagram.com/reel/DGEWygVp6QK/",
-                            mensaje: "Sabores auténticos que rescatan nuestra identidad",
+                            mensaje: "Si te gusta la pieza ya sabes donde es! 😉🌭 #HotDogsDeDonMaño #BernardoPolo",
                             ubicacion: "Manabí, Ecuador"
                         },
                         {
                             imagen: imgP4,
                             enlace: "https://www.instagram.com/reel/DFya9PmJMlo/",
-                            mensaje: "Gastronomía que une tradiciones y corazones",
+                            mensaje: "Güecaquil: Un restaurante costeño bacán con el puro sabor ecuatoriano. 🇪🇨🦞🍤 #BernardoPolo #VisitaEcuador",
                             ubicacion: "Esmeraldas, Ecuador"
                         },
                         {
                             imagen: imgP5,
                             enlace: "https://www.instagram.com/reel/DFYpUzyJkZz/",
-                            mensaje: "Del campo a la mesa, sabor y sostenibilidad",
+                            mensaje: "Nos pegamos unos cueritos en el mercado 😋🤤: La sazón de Estefania Vintimilla #BernardoPolo #VisitaEcuador",
                             ubicacion: "Loja, Ecuador"
                         },
-                        // Duplicados para tener 6 proyectos
                         {
                             imagen: imgP12,
                             enlace: "https://www.instagram.com/reel/DFOVzHTJloo/",
-                            mensaje: "Recetas ancestrales en manos contemporáneas",
+                            mensaje: "No creerás lo buenas que están éstas fresas con crema!😍🍓 Si eres amante del dulce tienes que ver este video",
                             ubicacion: "Manabí, Ecuador"
                         },
                         {
                             imagen: imgP13,
                             enlace: "https://www.instagram.com/reel/DDP9aRWJWTQ/",
-                            mensaje: "Cocineros locales que preservan nuestra cultura",
+                            mensaje: "Una salchipapa hecha con mucho pero mucho AMORRR!\n" +
+                                "\n" +
+                                "#bernardopolo #visitaecuador",
                             ubicacion: "Esmeraldas, Ecuador"
                         },
                         {
                             imagen: imgP14,
                             enlace: "https://www.instagram.com/reel/DBrqxP9p1rF/",
-                            mensaje: "Fusión de sabores: la nueva cocina ecuatoriana",
+                            mensaje: "Preparamos un levanta m*3rto$ !!😱 La Sazón de Oss Ventura.\n" +
+                                "\n" +
+                                "#bernardopolo #visitaecuador ",
                             ubicacion: "Loja, Ecuador"
                         }
                     ]}
@@ -134,38 +135,37 @@ const ImpactoSocial = () => {
                         {
                             imagen: imgP6,
                             enlace: "https://www.instagram.com/reel/DG3RJf6poaC/",
-                            mensaje: "La esencia de nuestros barrios en cada historia",
+                            mensaje: "Polito Longo de Barrio (Parte 1) #BernardoPolo #BarrioLaGloria",
                             ubicacion: "Ambato, Ecuador"
                         },
                         {
                             imagen: imgP7,
                             enlace: "https://www.instagram.com/reel/DF_VABfpAyN/",
-                            mensaje: "Cultura callejera, identidad y resistencia",
+                            mensaje: "Así se ve un cojudo pidiendo comida para llevar !! 🤪 #BernardoPolo #VisitaEcuador #McMary #food ",
                             ubicacion: "Santo Domingo, Ecuador"
                         },
                         {
                             imagen: imgP8,
                             enlace: "https://www.instagram.com/reel/DFd0MD4JJls/",
-                            mensaje: "Transformando espacios públicos en lugares de encuentro",
+                            mensaje: "Aquí vuelves a ser un niño!! Una experiencia única la que vivimos en BLOW YOUR MIND. #BernardoPolo #VisitaEcuador",
                             ubicacion: "Machala, Ecuador"
                         },
-                        // Duplicados para tener 6 proyectos
                         {
                             imagen: imgP15,
-                            enlace: "https://www.instagram.com/reel/DG3RJf6poaC/",
-                            mensaje: "Relatos urbanos que construyen comunidad",
+                            enlace: "https://www.instagram.com/reel/DE3PTbnpw55/",
+                            mensaje: "En ésta cafetería puedes crear tu obra de arte con café en mano TE VA A ENCANTAR !! 😍👩🏻‍🎨☕️🎨 #bernardopolo #visitaecuador ",
                             ubicacion: "Ambato, Ecuador"
                         },
                         {
                             imagen: imgP16,
                             enlace: "https://www.instagram.com/reel/DEyLIrJJhN_/",
-                            mensaje: "Arte urbano que da voz a los barrios",
+                            mensaje: "Una Chococafetería espectacular, ubicada en el corazón de Cuenca 🍫☕️ #bernardopolo #visitaecuado",
                             ubicacion: "Santo Domingo, Ecuador"
                         },
                         {
                             imagen: imgP17,
                             enlace: "https://www.instagram.com/reel/DDiXLpjJgJV/",
-                            mensaje: "Juventud y cultura local en los espacios urbanos",
+                            mensaje: "Mc Mary modo navidad 🎄 🤶 #bernardopolo #visitaecuador #McMary",
                             ubicacion: "Machala, Ecuador"
                         }
                     ]}
@@ -177,37 +177,41 @@ const ImpactoSocial = () => {
                         {
                             imagen: imgP9,
                             enlace: "https://www.instagram.com/reel/C0nE-7bx15F/",
-                            mensaje: "Preservando nuestras tradiciones para el futuro",
-                            ubicacion: "Riobamba, Ecuador"
+                            mensaje: "Me pasó lo mismo que la Luisito!….netflix? #luisitocomunica #dientes #netflix",
+                            ubicacion: "Cuenca, Ecuador"
                         },
                         {
                             imagen: imgP10,
                             enlace: "https://www.instagram.com/reel/C1p-RV9J22h/",
-                            mensaje: "El valor de lo artesanal en un mundo digital",
-                            ubicacion: "Ibarra, Ecuador"
+                            mensaje: "Explorando la CASA EMBRUJADA de Cuenca..misterios PARANORMALES🧟‍🦇",
+                            ubicacion: "Cuenca, Ecuador"
                         },
                         {
                             imagen: imgP11,
                             enlace: "https://www.instagram.com/reel/CkRuvyDJHdE/",
-                            mensaje: "Raíces culturales que inspiran nuevas generaciones",
+                            mensaje: "No es de la forma que pensaban 😅\n" +
+                                "\n" +
+                                "#bernardopolo #hotelesfullvacations #clubvisita #disneyconcierge",
                             ubicacion: "Otavalo, Ecuador"
                         },
-                        // Duplicados para tener 6 proyectos
                         {
                             imagen: imgP18,
                             enlace: "https://www.instagram.com/reel/DDvGVb2JaG5/",
-                            mensaje: "Tradiciones ecuatorianas que perduran en el tiempo",
+                            mensaje: "Bumblebee llegó a Visita Ecuador!!\n" +
+                                "\n" +
+                                "#bernardopolo #vistaecuador #polito #Bumblebee",
                             ubicacion: "Riobamba, Ecuador"
                         },
                         {
                             imagen: imgP19,
-                            enlace: "https://www.instagram.com/reel/C1p-RV9J22h/",
-                            mensaje: "Oficios tradicionales en la era contemporánea",
+                            enlace: "https://www.instagram.com/reel/DAFGkBSpsXJ/",
+                            mensaje: "🤪Pachito te lo lava 🫧\n" +
+                                "Por solo $7 te lo deja reluciente no importa si es 4x4 o deportivo #bernardopolo ",
                             ubicacion: "Ibarra, Ecuador"
                         },
                         {
                             imagen: imgP20,
-                            enlace: "https://www.instagram.com/reel/CkRuvyDJHdE/",
+                            enlace: "https://www.instagram.com/reel/C_wMrSyp-Qp/",
                             mensaje: "Festividades ancestrales que unen a las comunidades",
                             ubicacion: "Otavalo, Ecuador"
                         }
@@ -235,7 +239,6 @@ const ImpactoSocial = () => {
                             mensaje: "Sembrando esperanza en cada rincón del Ecuador",
                             ubicacion: "Galápagos, Ecuador"
                         },
-                        // Duplicados para tener 6 proyectos
                         {
                             imagen: "./images/proyecto_imagen01.png",
                             enlace: "https://ejemplo.com/sueno1",

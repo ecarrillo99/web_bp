@@ -8,21 +8,18 @@ const ProyectoSection = ({ titulo, proyectos }) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const carouselRef = useRef(null);
 
-    // Determine items per page based on screen size
     const getItemsPerPage = () => {
-        if (windowWidth < 640) return 1; // Mobile
-        if (windowWidth < 1024) return 2; // Tablet
-        return 3; // Desktop
+        if (windowWidth < 640) return 1;
+        if (windowWidth < 1024) return 2;
+        return 3;
     };
 
     const itemsPerPage = getItemsPerPage();
     const totalPages = Math.ceil(proyectos.length / itemsPerPage);
 
-    // Update window width when resizing
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
-            // Reset to first slide when screen size changes categories
             setCurrentIndex(0);
         };
 
@@ -30,7 +27,6 @@ const ProyectoSection = ({ titulo, proyectos }) => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Auto-scroll carousel
     useEffect(() => {
         const interval = setInterval(() => {
             nextSlide();
@@ -69,7 +65,6 @@ const ProyectoSection = ({ titulo, proyectos }) => {
         }
     };
 
-    // Create paginated content
     const paginatedProyectos = [];
     for (let i = 0; i < totalPages; i++) {
         const startIdx = i * itemsPerPage;
