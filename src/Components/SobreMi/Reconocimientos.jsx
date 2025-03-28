@@ -73,7 +73,6 @@ const ReconocimientoModal = ({ isOpen, onClose, reconocimiento, reconocimientosD
                 url: window.location.href
             }).catch(console.error);
         } else {
-            // Fallback for browsers that don't support Web Share API
             navigator.clipboard.writeText(`${reconocimiento.titulo}\n\n${reconocimiento.historia}\n\n${window.location.href}`)
                 .then(() => alert('Copiado al portapapeles'))
                 .catch(err => console.error('Error sharing:', err));

@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback, memo } from 'react';
 import { influencersData, socialIconMap } from './creadores/creators-data';
 import { getVisibleInfluencers, getResponsiveDisplayCount } from './creadores/creators-utils';
 
-// Memoized Social Link Component
 const SocialLink = memo(({ link }) => {
     const platformInfo = socialIconMap[link.platform.toLowerCase()] || socialIconMap['default'];
     return (
@@ -26,7 +25,6 @@ const SocialLink = memo(({ link }) => {
     );
 });
 
-// Memoized Influencer Card Component
 const InfluencerCard = memo(({ influencer, onClick }) => (
     <div
         className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 cursor-pointer"
@@ -47,7 +45,6 @@ const InfluencerCard = memo(({ influencer, onClick }) => (
     </div>
 ));
 
-// Memoized Video Thumbnail Component
 const VideoThumbnail = memo(({ video }) => (
     <a
         href={video.videoUrl}

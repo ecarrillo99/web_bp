@@ -317,7 +317,7 @@ const Entrevistas = () => {
                     </div>
 
 
-                    <div className="flex  gap-2 justify-start md:justify-center">
+                    <div className="flex  gap-2 justify-start md:justify-center mr-5">
                         {filterOptions.map(option => (
                             <button
                                 key={option.id}

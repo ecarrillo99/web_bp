@@ -74,7 +74,7 @@ const ProyectoSection = ({ titulo, proyectos }) => {
     return (
         <div className="mb-20 px-4 sm:px-6 lg:px-8">
             <div className="relative mb-10">
-                <h3 className="text-xl sm:text-2xl font-bold text-center relative z-10">
+                <h3 className="text-xl sm:text-2xl font-bold text-center relative z-10 uppercase">
                     {titulo}
                 </h3>
                 <div className="absolute left-0 right-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#96c121] to-transparent"></div>

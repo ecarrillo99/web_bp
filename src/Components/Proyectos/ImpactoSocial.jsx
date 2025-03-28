@@ -217,6 +217,52 @@ const ImpactoSocial = () => {
                         }
                     ]}
                 />
+                <ProyectoSection
+                    titulo="Toma mi Mano 🤝"
+                    proyectos={[
+                        {
+                            imagen: imgP9,
+                            enlace: "https://www.instagram.com/reel/C0nE-7bx15F/",
+                            mensaje: "Me pasó lo mismo que la Luisito!….netflix? #luisitocomunica #dientes #netflix",
+                            ubicacion: "Cuenca, Ecuador"
+                        },
+                        {
+                            imagen: imgP10,
+                            enlace: "https://www.instagram.com/reel/C1p-RV9J22h/",
+                            mensaje: "Explorando la CASA EMBRUJADA de Cuenca..misterios PARANORMALES🧟‍🦇",
+                            ubicacion: "Cuenca, Ecuador"
+                        },
+                        {
+                            imagen: imgP11,
+                            enlace: "https://www.instagram.com/reel/CkRuvyDJHdE/",
+                            mensaje: "No es de la forma que pensaban 😅\n" +
+                                "\n" +
+                                "#bernardopolo #hotelesfullvacations #clubvisita #disneyconcierge",
+                            ubicacion: "Otavalo, Ecuador"
+                        },
+                        {
+                            imagen: imgP18,
+                            enlace: "https://www.instagram.com/reel/DDvGVb2JaG5/",
+                            mensaje: "Bumblebee llegó a Visita Ecuador!!\n" +
+                                "\n" +
+                                "#bernardopolo #vistaecuador #polito #Bumblebee",
+                            ubicacion: "Riobamba, Ecuador"
+                        },
+                        {
+                            imagen: imgP19,
+                            enlace: "https://www.instagram.com/reel/DAFGkBSpsXJ/",
+                            mensaje: "🤪Pachito te lo lava 🫧\n" +
+                                "Por solo $7 te lo deja reluciente no importa si es 4x4 o deportivo #bernardopolo ",
+                            ubicacion: "Ibarra, Ecuador"
+                        },
+                        {
+                            imagen: imgP20,
+                            enlace: "https://www.instagram.com/reel/C_wMrSyp-Qp/",
+                            mensaje: "Festividades ancestrales que unen a las comunidades",
+                            ubicacion: "Otavalo, Ecuador"
+                        }
+                    ]}
+                />
 
 
             </div>
