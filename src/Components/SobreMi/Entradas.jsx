@@ -2,14 +2,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
+import VideoModal from  "./VideoModal"
 
 // Custom arrow components with improved styling
 const CustomNextArrow = (props) => {
     return (
         <div
-            className="absolute top-1/2 transform -translate-y-1/2 right-3 cursor-pointer rounded-full bg-gradient-to-r from-[#96c121] to-[#005F6B] text-white h-8 w-8 flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+            className="absolute top-1/2 transform -translate-y-1/2 right-3 cursor-pointer rounded-full bg-gradient-to-r from-[#96c121] to-[#005F6B] text-white h-6 w-6 flex items-center justify-center shadow-lg transition-transform hover:scale-110"
             onClick={props.onClick}>
-            <span className="icon-[material-symbols--arrow-forward-ios] h-4 w-4"></span>
+            <span className="icon-[material-symbols--arrow-forward-ios] h-3 w-3"></span>
         </div>
     );
 };
@@ -17,9 +18,9 @@ const CustomNextArrow = (props) => {
 const CustomPrevArrow = (props) => {
     return (
         <div
-            className="absolute top-1/2 transform -translate-y-1/2 left-3 z-10 cursor-pointer rounded-full bg-gradient-to-r from-[#96c121] to-[#005F6B] text-white h-8 w-8 flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+            className="absolute top-1/2 transform -translate-y-1/2 left-3 z-10 cursor-pointer rounded-full bg-gradient-to-r from-[#96c121] to-[#005F6B] text-white h-6 w-6 flex items-center justify-center shadow-lg transition-transform hover:scale-110"
             onClick={props.onClick}>
-            <span className="icon-[material-symbols--arrow-back-ios-new] h-4 w-4"></span>
+            <span className="icon-[material-symbols--arrow-back-ios-new] h-3 w-3"></span>
         </div>
     );
 };
@@ -58,7 +59,7 @@ const settings = {
     ]
 };
 
-const VideoCard = ({ entrada, index }) => {
+const VideoCard = ({ entrada, index, onVideoClick }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -67,12 +68,15 @@ const VideoCard = ({ entrada, index }) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className={`flex flex-col h-full p-4 m-2 rounded-xl overflow-hidden transition-all duration-300 ${isHovered ? 'shadow-xl transform -translate-y-1 bg-white' : 'shadow-md bg-gray-50'}`}>
+            <div  className="h-full cursor-pointer"
+                 onClick={() => onVideoClick(index)}
+                 onMouseEnter={() => setIsHovered(true)}
+                 onMouseLeave={() => setIsHovered(false)}>
                 <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-3">
-                    <div className={`absolute inset-0 bg-[#96c121] opacity-0 ${isHovered ? 'opacity-20' : ''} transition-opacity duration-300 z-10`}></div>
+                    <div className={`absolute inset-0  opacity-0  z-10`}></div>
                     <iframe
                         className="w-full h-full object-cover"
-                        src={entrada.embedUrl}
+                        src={entrada.url}
                         title={entrada.titulo}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
@@ -95,41 +99,60 @@ const VideoCard = ({ entrada, index }) => {
 };
 
 const Entradas = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
     const entradas = [
         {
             id: 1,
             titulo: "Desmintiendo el mito del cangrejo en Churute",
             contenido: "Hola, hola, hola. Amigos viajeros ¿se han preguntado como se obtiene la pulpa de cangrejo? Bueno, después de tantos años de comprarle a mi buena amiga Melva, quien ha vendido pulpa de cangrejos durante más de 30 años en Churute (en la provincia del Guayas). Me pregunté ¿cómo lo hace?",
-            embedUrl: "https://www.youtube.com/embed/SduXEHsPzYE"
+            url: "https://www.youtube.com/embed/SduXEHsPzYE"
         },
         {
             id: 2,
             titulo: "Experiencias gastronómicas en Ecuador",
             contenido: "La cocina ecuatoriana es una de las más diversas de América Latina. En este video exploramos las delicias culinarias de la costa, sierra y amazonía, descubriendo sabores únicos y tradiciones ancestrales que han perdurado hasta nuestros días.",
-            embedUrl: "https://www.youtube.com/embed/QaL6cG4LCNU"
+            url: "https://www.youtube.com/embed/QaL6cG4LCNU"
         },
         {
             id: 3,
             titulo: "Aventuras en las Islas Galápagos",
             contenido: "Les comparto mi experiencia navegando por el archipiélago de Galápagos, un paraíso natural único en el mundo. Desde nadar con tortugas marinas hasta observar aves exóticas, cada día fue una aventura inolvidable en este laboratorio viviente de evolución.",
-            embedUrl: "https://www.youtube.com/embed/_xPNgNvS4wg"
+            url: "https://www.youtube.com/embed/_xPNgNvS4wg"
         },
         {
             id: 4,
             titulo: "Desmintiendo el mito del cangrejo en Churute",
             contenido: "Hola, hola, hola. Amigos viajeros ¿se han preguntado como se obtiene la pulpa de cangrejo? Bueno, después de tantos años de comprarle a mi buena amiga Melva, quien ha vendido pulpa de cangrejos durante más de 30 años en Churute (en la provincia del Guayas). Me pregunté ¿cómo lo hace?",
-            embedUrl: "https://www.youtube.com/embed/SduXEHsPzYE"
+            url: "https://www.youtube.com/embed/SduXEHsPzYE"
         }
     ];
+    const handleVideoClick = (index) => {
+        setCurrentVideoIndex(index);
+        setIsModalOpen(true);
+    };
 
     return (
         <div className='w-full'>
             <Slider {...settings} className="blog-slider">
                 {entradas.map((entrada, index) => (
-                    <VideoCard key={entrada.id} entrada={entrada} index={index} />
+                    <VideoCard
+                        key={entrada.id}
+                        entrada={entrada}
+                        index={index}
+                        onVideoClick={handleVideoClick}
+                    />
                 ))}
             </Slider>
+
+            {isModalOpen && (
+                <VideoModal
+                    videos={entradas}
+                    initialIndex={currentVideoIndex}
+                    onClose={() => setIsModalOpen(false)}
+                />
+            )}
         </div>
     );
 };

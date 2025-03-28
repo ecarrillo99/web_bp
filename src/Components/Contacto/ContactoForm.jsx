@@ -82,6 +82,10 @@ const ContactoForm = () => {
         }
     }, [status]);
 
+    const whatsappNumber = '+593991234567'; // Cleaned up the number format
+    const whatsappLink = `https://wa.me/${whatsappNumber.replace(/[+\s()-]/g, '')}?text=Hola,%20estoy%20interesado%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n`;
+
+
     return (
         <div className='bg-gradient-to-b from-teal-50 to-gray-100 py-16'>
             <div className='flex flex-col md:flex-row mx-auto max-w-6xl sm:px-6 lg:px-8 w-full gap-8 lg:gap-16 px-4 relative overflow-hidden'>
@@ -99,17 +103,27 @@ const ContactoForm = () => {
                         <div className="flex flex-col gap-4 mb-8">
                             <div className="flex items-center gap-3">
                                 <div className="rounded-full bg-gradient-to-r from-[#96c121] to-[#005F6B] p-2">
-                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                     </svg>
                                 </div>
                                 <span className="text-gray-700">polobernardo@hotmail.com.com</span>
                             </div>
                             <div className="flex items-center gap-3">
-                                <div className="rounded-full bg-gradient-to-r from-[#96c121] to-[#005F6B] p-2 h-9 -py-1">
-                                    <span className="w-5 h-5 text-white  icon-[mdi--whatsapp] "/>
-                                </div>
-                                <span className="text-gray-700">+593 (99) 123-4567</span>
+                                <a
+                                    href={whatsappLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+                                >
+                                    <div
+                                        className="rounded-full bg-gradient-to-r from-[#96c121] to-[#005F6B] p-2 h-9 -py-1">
+                                        <span className="w-5 h-5 text-white icon-[mdi--whatsapp]"/>
+                                    </div>
+                                    <span className="text-gray-700">+593 (99) 123-4567</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -120,8 +134,10 @@ const ContactoForm = () => {
                             src='./images/contacto_image.png'
                             alt='Contacto'
                         />
-                        <div className="absolute top-1/4 -left-6 h-12 w-12 bg-yellow-100 rounded-full animate-pulse"></div>
-                        <div className="absolute bottom-1/4 -right-6 h-16 w-16 bg-teal-100 rounded-full animate-pulse delay-700"></div>
+                        <div
+                            className="absolute top-1/4 -left-6 h-12 w-12 bg-yellow-100 rounded-full animate-pulse"></div>
+                        <div
+                            className="absolute bottom-1/4 -right-6 h-16 w-16 bg-teal-100 rounded-full animate-pulse delay-700"></div>
                     </div>
                 </div>
 

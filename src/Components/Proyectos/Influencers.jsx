@@ -14,12 +14,22 @@ import imgP10 from '../../imagenes/Influencers/img_11.png'
 import imgP11 from '../../imagenes/Influencers/img_12.png'
 import imgP12 from '../../imagenes/Influencers/img_13.png'
 import imgP13 from '../../imagenes/Influencers/img_14.png'
-import imgP14 from '../../imagenes/Influencers/img_15.png'
 import imgP15 from '../../imagenes/Influencers/img_16.png'
 import imgP16 from '../../imagenes/Influencers/img_17.png'
 import imgP17 from '../../imagenes/Influencers/img_20.png'
 import imgP18 from '../../imagenes/Influencers/img_19.png'
-import imgP19 from '../../imagenes/Influencers/img_21.png'
+import imgP19 from '../../imagenes/Influencers/img_23.png'
+import imgP20 from '../../imagenes/Influencers/img_22.png'
+import imgP21 from '../../imagenes/Influencers/img_24.png'
+import imgP22 from '../../imagenes/Influencers/img_25.png'
+import imgP23 from '../../imagenes/Influencers/img_26.png'
+import imgP24 from '../../imagenes/Influencers/img_27.png'
+import imgP25 from '../../imagenes/Influencers/img_28.png'
+import imgP26 from '../../imagenes/Influencers/img_31.png'
+import imgP27 from '../../imagenes/Influencers/img_32.png'
+import imgP28 from '../../imagenes/Influencers/img_33.png'
+import imgP29 from '../../imagenes/Influencers/img_35.png'
+import CreadoresNetworking from "./CreadoresNetworking";
 
 const Influencers = () => {
     return (
@@ -38,89 +48,7 @@ const Influencers = () => {
             </div>
 
             <div className="max-w-6xl mx-auto">
-                <ProyectoSection
-                    titulo="Creadores/Networking"
-                    proyectos={[
-                        {
-                            imagen: imgP14,
-                            enlace: "https://www.tiktok.com/@visitaecuadorinfl/video/7359324228736421125",
-                            mensaje: "Nos complace anunciar un magnifico convenio entre Visitaecuador.com y Jardín Azuayo, que beneficiará a nuestra comunidad y a sus socios 🤩",
-                            ubicacion: "Cuenca, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/cultura2",
-                            mensaje: "Artesanías ecuatorianas: el arte en cada detalle",
-                            ubicacion: "Tungurahua, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/cultura3",
-                            mensaje: "Comunidades indígenas: guardianes de la sabiduría ancestral",
-                            ubicacion: "Pastaza, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "./images/proyecto_imagen01.png",
-                            mensaje: "Bailes tradicionales de las regiones ecuatorianas",
-                            ubicacion: "Imbabura, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/cultura2",
-                            mensaje: "Tejidos ancestrales: técnicas y simbolismos",
-                            ubicacion: "Tungurahua, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/cultura3",
-                            mensaje: "Lenguas originarias y su preservación cultural",
-                            ubicacion: "Pastaza, Ecuador"
-                        }
-                    ]}
-                />
-
-                <ProyectoSection
-                    titulo="Rutas Turísticas"
-                    proyectos={[
-                        {
-                            imagen: imgP17,
-                            enlace: "https://www.tiktok.com/@visitaecuadorinfl/video/7320313444085828870?is_from_webapp=1&web_id=7478707606246213126",
-                            mensaje: "Paco el Morlaco pedaleo 300 km en su bici hecha con más de 450 botellas PET hacia lo más alto…. EL CHIMBORAZO 🚵🏻🗻",
-                            ubicacion: "Chimborazo, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/rutas2",
-                            mensaje: "Playas escondidas de la costa pacífica",
-                            ubicacion: "Santa Elena, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://www.instagram.com/reel/DDF-zB9xz8d/",
-                            mensaje: "La ruta de los volcanes: aventura en los Andes",
-                            ubicacion: "Chimborazo, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/rutas1",
-                            mensaje: "Expediciones en la selva: flora y fauna únicas",
-                            ubicacion: "Napo, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/rutas2",
-                            mensaje: "Surf y aventura en la costa ecuatoriana",
-                            ubicacion: "Santa Elena, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://www.instagram.com/reel/DDF-zB9xz8d/",
-                            mensaje: "Trekking en las alturas: paisajes andinos",
-                            ubicacion: "Chimborazo, Ecuador"
-                        }
-                    ]}
-                />
+                <CreadoresNetworking/>
 
                 <ProyectoSection
                     titulo="Gastronomía Local"
@@ -151,9 +79,9 @@ const Influencers = () => {
                             ubicacion: "Azuay, Ecuador"
                         },
                         {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/gastro2",
-                            mensaje: "Bebidas tradicionales y sus historias",
+                            imagen: imgP20,
+                            enlace: "https://www.instagram.com/reel/DHAImayp2an/",
+                            mensaje: "Que buen seco por santa. 🐷🐽 #cuenca #ecuador #seco",
                             ubicacion: "Los Ríos, Ecuador"
                         },
                         {
@@ -166,7 +94,7 @@ const Influencers = () => {
                 />
 
                 <ProyectoSection
-                    titulo="Cultura y Tradiciones"
+                    titulo="Cultura y Turismo"
                     proyectos={[
                         {
                             imagen: imgP12,
@@ -178,7 +106,7 @@ const Influencers = () => {
                             imagen: imgP16,
                             enlace: "https://www.instagram.com/p/C1uwTfxJhT5/",
                             mensaje: "¿Tenías idea de qué? Con VisitaEcuador.com puedes entrar a lugares no antes explorados como es la Casa de las Cruces donde existe mucho misterio en saber ",
-                            ubicacion: "Tungurahua, Ecuador"
+                            ubicacion: "Cuenca, Ecuador"
                         },
                         {
                             imagen: imgP17,
@@ -187,10 +115,12 @@ const Influencers = () => {
                             ubicacion: "Chimborazo, Ecuador"
                         },
                         {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "./images/proyecto_imagen01.png",
-                            mensaje: "Bailes tradicionales de las regiones ecuatorianas",
-                            ubicacion: "Imbabura, Ecuador"
+                            imagen: imgP21,
+                            enlace: "https://www.instagram.com/reel/DFYFpFIPkEt/",
+                            mensaje: "Desbloqueando nuevos lugares en la bella provincia de Santa Elena 📸📹 @denisseroxx\n" +
+                                "Unblocking new spots on the Ecuadorian coast 📸 @denisseroxx\n" +
+                                "#ecuador #santaelena#visitecuador",
+                            ubicacion: "Santa Elena, Ecuador"
                         },
                         {
                             imagen: "./images/proyecto_imagen01.png",
@@ -273,16 +203,65 @@ const Influencers = () => {
                             ubicacion: "Quito, Ecuador"
                         },
                         {
-                            imagen: imgP15 ,
+                            imagen: imgP15,
                             enlace: "https://www.instagram.com/reel/DBM4TdnplER/",
                             mensaje: "Blogsito cumpleañero🥰🥳 empezamos bonito los 26❤️ gracias a @visitaecuadorcom",
                             ubicacion: "Guayaquil, Ecuador"
                         },
                         {
-                            imagen: imgP19 ,
+                            imagen: imgP19,
                             enlace: "https://www.instagram.com/p/C9SX-UpJGgL/",
                             mensaje: "Amandooooo 🐚🏝️🌞 gracias a @visitaecuadorcom",
                             ubicacion: "Guayaquil, Ecuador"
+                        },
+                        {
+                            imagen: imgP22,
+                            enlace: "https://www.instagram.com/reel/C9V0YuKMHKS/",
+                            mensaje: "Vlogsito de mi viaje a quito con @visitaecuadorcom",
+                            ubicacion: "Quito, Ecuador"
+                        },
+                        {
+                            imagen: imgP23,
+                            enlace: "https://www.instagram.com/p/C2IMpd3uWFz/",
+                            mensaje: "@vjleon93 nos cuenta su experiencia en el @hotelsheratonguayaquil",
+                            ubicacion: "Guayaquil, Ecuador"
+                        },
+                        {
+                            imagen: imgP24,
+                            enlace: "https://www.instagram.com/p/C6G0GMVOqhQ/",
+                            mensaje: "\n" +
+                                "@bellnico gracias a su suscripción de VisitaEcuador.com se hospedo en el @wyndhamgardenquito . ",
+                            ubicacion: "Quito, Ecuador"
+                        },
+                        {
+                            imagen: imgP25,
+                            enlace: "https://www.instagram.com/p/C1c1fNoJRqW/",
+                            mensaje: "Aquí les dejo mi experiencia de Lujo y Confort en el Hotel Wyndham Garden de Quito. 🛌",
+                            ubicacion: "Quito, Ecuador"
+                        },
+                        {
+                            imagen: imgP26,
+                            enlace: "https://www.instagram.com/p/C6Oxx-jO0Yz/",
+                            mensaje: "@maurygarnica se hospedo con su familia y disfrutarón en el @trypbywyndhamguayaquil gracias a su suscripción de VisitaEcuador.com.",
+                            ubicacion: "Guayaquil, Ecuador"
+                        },
+                        {
+                            imagen: imgP27,
+                            enlace: "https://www.instagram.com/p/C50y-hbOw1M/",
+                            mensaje: "@cristinatacuri_ec gracias a su suscripción de VisitaEcuador.com se hospedo en el @trypbywyndhamguayaquil ",
+                            ubicacion: "Guayaquil, Ecuador"
+                        },
+                        {
+                            imagen: imgP28,
+                            enlace: "https://www.instagram.com/reel/C5BfXMLuWjf/",
+                            mensaje: "@pacoelmorlaco gracias a su suscripción de VisitaEcuador.com se hospedo en el @hotelmedinadellago .",
+                            ubicacion: "Otavalo, Ecuador"
+                        },
+                        {
+                            imagen: imgP29,
+                            enlace: "https://www.instagram.com/reel/C3-be97OyAU/",
+                            mensaje: "@abigailjaramillo_viteri se hospedo en el @fenixhotelquito , gracias a su suscripción de VisitaEcuador.com",
+                            ubicacion: "Quito, Ecuador"
                         },
                     ]}
                 />

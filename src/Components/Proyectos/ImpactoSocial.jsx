@@ -218,47 +218,7 @@ const ImpactoSocial = () => {
                     ]}
                 />
 
-                <ProyectoSection
-                    titulo="El Sueño De"
-                    proyectos={[
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/sueno1",
-                            mensaje: "Construyendo futuros brillantes a través de la educación",
-                            ubicacion: "Tena, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/sueno2",
-                            mensaje: "Talentos emergentes con visión de cambio",
-                            ubicacion: "Manta, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/sueno3",
-                            mensaje: "Sembrando esperanza en cada rincón del Ecuador",
-                            ubicacion: "Galápagos, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/sueno1",
-                            mensaje: "Jóvenes líderes transformando su entorno",
-                            ubicacion: "Tena, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/sueno2",
-                            mensaje: "Sueños que se transforman en oportunidades",
-                            ubicacion: "Manta, Ecuador"
-                        },
-                        {
-                            imagen: "./images/proyecto_imagen01.png",
-                            enlace: "https://ejemplo.com/sueno3",
-                            mensaje: "Innovación social desde las comunidades",
-                            ubicacion: "Galápagos, Ecuador"
-                        }
-                    ]}
-                />
+
             </div>
         </div>
     );

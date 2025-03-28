@@ -12,10 +12,17 @@ import imgP6 from "../../imagenes/sabe2009.png"
 import imgP7 from "../../imagenes/afiliado.png"
 import imgP8 from "../../imagenes/fuckup.png"
 
-const ReconocimientoModal = ({ isOpen, onClose, reconocimiento }) => {
+const ReconocimientoModal = ({ isOpen, onClose, reconocimiento, reconocimientosData, onNavigate }) => {
 
     const modalContentRef = useRef(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
+    useEffect(() => {
+        if (reconocimiento) {
+            const index = reconocimientosData.findIndex(r => r.id === reconocimiento.id);
+            setCurrentIndex(index);
+        }
+    }, [reconocimiento, reconocimientosData]);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -49,17 +56,109 @@ const ReconocimientoModal = ({ isOpen, onClose, reconocimiento }) => {
         prevArrow: <ModalPrevArrow />,
     };
 
+
+    const handleNavigation = (direction) => {
+        const newIndex = direction === 'next'
+            ? (currentIndex + 1) % reconocimientosData.length
+            : (currentIndex - 1 + reconocimientosData.length) % reconocimientosData.length;
+
+        onNavigate(reconocimientosData[newIndex]);
+    };
+
+    const handleShare = () => {
+        if (navigator.share) {
+            navigator.share({
+                title: reconocimiento.titulo,
+                text: reconocimiento.historia,
+                url: window.location.href
+            }).catch(console.error);
+        } else {
+            // Fallback for browsers that don't support Web Share API
+            navigator.clipboard.writeText(`${reconocimiento.titulo}\n\n${reconocimiento.historia}\n\n${window.location.href}`)
+                .then(() => alert('Copiado al portapapeles'))
+                .catch(err => console.error('Error sharing:', err));
+        }
+    };
+
+    const handlePrint = () => {
+        const printContent = `
+            <html>
+                <head>
+                    <title>${reconocimiento.titulo}</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; }
+                        h1 { color: #005F6B; }
+                        img { max-width: 100%; height: auto; }
+                    </style>
+                </head>
+                <body>
+                    <h1>${reconocimiento.titulo}</h1>
+                    <p><strong>Fecha:</strong> ${reconocimiento.fecha}</p>
+                    <p><strong>Lugar:</strong> ${reconocimiento.lugar}</p>
+                    <h2>Historia</h2>
+                    <p>${reconocimiento.historia}</p>
+                    <img src="${reconocimiento.imagenes[0]}" alt="${reconocimiento.titulo}">
+                </body>
+            </html>
+        `;
+
+        const printWindow = window.open('', '', 'width=600,height=600');
+        printWindow.document.open();
+        printWindow.document.write(printContent);
+        printWindow.document.close();
+        printWindow.print();
+    };
+
     return (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
             <div ref={modalContentRef} className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+
+                <div className="absolute top-1/2 left-4 z-50 transform -translate-y-1/2 ">
+                    <button
+                        onClick={() => handleNavigation('prev')}
+                        className="bg-white/50 hover:bg-white/75 text-white p-1 rounded-full shadow-lg hover:opacity-80 transition-opacity h-8 w-8"
+                    >
+                        <span className="icon-[material-symbols--arrow-back-ios-new]  text-[#005F6B] h-6 w-6"></span>
+                    </button>
+                </div>
+                <div className="absolute top-1/2 right-4 z-50 transform -translate-y-1/2 ">
+                    <button
+                        onClick={() => handleNavigation('next')}
+                        className="bg-white/50 hover:bg-white/75 text-white p-1 rounded-full shadow-lg hover:opacity-80 transition-opacity h-8 w-8"
+                    >
+                        <span className="icon-[material-symbols--arrow-forward-ios]  text-[#005F6B] h-6 w-6"></span>
+                    </button>
+                </div>
+
                 <div className="flex justify-between items-center p-4 border-b">
                     <h3 className="text-xl font-semibold text-gray-800">{reconocimiento.titulo}</h3>
-                    <button
-                        onClick={onClose}
-                        className="text-gray-500 hover:text-gray-700 transition-colors"
-                    >
-                        <span className="icon-[material-symbols--close] h-6 w-6"></span>
-                    </button>
+                    <div className="flex items-center space-x-4">
+
+                        <button
+                            onClick={handleShare}
+                            className="text-gray-500 hover:text-gray-700 transition-colors"
+                            title="Compartir"
+                        >
+                            <span className="icon-[material-symbols--share] h-6 w-6"></span>
+                        </button>
+
+
+                        <button
+                            onClick={handlePrint}
+                            className="text-gray-500 hover:text-gray-700 transition-colors"
+                            title="Imprimir"
+                        >
+                            <span className="icon-[material-symbols--print] h-6 w-6"></span>
+                        </button>
+
+                        <button
+                            onClick={onClose}
+                            className="text-gray-500 hover:text-gray-700 transition-colors"
+                            title="Cerrar"
+                        >
+                            <span className="icon-[material-symbols--close] h-6 w-6"></span>
+                        </button>
+                    </div>
                 </div>
 
                 <div className="p-4">
@@ -121,7 +220,7 @@ const CustomNextArrow = (props) => {
         <div
             className="absolute top-1/2 transform -translate-y-1/2 right-3 cursor-pointer rounded-full bg-gradient-to-r from-[#96c121] to-[#005F6B] text-white h-8 w-8 flex items-center justify-center shadow-lg transition-transform hover:scale-110"
             onClick={props.onClick}
-            style={{ filter: 'drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5))' }}>
+            style={{filter: 'drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5))' }}>
             <span className="icon-[material-symbols--arrow-forward-ios] h-4 w-4"></span>
         </div>
     );
@@ -324,6 +423,9 @@ const Reconocimientos = () => {
             setSelectedReconocimiento(null);
         }, 300);
     };
+    const navigateModal = (newReconocimiento) => {
+        setSelectedReconocimiento(newReconocimiento);
+    };
 
     return (
         <div id="reconocimientos" className="flex flex-col gap-3 py-8">
@@ -372,6 +474,8 @@ const Reconocimientos = () => {
                 isOpen={modalOpen}
                 onClose={closeModal}
                 reconocimiento={selectedReconocimiento}
+                reconocimientosData={reconocimientosData}
+                onNavigate={navigateModal}
             />
         </div>
     );

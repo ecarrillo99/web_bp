@@ -12,7 +12,7 @@ const ProyectoItem = ({ imagen, enlace, mensaje, ubicacion }) => {
                     <img
                         src={imagen}
                         alt={mensaje}
-                        className="h-48 sm:h-56 md:h-64 lg:h-72 w-full object-cover cursor-pointer"
+                        className="h-56 sm:h-56 md:h-64 lg:h-96 w-full object-cover cursor-pointer"
                         onClick={handleClick}
                         onError={(e) => {
                             e.target.onerror = null;

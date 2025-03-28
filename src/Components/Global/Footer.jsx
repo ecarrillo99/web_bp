@@ -58,49 +58,82 @@ const Footer = () => {
                         <div>
                             <h3 className='font-semibold text-lg mb-4 border-b border-blue-500 pb-2'>Sígueme</h3>
                             <div className='grid grid-cols-3 gap-4'>
-                                <div className='relative rounded-lg overflow-hidden transition-transform duration-300 transform hover:-translate-y-1'>
-
+                                {/* Facebook Social Links */}
+                                <div className='relative rounded-lg overflow-hidden group'>
                                     <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700"></div>
-
-                                    <div className="absolute top-0 bottom-0 left-1/2 w-px bg-white bg-opacity-20 z-10"></div>
 
                                     <div className="relative z-2 flex flex-col items-center justify-center p-3">
                                         <span className="icon-[mdi--facebook] h-6 w-6 text-white"></span>
-                                        <span className="text-xs mt-1 text-white">Facebook</span>
+                                        <div className="text-xs mt-1 text-white flex flex-col items-center">
+                                            <div className="flex space-x-2">
+                                                <span>Facebook</span>
+                                            </div>
+                                            <div className="flex space-x-2 mt-1">
+                                                <a
+                                                    href="https://www.facebook.com/bernardopolopolito"
+                                                    className="hover:text-blue-200 transition-colors"
+                                                >
+                                                    FanPage
+                                                </a>
+                                                <span className="opacity-50">|</span>
+                                                <a
+                                                    href="https://www.facebook.com/@bernardo.polo.94"
+                                                    className="hover:text-blue-200 transition-colors"
+                                                >
+                                                    Personal
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                    <a href="https://www.facebook.com/bernardopolopolito" className="absolute top-0 left-0 w-1/2 h-full z-20 hover:bg-blue-800 hover:bg-opacity-50 transition-colors duration-300"></a>
-                                    <a href="https://www.facebook.com/@bernardo.polo.94" className="absolute top-0 right-0 w-1/2 h-full z-20 hover:bg-blue-800 hover:bg-opacity-50 transition-colors duration-300"></a>
                                 </div>
 
-                                <div className='relative rounded-lg overflow-hidden transition-transform duration-300 transform hover:-translate-y-1'>
-
-                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-pink-600"></div>
-
-                                    <div className="absolute top-0 bottom-0 left-1/2 w-px bg-white bg-opacity-20 z-10"></div>
+                                {/* Instagram Social Links */}
+                                <div className='relative rounded-lg overflow-hidden group'>
+                                    <div
+                                        className="absolute inset-0 bg-gradient-to-r from-purple-800 to-pink-600"></div>
 
                                     <div className="relative z-2 flex flex-col items-center justify-center p-3">
                                         <span className="icon-[mage--instagram-circle] h-6 w-6 text-white"></span>
-                                        <span className="text-xs mt-1 text-white">Instagram</span>
+                                        <div className="text-xs mt-1 text-white flex flex-col items-center">
+                                            <div className="flex space-x-2">
+                                                <span>Instagram</span>
+                                            </div>
+                                            <div className="flex space-x-2 mt-1">
+                                                <a
+                                                    href="https://www.instagram.com/bernardopolopolito"
+                                                    className="hover:text-pink-200 transition-colors"
+                                                >
+                                                    FanPage
+                                                </a>
+                                                <span className="opacity-50">|</span>
+                                                <a
+                                                    href="https://www.instagram.com/bernardopoloa/"
+                                                    className="hover:text-pink-200 transition-colors"
+                                                >
+                                                    Personal
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                    <a href="https://www.instagram.com/bernardopolopolito" className="absolute top-0 left-0 w-1/2 h-full z-20 hover:bg-purple-700 hover:bg-opacity-50 transition-colors duration-300"></a>
-                                    <a href="https://www.instagram.com/bernardopoloa/" className="absolute top-0 right-0 w-1/2 h-full z-20 hover:bg-pink-500 hover:bg-opacity-50 transition-colors duration-300"></a>
                                 </div>
 
-                                <a href="https://x.com/bernardopolo10" className='flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-gray-600 p-3 rounded-lg hover:from-gray-700 hover:to-gray-500 transition-all duration-300 transform hover:-translate-y-1'>
+                                <a href="https://x.com/bernardopolo10"
+                                   className='flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-gray-600 p-3 rounded-lg hover:from-gray-700 hover:to-gray-500 transition-all duration-300 transform hover:-translate-y-1'>
                                     <span className="icon-[mage--x] h-6 w-6"></span>
                                     <span className="text-xs mt-1">X</span>
                                 </a>
-                                <a href="https://www.tiktok.com/@bernardopolopolito" className='flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-black p-3 rounded-lg hover:from-gray-700 hover:to-gray-900 transition-all duration-300 transform hover:-translate-y-1'>
+                                <a href="https://www.tiktok.com/@bernardopolopolito"
+                                   className='flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-black p-3 rounded-lg hover:from-gray-700 hover:to-gray-900 transition-all duration-300 transform hover:-translate-y-1'>
                                     <span className="icon-[mage--tiktok-circle] h-6 w-6"></span>
                                     <span className="text-xs mt-1">TikTok</span>
                                 </a>
-                                <a href="https://youtube.com/@bernardopolopolito" className='flex flex-col items-center justify-center bg-gradient-to-br from-red-800 to-red-600 p-3 rounded-lg hover:from-red-700 hover:to-red-500 transition-all duration-300 transform hover:-translate-y-1'>
+                                <a href="https://youtube.com/@bernardopolopolito"
+                                   className='flex flex-col items-center justify-center bg-gradient-to-br from-red-800 to-red-600 p-3 rounded-lg hover:from-red-700 hover:to-red-500 transition-all duration-300 transform hover:-translate-y-1'>
                                     <span className="icon-[entypo-social--youtube-with-circle] h-6 w-6"></span>
                                     <span className="text-xs mt-1">YouTube</span>
                                 </a>
-                                <a href="https://www.linkedin.com/in/bernardo-polo-polito-70560250" className='flex flex-col items-center justify-center bg-gradient-to-br from-blue-900 to-blue-700 p-3 rounded-lg hover:from-blue-800 hover:to-blue-600 transition-all duration-300 transform hover:-translate-y-1'>
+                                <a href="https://www.linkedin.com/in/bernardo-polo-polito-70560250"
+                                   className='flex flex-col items-center justify-center bg-gradient-to-br from-blue-900 to-blue-700 p-3 rounded-lg hover:from-blue-800 hover:to-blue-600 transition-all duration-300 transform hover:-translate-y-1'>
                                     <span className="icon-[entypo-social--linkedin-with-circle] h-6 w-6"></span>
                                     <span className="text-xs mt-1">LinkedIn</span>
                                 </a>
@@ -116,9 +149,12 @@ const Footer = () => {
                         Copyright © {new Date().getFullYear()} · Bernardo Polo Andrade · Todos los derechos reservados
                     </p>
                     <div className="flex space-x-4">
-                        <a href="#" className="text-xs opacity-70 hover:opacity-100 transition-opacity duration-300">Política de Privacidad</a>
-                        <a href="#" className="text-xs opacity-70 hover:opacity-100 transition-opacity duration-300">Términos y Condiciones</a>
-                        <a href="#" className="text-xs opacity-70 hover:opacity-100 transition-opacity duration-300">Contacto</a>
+                        <a href="#" className="text-xs opacity-70 hover:opacity-100 transition-opacity duration-300">Política
+                            de Privacidad</a>
+                        <a href="#" className="text-xs opacity-70 hover:opacity-100 transition-opacity duration-300">Términos
+                            y Condiciones</a>
+                        <a href="#"
+                           className="text-xs opacity-70 hover:opacity-100 transition-opacity duration-300">Contacto</a>
                     </div>
                 </div>
             </div>

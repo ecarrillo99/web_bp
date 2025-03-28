@@ -93,7 +93,7 @@ const ProyectoSection = ({ titulo, proyectos }) => {
                         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                     >
                         {paginatedProyectos.map((page, pageIndex) => (
-                            <div key={pageIndex} className="w-full flex-shrink-0">
+                            <div key={pageIndex} className="w-full h-full flex-shrink-0">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                                     {page.map((proyecto, proyectoIndex) => (
                                         <ProyectoItem

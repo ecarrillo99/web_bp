@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Entradas from './Entradas';
 
 const Blog = () => {
-    // Intersection Observer for animation on scroll
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {

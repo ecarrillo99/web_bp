@@ -1,7 +1,8 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React, { useState } from 'react';
+import React, {useEffect, useState, useCallback} from 'react';
 import Slider from "react-slick";
+import { saveAs } from 'file-saver';
 import Logo from "../../imagenes/logo_verde.png";
 import { motion, AnimatePresence } from "framer-motion";
 import imgP1 from "../../imagenes/the bizz 2012.png"
@@ -79,7 +80,7 @@ const achievementsData = {
     "Dic 2004": {
         type: "icon",
         image: Logo,
-        description: "En diciembre de 2006, durante la gestión de la ministra María Isabel Salvador, Ecuaventura.com cambia su nombre a VistaEcuador.com, reflejando un enfoque más amplio para promover el país a nivel internacional. Este cambio no solo representó un cambio de nombre, sino una transformación en la manera en que Ecuador se proyectaba al mundo.",
+        description: "En diciembre de 2004, durante la gestión de la ministra María Isabel Salvador, Ecuaventura.com cambia su nombre a VistaEcuador.com, reflejando un enfoque más amplio para promover el país a nivel internacional. Este cambio no solo representó un cambio de nombre, sino una transformación en la manera en que Ecuador se proyectaba al mundo.",
         lab: "Una historia más sobre nuestra marca impactando al mundo.",
         icon: "icon-[material-symbols--branding-watermark]"
     },
@@ -181,6 +182,8 @@ const YearCard = ({ yearMonth, data, isSelected, onClick }) => {
 const Historia = () => {
     const [selectedYear, setSelectedYear] = useState(null);
     const [timelineYears] = useState(Object.keys(achievementsData));
+    const [copiedLink, setCopiedLink] = useState(false);
+
 
     const openModal = (year) => {
         setSelectedYear(year);
@@ -189,6 +192,82 @@ const Historia = () => {
     const closeModal = () => {
         setSelectedYear(null);
     };
+
+    const navigateAchievement = (direction) => {
+        const currentIndex = timelineYears.indexOf(selectedYear);
+        let newIndex;
+
+        if (direction === 'next') {
+            newIndex = (currentIndex + 1) % timelineYears.length;
+        } else {
+            newIndex = (currentIndex - 1 + timelineYears.length) % timelineYears.length;
+        }
+
+        setSelectedYear(timelineYears[newIndex]);
+    };
+
+    const handlePrint = useCallback(() => {
+        const achievement = achievementsData[selectedYear];
+        const printWindow = window.open('', '_blank');
+
+        printWindow.document.write(`
+            <html>
+                <head>
+                    <title>Logro ${selectedYear} - VistaEcuador</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+                        h1 { color: #005F6B; }
+                        img { max-width: 100%; height: auto; margin: 20px 0; }
+                    </style>
+                </head>
+                <body>
+                    <h1>${selectedYear} - ${achievement.lab}</h1>
+                    ${achievement.image ? `<img src="${typeof achievement.image === 'string' ? achievement.image : achievement.image.src}" alt="Logro ${selectedYear}">` : ''}
+                    <p>${achievement.description}</p>
+                </body>
+            </html>
+        `);
+
+        printWindow.document.close();
+        printWindow.print();
+    }, [selectedYear]);
+
+    const handleShareClick = useCallback(() => {
+        const shareData = {
+            title: `Logro ${selectedYear} - VistaEcuador`,
+            text: achievementsData[selectedYear].description,
+            url: window.location.href + `#logro-${selectedYear.replace(/\s+/g, '-')}`
+        };
+
+        if (navigator.share) {
+            navigator.share(shareData)
+                .then(() => console.log('Successfully shared'))
+                .catch((error) => console.log('Error sharing', error));
+        } else {
+            navigator.clipboard.writeText(shareData.url)
+                .then(() => {
+                    setCopiedLink(true);
+                    setTimeout(() => setCopiedLink(false), 2000);
+                });
+        }
+    }, [selectedYear]);
+
+    const handleDownload = useCallback(() => {
+        const achievement = achievementsData[selectedYear];
+
+        const downloadContent = `Logro ${selectedYear} - VistaEcuador
+
+        Título: ${achievement.lab}
+
+        Descripción:
+            ${achievement.description}
+
+        Fuente: VistaEcuador.com
+            Fecha de logro: ${selectedYear}`;
+
+        const blob = new Blob([downloadContent], { type: 'text/plain;charset=utf-8' });
+        saveAs(blob, `LogroVistaEcuador_${selectedYear.replace(/\s+/g, '_')}.txt`);
+    }, [selectedYear]);
 
     const renderModalContent = (year) => {
         const achievement = achievementsData[year];
@@ -228,6 +307,27 @@ const Historia = () => {
             </div>
         );
     };
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (!selectedYear) return;
+
+            switch (event.key) {
+                case 'ArrowRight':
+                    navigateAchievement('next');
+                    break;
+                case 'ArrowLeft':
+                    navigateAchievement('prev');
+                    break;
+                case 'Escape':
+                    closeModal();
+                    break;
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [selectedYear]);
 
     return (
         <div id="logros" className="flex flex-col gap-4 relative bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl shadow-sm">
@@ -270,23 +370,41 @@ const Historia = () => {
                         onClick={closeModal}
                     >
                         <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            initial={{scale: 0.9, opacity: 0}}
+                            animate={{scale: 1, opacity: 1}}
+                            exit={{scale: 0.9, opacity: 0}}
+                            transition={{type: "spring", stiffness: 300, damping: 30}}
                             className="bg-white max-w-5xl w-full grid md:grid-cols-2 rounded-xl overflow-hidden shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
                         >
+                            <button
+                                onClick={() => navigateAchievement('prev')}
+                                className="absolute top-1/2 left-16 transform -translate-y-1/2 z-10 bg-white/50 hover:bg-white/75 rounded-full p-1 transition-all h-8 w-8"
+                            >
+                                <span
+                                    className="icon-[material-symbols--arrow-back-ios-new] text-2xl text-[#005F6B] h-6 w-6"></span>
+                            </button>
+                            <button
+                                onClick={() => navigateAchievement('next')}
+                                className="absolute top-1/2 right-20 transform -translate-y-1/2 z-10 bg-white/50 hover:bg-white/75 rounded-full p-1 transition-all h-8 w-8"
+                            >
+                                <span
+                                    className="icon-[material-symbols--arrow-forward-ios] text-2xl text-[#005F6B] h-6 w-6"></span>
+                            </button>
+
                             <div className="h-96 md:h-auto">
                                 {renderModalContent(selectedYear)}
                             </div>
                             <div className="p-8 flex flex-col justify-center relative">
-                                <button
-                                    onClick={closeModal}
-                                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition-colors"
-                                >
-                                    <span className="icon-[material-symbols--close] text-2xl"></span>
-                                </button>
+                                <div className="absolute top-4 right-4 flex space-x-2">
+                                    <button
+                                        onClick={closeModal}
+                                        className="text-gray-500 hover:text-gray-800 transition-colors"
+                                        title="Cerrar"
+                                    >
+                                        <span className="icon-[material-symbols--close] text-2xl"></span>
+                                    </button>
+                                </div>
 
                                 <div className="flex items-center mb-4">
                                     <span className={`${achievementsData[selectedYear].icon} text-3xl text-[#96C121] mr-3`}></span>
@@ -305,6 +423,33 @@ const Historia = () => {
                                     <div className="flex items-center text-sm text-[#005F6B]">
                                         <span className="icon-[material-symbols--history] mr-2"></span>
                                         <span>Parte de nuestra historia</span>
+                                    </div>
+                                    <div className="mt-5 flex gap-4">
+                                        <button
+                                            onClick={handlePrint}
+                                            className="text-[#96C121] hover:text-[#005F6B] transition-colors"
+                                            title="Imprimir"
+                                        >
+                                            <span className="icon-[material-symbols--print] text-2xl"></span>
+                                        </button>
+
+
+                                        <button
+                                            onClick={handleShareClick}
+                                            className="text-[#96C121] hover:text-[#96C121] transition-colors"
+                                            title="Compartir"
+                                        >
+                                            <span className="icon-[material-symbols--share] text-2xl"></span>
+                                        </button>
+
+
+                                        <button
+                                            onClick={handleDownload}
+                                            className="text-[#96C121] hover:text-[#005F6B] transition-colors relative"
+                                            title="Descargar"
+                                        >
+                                            <span className="icon-[material-symbols--download] text-2xl"></span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

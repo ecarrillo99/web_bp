@@ -2,13 +2,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, { useState } from 'react';
 import Slider from "react-slick";
+import {
+    X,
+    ExternalLink,
+    Share2,
+    ChevronLeft,
+    ChevronRight
+} from 'lucide-react';
 
 const CustomNextArrow = (props) => {
     return (
         <div
             className="absolute top-1/2 transform -translate-y-1/2 right-3 cursor-pointer rounded-full bg-gradient-to-r from-[#96c121] to-[#005F6B] text-white h-8 w-8 flex items-center justify-center shadow-lg transition-transform hover:scale-110"
             onClick={props.onClick}>
-            <span className="icon-[material-symbols--arrow-forward-ios] h-4 w-4"></span>
+            <ChevronRight className="h-4 w-4" />
         </div>
     );
 };
@@ -18,16 +25,101 @@ const CustomPrevArrow = (props) => {
         <div
             className="absolute top-1/2 transform -translate-y-1/2 left-3 z-10 cursor-pointer rounded-full bg-gradient-to-r from-[#96c121] to-[#005F6B] text-white h-8 w-8 flex items-center justify-center shadow-lg transition-transform hover:scale-110"
             onClick={props.onClick}>
-            <span className="icon-[material-symbols--arrow-back-ios-new] h-4 w-4"></span>
+            <ChevronLeft className="h-4 w-4" />
+        </div>
+    );
+};
+const VideoModal = ({ video, onClose, onNext, onPrev, hasNext, hasPrev }) => {
+    const handleShare = () => {
+        if (navigator.share) {
+            navigator.share({
+                title: video.title,
+                url: video.url.replace('embed/', 'watch?v=')
+            }).catch(console.error);
+        } else {
+            navigator.clipboard.writeText(video.url.replace('embed/', 'watch?v='))
+                .then(() => alert('Link copiado al portapapeles'));
+        }
+    };
+
+    const openOriginalVideo = () => {
+        window.open(video.url.replace('embed/', 'watch?v='), '_blank');
+    };
+
+    return (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center p-4" >
+            <div className="relative bg-white rounded-xl max-w-4xl w-full max-h-[90vh] flex flex-col" >
+
+                <button
+                    onClick={onClose}
+                    className="absolute top-4 right-4 z-10 bg-gray-100 hover:bg-gray-200 rounded-full p-2"
+                >
+                    <X className="h-6 w-6 text-gray-700" />
+                </button>
+
+                {hasPrev && (
+                    <button
+                        onClick={onPrev}
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/50 hover:bg-white/70 rounded-full p-2"
+                    >
+                        <ChevronLeft className="h-8 w-8 text-gray-800" />
+                    </button>
+                )}
+                {hasNext && (
+                    <button
+                        onClick={onNext}
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/50 hover:bg-white/70 rounded-full p-2"
+                    >
+                        <ChevronRight className="h-8 w-8 text-gray-800" />
+                    </button>
+                )}
+
+                <div className="w-full aspect-video">
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        src={video.url}
+                        title={video.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                    ></iframe>
+                </div>
+
+                <div className="p-6 flex justify-between items-center">
+                    <div>
+                        <h3 className="text-xl font-bold text-gray-800">{video.title}</h3>
+                        <p className="text-gray-600 text-sm">Medio: {video.mediaType}</p>
+                    </div>
+                    <div className="flex space-x-3">
+                        <button
+                            onClick={openOriginalVideo}
+                            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center space-x-2"
+                        >
+                            <ExternalLink className="h-5 w-5" />
+                            <span>Ver en plataforma</span>
+                        </button>
+                        <button
+                            onClick={handleShare}
+                            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center space-x-2"
+                        >
+                            <Share2 className="h-5 w-5" />
+                            <span>Compartir</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
 
-const VideoCard = ({ embedUrl, title, mediaType }) => {
+const VideoCard = ({ embedUrl, title, mediaType, onClick }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
         <div
+            onClick={onClick}
             className="relative overflow-hidden rounded-lg transition-all duration-300 transform"
             style={{
                 transform: isHovered ? 'scale(1.03)' : 'scale(1)',
@@ -54,7 +146,7 @@ const VideoCard = ({ embedUrl, title, mediaType }) => {
                             {mediaType}
                         </div>
                     </div>
-                    <div className="p-3">
+                    <div className="p-3 cursor-pointer">
                         <h3 className="font-medium text-gray-800 truncate">{title}</h3>
                         <p className="text-xs text-gray-500 mt-1">Medio de comunicación destacado</p>
                     </div>
@@ -65,6 +157,9 @@ const VideoCard = ({ embedUrl, title, mediaType }) => {
 };
 
 const Entrevistas = () => {
+    const [activeFilter, setActiveFilter] = useState("todos");
+    const [selectedVideo, setSelectedVideo] = useState(null);
+
     const allVideos = [
 //TV
         {
@@ -130,11 +225,35 @@ const Entrevistas = () => {
         }
     ];
 
-    const [activeFilter, setActiveFilter] = useState("todos");
 
     const filteredVideos = activeFilter === "todos"
         ? allVideos
         : allVideos.filter(video => video.mediaType === activeFilter);
+
+    const handleVideoSelect = (video) => {
+        setSelectedVideo(video);
+    };
+
+    const handleCloseModal = () => {
+        setSelectedVideo(null);
+    };
+
+    const handleNextVideo = () => {
+        if (!selectedVideo || filteredVideos.length <= 1) return;
+
+        const currentIndex = filteredVideos.findIndex(v => v.url === selectedVideo.url);
+        const nextIndex = (currentIndex + 1) % filteredVideos.length;
+        setSelectedVideo(filteredVideos[nextIndex]);
+    };
+
+    const handlePrevVideo = () => {
+        if (!selectedVideo || filteredVideos.length <= 1) return;
+
+        const currentIndex = filteredVideos.findIndex(v => v.url === selectedVideo.url);
+        const prevIndex = (currentIndex - 1 + filteredVideos.length) % filteredVideos.length;
+        setSelectedVideo(filteredVideos[prevIndex]);
+    };
+
 
     const settings = {
         dots: true,
@@ -185,11 +304,9 @@ const Entrevistas = () => {
         <div id="entrevistas" className="relative overflow-hidden py-4 my-4">
             <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-[#ABC467] rounded-xl -z-10"></div>
 
-            <div className="px-6 py-8">
-                {/* Header y filtros en flex-row en pantallas medianas y grandes, column en móviles */}
+
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-6">
-                    {/* Título */}
-                    <div className="flex flex-col">
+                   <div className="flex flex-col">
                         <div className="flex items-center gap-3 mb-2">
                             <div className="h-8 w-1 bg-[#96c121] rounded-full"></div>
                             <h2 className="text-2xl font-bold text-gray-800">
@@ -229,6 +346,7 @@ const Entrevistas = () => {
                                         embedUrl={video.url}
                                         title={video.title}
                                         mediaType={video.mediaType}
+                                        onClick={() => handleVideoSelect(video)}
                                     />
                                 </div>
                             ))}
@@ -239,7 +357,17 @@ const Entrevistas = () => {
                         <p className="text-gray-600">No hay entrevistas disponibles en esta categoría.</p>
                     </div>
                 )}
-            </div>
+                {selectedVideo && (
+                    <VideoModal
+                        video={selectedVideo}
+                        onClose={handleCloseModal}
+                        onNext={handleNextVideo}
+                        onPrev={handlePrevVideo}
+                        hasNext={filteredVideos.length > 1}
+                        hasPrev={filteredVideos.length > 1}
+                    />
+                )}
+
         </div>
     );
 };
