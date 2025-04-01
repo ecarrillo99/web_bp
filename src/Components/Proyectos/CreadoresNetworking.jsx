@@ -71,6 +71,7 @@ const CreatorsNetworking = () => {
     const [currentCarouselIndex, setCurrentCarouselIndex] = useState(0);
     const [displayCount, setDisplayCount] = useState(4);
     const [activeModalTab, setActiveModalTab] = useState('biography');
+    const [selectedInfluencerIndex, setSelectedInfluencerIndex] = useState(null);
 
     const modalTabs = [
         { id: 'biography', label: 'Biografía' },
@@ -91,14 +92,38 @@ const CreatorsNetworking = () => {
     }, []);
 
     const openModal = useCallback((influencer) => {
+        const index = influencersData.findIndex(item => item.id === influencer.id);
         setSelectedInfluencer(influencer);
+        setSelectedInfluencerIndex(index);
         setActiveModalTab('biography');
     }, []);
 
     const closeModal = useCallback(() => {
         setSelectedInfluencer(null);
+        setSelectedInfluencerIndex(null);
     }, []);
 
+    const navigateToPreviousInfluencer = useCallback(() => {
+        if (selectedInfluencerIndex === null) return;
+
+        const newIndex = selectedInfluencerIndex === 0
+            ? influencersData.length - 1
+            : selectedInfluencerIndex - 1;
+
+        setSelectedInfluencer(influencersData[newIndex]);
+        setSelectedInfluencerIndex(newIndex);
+    }, [selectedInfluencerIndex]);
+
+    const navigateToNextInfluencer = useCallback(() => {
+        if (selectedInfluencerIndex === null) return;
+
+        const newIndex = selectedInfluencerIndex === influencersData.length - 1
+            ? 0
+            : selectedInfluencerIndex + 1;
+
+        setSelectedInfluencer(influencersData[newIndex]);
+        setSelectedInfluencerIndex(newIndex);
+    }, [selectedInfluencerIndex]);
 
     useEffect(() => {
         const handleResize = () => {
@@ -113,15 +138,20 @@ const CreatorsNetworking = () => {
 
     useEffect(() => {
         const handleKeyDown = (event) => {
-            if (event.key === 'Escape' && selectedInfluencer) {
-                closeModal();
+            if (selectedInfluencer) {
+                if (event.key === 'Escape') {
+                    closeModal();
+                } else if (event.key === 'ArrowLeft') {
+                    navigateToPreviousInfluencer();
+                } else if (event.key === 'ArrowRight') {
+                    navigateToNextInfluencer();
+                }
             }
-
         };
 
         document.addEventListener('keydown', handleKeyDown);
         return () => document.removeEventListener('keydown', handleKeyDown);
-    }, [selectedInfluencer, closeModal]);
+    }, [selectedInfluencer, closeModal, navigateToPreviousInfluencer, navigateToNextInfluencer]);
 
     const renderModalContent = () => {
         switch (activeModalTab) {
@@ -155,7 +185,6 @@ const CreatorsNetworking = () => {
                 return null;
         }
     };
-
 
     return (
         <div className="w-full py-8 -mb-60 min-h-screen">
@@ -206,6 +235,22 @@ const CreatorsNetworking = () => {
                             className="bg-white rounded-2xl w-full max-w-3xl mx-auto overflow-hidden shadow-2xl transform transition-all duration-300 hover:scale-[1.02] max-h-[95vh] flex flex-col relative"
                             onClick={(e) => e.stopPropagation()}
                         >
+                            {/* Botones de navegación del modal */}
+                            <button
+                                onClick={navigateToPreviousInfluencer}
+                                aria-label="Perfil anterior"
+                                className="absolute top-1/2 left-4 -translate-y-1/2 z-10 bg-white bg-opacity-30 hover:bg-opacity-60 rounded-full w-10 h-10 flex items-center justify-center transition-all text-black"
+                            >
+                                <span className="icon-[material-symbols--arrow-back-ios-new] h-6 w-6"></span>
+                            </button>
+
+                            <button
+                                onClick={navigateToNextInfluencer}
+                                aria-label="Perfil siguiente"
+                                className="absolute top-1/2 right-4 -translate-y-1/2 z-10 bg-white bg-opacity-30 hover:bg-opacity-60 rounded-full w-10 h-10 flex items-center justify-center transition-all text-black"
+                            >
+                                <span className="icon-[material-symbols--arrow-forward-ios] h-6 w-6"></span>
+                            </button>
 
                             <div className="relative h-[300px] flex-shrink-0">
                                 <img

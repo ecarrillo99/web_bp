@@ -27,15 +27,16 @@ import imgP23 from '../../../imagenes/Influencers/img_33.png';
 import imgP24 from '../../../imagenes/Influencers/img_34.png';
 import imgP25 from '../../../imagenes/Influencers/img_35.png';
 import imgP26 from '../../../imagenes/Influencers/img_36.png';
-
+import imgP27 from '../../../imagenes/Influencers/img.png'
+import imgP28 from '../../../imagenes/Influencers/img_9.png'
 
 export const socialIconMap = {
     'facebook': {
-        icon: 'icon-[mdi--facebook]',
+        icon: 'icon-[mage--facebook]',
         color: 'bg-[#3b5998]'
     },
     'instagram': {
-        icon: 'icon-[mage--instagram-circle]',
+        icon: 'icon-[mdi--instagram]',
         color: 'bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]'
     },
     'twitter': {
@@ -43,11 +44,11 @@ export const socialIconMap = {
         color: 'bg-black'
     },
     'tiktok': {
-        icon: 'icon-[mage--tiktok-circle]',
+        icon: 'icon-[mage--tiktok]',
         color: 'bg-black'
     },
     'youtube': {
-        icon: 'icon-[entypo-social--youtube-with-circle]',
+        icon: 'icon-[mage--youtube]',
         color: 'bg-[#FF0000]'
     },
     'default': {
@@ -83,7 +84,12 @@ export const socialIconMap = {
             "🎭Actor\n" +
             "🏊‍♂️ profesor de natación\n",
         imageUrl: imgP1,
-        bio: "Apasionado creador de contenido de Cuenca, Ecuador. Comparto mi vida y experiencias con autenticidad.",
+        bio: "🎬Creador de contenido 👌🏽\n" +
+            "🎭Actor\n" +
+            "🎥Realizador audiovisual\n" +
+            "🫧Estratega y consultor de marketing digital\n" +
+            "🏊‍♂️ profesor de natación\n" +
+            "🌚soy pana 😎.",
         socialLinks: [
             { platform: 'instagram', url: 'https://www.instagram.com/yankicaldas/' },
             { platform: 'twitter', url: 'https://www.threads.net/@yankicaldas'},
@@ -105,7 +111,7 @@ export const socialIconMap = {
             "l𝗮 𝗣𝘃𝘁𝗲𝗮𝗱𝗶𝘁𝗮 𝗱𝗲𝗹 𝗦𝗮𝗯𝗼𝗿 🗺🧭\n" +
             "⭐️𝙴𝙼𝙿𝚁𝙴𝙽𝙳𝙴𝙳𝙾𝚁 💯🤩",
         imageUrl: imgP2,
-        bio: "Apasionada creadora de contenido de Cuenca, Ecuador. Comparto mi vida y experiencias con autenticidad.",
+        bio: "Padre, amigo, deportista, 📌T⃨i⃨k⃨T⃨o⃨k⃨: 𝗃𝗈𝗋𝗀𝖾𝖺𝗇𝗂𝖻𝖺𝗅𝖼𝖺𝗌𝗌𝗂𝗌.",
         socialLinks: [
             { platform: 'instagram', url: 'https://www.instagram.com/jorgeanibalcassisoficial/' },
             { platform: 'twitter', url: 'https://www.threads.net/@jorgeanibalcassisoficial'},
@@ -127,7 +133,11 @@ export const socialIconMap = {
         role: "REINA DE CUENCA 2018-2019 👑\n" +
             "Creadora de @cookris.ec 💜🍪" ,
         imageUrl: imgP3,
-        bio: "Apasionada creadora de contenido de Cuenca, Ecuador. Comparto mi vida y experiencias con autenticidad.",
+        bio: "REINA DE CUENCA 2018-2019👑\n" +
+            "Mis postres : tartle.cue 🤍\n" +
+            "Restaurante: olivetto.cue 🍷\n" +
+            "Joyas: c.o.chains ✨\n" +
+            "Fundadora : operacionfelicidad.ec 💙.",
         socialLinks: [
             { platform: 'instagram', url: 'https://www.instagram.com/cristyortega22/' },
             { platform: 'twitter', url: 'https://www.threads.net/@cristyortega22'},
@@ -138,7 +148,8 @@ export const socialIconMap = {
                 title: 'Un día en Cuenca',
                 thumbnailUrl: imgP17,
                 videoUrl: 'https://www.instagram.com/p/C9SX-UpJGgL/'
-            }
+            },
+
         ]
     },
     {
@@ -161,7 +172,19 @@ export const socialIconMap = {
                 title: 'Un día en Cuenca',
                 thumbnailUrl: imgP14,
                 videoUrl: 'https://www.tiktok.com/@kamiramona/video/7375240984218586374?_r=1&_t=ZM-8ux7qc5v6r1'
-            }
+            },
+            {
+                id: 'video2',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP27,
+                videoUrl: 'https://www.tiktok.com/@kamiramona/video/7389314739437899014?_r=1&_t=ZM-8ux7vsQOcNj'
+            },
+            {
+                id: 'video3',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP28,
+                videoUrl: 'https://www.tiktok.com/@kamiramona/video/7361224495941553414'
+            },
         ]
     },
     {

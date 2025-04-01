@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import VideoModal from  "./VideoModal"
 
-// Custom arrow components with improved styling
 const CustomNextArrow = (props) => {
     return (
         <div
