@@ -31,7 +31,7 @@ const settings = {
     autoplay: true,
     autoplaySpeed: 5000,
     speed: 700,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     nextArrow: <CustomNextArrow />,
     prevArrow: <CustomPrevArrow />,
@@ -67,14 +67,14 @@ const VideoCard = ({ entrada, index, onVideoClick }) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div  className="h-full cursor-pointer"
+            <div  className="h-full cursor-pointer  "
                  onClick={() => onVideoClick(index)}
                  onMouseEnter={() => setIsHovered(true)}
                  onMouseLeave={() => setIsHovered(false)}>
                 <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-3">
-                    <div className={`absolute inset-0  opacity-0  z-10`}></div>
+                    <div className={`absolute inset-0  opacity-0  z-10 `}></div>
                     <iframe
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover "
                         src={entrada.url}
                         title={entrada.titulo}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -133,8 +133,8 @@ const Entradas = () => {
     };
 
     return (
-        <div className='w-full'>
-            <Slider {...settings} className="blog-slider">
+        <div className='w-full '>
+            <Slider {...settings} className="blog-slider ">
                 {entradas.map((entrada, index) => (
                     <VideoCard
                         key={entrada.id}

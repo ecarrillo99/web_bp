@@ -27,8 +27,29 @@ import imgP23 from '../../../imagenes/Influencers/img_33.png';
 import imgP24 from '../../../imagenes/Influencers/img_34.png';
 import imgP25 from '../../../imagenes/Influencers/img_35.png';
 import imgP26 from '../../../imagenes/Influencers/img_36.png';
-import imgP27 from '../../../imagenes/Influencers/img.png'
-import imgP28 from '../../../imagenes/Influencers/img_9.png'
+import imgP27 from '../../../imagenes/Influencers/img.png';
+import imgP28 from '../../../imagenes/Influencers/img_9.png';
+import imgP29 from '../../../imagenes/Influencers/img_37.png';
+import imgP30 from '../../../imagenes/Influencers/img_38.png';
+import imgP31 from '../../../imagenes/Influencers/img_39.png';
+import imgP32 from '../../../imagenes/Influencers/img_40.png';
+import imgP33 from '../../../imagenes/Influencers/img_41.png';
+import imgP34 from '../../../imagenes/Influencers/img_42.png';
+import imgP35 from '../../../imagenes/Influencers/img_43.png';
+import imgP36 from '../../../imagenes/Influencers/img_44.png';
+import imgP37 from '../../../imagenes/Influencers/img_45.png';
+import imgP38 from '../../../imagenes/Influencers/img_46.png';
+import imgP39 from '../../../imagenes/Influencers/img_47.png';
+import imgP40 from '../../../imagenes/Influencers/img_48.png';
+import imgP41 from '../../../imagenes/Influencers/img_49.png';
+import imgP42 from '../../../imagenes/Influencers/img_50.png';
+import imgP43 from '../../../imagenes/Influencers/img_51.png';
+import imgP44 from '../../../imagenes/Influencers/img_52.png';
+import imgP45 from '../../../imagenes/Influencers/img_53.png';
+import imgP46 from '../../../imagenes/Influencers/img_54.png';
+
+
+
 
 export const socialIconMap = {
     'facebook': {
@@ -74,6 +95,24 @@ export const socialIconMap = {
                 title: 'Un día en Cuenca',
                 thumbnailUrl: imgP15,
                 videoUrl: 'https://www.tiktok.com/@visitaecuadorinfl/video/7394500130772094214?is_from_webapp=1&web_id=7478707606246213126'
+            },
+            {
+                id: 'video2',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP29,
+                videoUrl: 'https://www.instagram.com/reel/C9TNCN7pnDR/'
+            },
+            {
+                id: 'video3',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP30,
+                videoUrl: 'https://www.instagram.com/reel/C90Z1PPJgaV/'
+            },
+            {
+                id: 'video4',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP31,
+                videoUrl: 'https://www.instagram.com/reel/C-qqvsGJ9ly/'
             }
         ]
     },
@@ -149,7 +188,18 @@ export const socialIconMap = {
                 thumbnailUrl: imgP17,
                 videoUrl: 'https://www.instagram.com/p/C9SX-UpJGgL/'
             },
-
+            {
+                id: 'video2',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP32,
+                videoUrl: 'https://www.instagram.com/reel/C-235qjBvv9/'
+            },
+            {
+                id: 'video3',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP35,
+                videoUrl: 'https://www.instagram.com/reel/C9P3ECYJ_tl/'
+            }
         ]
     },
     {
@@ -208,6 +258,24 @@ export const socialIconMap = {
                 title: 'Un día en Cuenca',
                 thumbnailUrl: imgP18,
                 videoUrl: 'https://www.instagram.com/p/C2IMpd3uWFz/'
+            },
+            {
+                id: 'video2',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP33,
+                videoUrl: 'https://www.instagram.com/reel/C8M94MuJp1k/'
+            },
+            {
+                id: 'video3',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP34,
+                videoUrl: 'https://www.instagram.com/reel/C-23Y49BOmT/'
+            },
+            {
+                id: 'video3',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP36,
+                videoUrl: 'https://www.instagram.com/reel/C6MpX77pzN8/'
             }
         ]
     },
@@ -230,6 +298,12 @@ export const socialIconMap = {
                 title: 'Un día en Cuenca',
                 thumbnailUrl: imgP19,
                 videoUrl: 'https://www.instagram.com/p/C6G0GMVOqhQ/'
+            },
+            {
+                id: 'video2',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP39,
+                videoUrl: 'https://www.instagram.com/reel/C6q6kqFOYDR/'
             }
         ]
     },
@@ -254,7 +328,19 @@ export const socialIconMap = {
                 title: 'Un día en Cuenca',
                 thumbnailUrl: imgP20,
                 videoUrl: 'https://www.instagram.com/p/C1c1fNoJRqW/'
-            }
+            },
+            {
+                id: 'video2',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP45,
+                videoUrl: 'https://www.instagram.com/reel/C6eodMAJ7eq/'
+            },
+            {
+                id: 'video3',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP46,
+                videoUrl: 'https://www.instagram.com/visitaecuadorcom/reel/C56vLalpjVn/'
+            },
         ]
     },
     {
@@ -277,6 +363,12 @@ export const socialIconMap = {
                 title: 'Un día en Cuenca',
                 thumbnailUrl: imgP21,
                 videoUrl: 'https://www.instagram.com/p/C6Oxx-jO0Yz/'
+            },
+            {
+                id: 'video2',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP40,
+                videoUrl: 'https://www.instagram.com/reel/C_L4TCMBV0J/'
             }
         ]
     },
@@ -303,6 +395,12 @@ export const socialIconMap = {
                 title: 'Un día en Cuenca',
                 thumbnailUrl: imgP22,
                 videoUrl: 'https://www.instagram.com/p/C50y-hbOw1M/'
+            },
+            {
+                id: 'video2',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP37,
+                videoUrl: 'https://www.instagram.com/reel/C-26J-_BZw5/'
             }
         ]
     },
@@ -324,6 +422,18 @@ export const socialIconMap = {
                 title: 'Un día en Cuenca',
                 thumbnailUrl: imgP23,
                 videoUrl: 'https://www.instagram.com/reel/C5BfXMLuWjf/'
+            },
+            {
+                id: 'video2',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP41,
+                videoUrl: 'https://www.instagram.com/reel/C1KagySOnaN/'
+            },
+            {
+                id: 'video3',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP42,
+                videoUrl: 'https://www.instagram.com/reel/C1UmMAxOI2Y/'
             }
         ]
     },
@@ -347,7 +457,19 @@ export const socialIconMap = {
                 title: 'Un día en Cuenca',
                 thumbnailUrl: imgP24,
                 videoUrl: 'https://www.instagram.com/reel/C71oehIOvW-/'
-            }
+            },
+            {
+                id: 'video2',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP38,
+                videoUrl: 'https://www.instagram.com/reel/C6tg7aPOqGM/'
+            },
+            {
+                id: 'video3',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP43,
+                videoUrl: 'https://www.instagram.com/reel/C3GgbgSp0LS/'
+            },
         ]
     },
     {
@@ -369,6 +491,12 @@ export const socialIconMap = {
                 title: 'Un día en Cuenca',
                 thumbnailUrl: imgP25,
                 videoUrl: 'https://www.instagram.com/reel/C3-be97OyAU/'
+            },
+            {
+                id: 'video1',
+                title: 'Un día en Cuenca',
+                thumbnailUrl: imgP44,
+                videoUrl: 'https://www.instagram.com/reel/C2fiZW0Akk2/'
             }
         ]
     },

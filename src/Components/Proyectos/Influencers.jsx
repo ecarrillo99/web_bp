@@ -1,34 +1,48 @@
 import React from 'react';
 import ProyectoSection from './ProyectoSection';
-import imgP from '../../imagenes/Influencers/img_29.png'
-import imgP1 from '../../imagenes/Influencers/img_5.png'
-import imgP2 from '../../imagenes/Influencers/img.png'
-import imgP3 from '../../imagenes/Influencers/img_6.png'
-import imgP4 from '../../imagenes/Influencers/img_7.png'
-import imgP5 from '../../imagenes/Influencers/img_3.png'
-import imgP6 from '../../imagenes/Influencers/img_4.png'
-import imgP7 from '../../imagenes/Influencers/img_8.png'
-import imgP8 from '../../imagenes/Influencers/img_9.png'
-import imgP9 from '../../imagenes/Influencers/img_10.png'
-import imgP10 from '../../imagenes/Influencers/img_11.png'
-import imgP11 from '../../imagenes/Influencers/img_12.png'
-import imgP12 from '../../imagenes/Influencers/img_13.png'
-import imgP13 from '../../imagenes/Influencers/img_14.png'
-import imgP15 from '../../imagenes/Influencers/img_16.png'
-import imgP16 from '../../imagenes/Influencers/img_17.png'
-import imgP17 from '../../imagenes/Influencers/img_20.png'
-import imgP18 from '../../imagenes/Influencers/img_19.png'
-import imgP19 from '../../imagenes/Influencers/img_23.png'
-import imgP20 from '../../imagenes/Influencers/img_22.png'
-import imgP21 from '../../imagenes/Influencers/img_24.png'
-import imgP22 from '../../imagenes/Influencers/img_25.png'
-import imgP23 from '../../imagenes/Influencers/img_26.png'
-import imgP24 from '../../imagenes/Influencers/img_27.png'
-import imgP25 from '../../imagenes/Influencers/img_28.png'
-import imgP26 from '../../imagenes/Influencers/img_31.png'
-import imgP27 from '../../imagenes/Influencers/img_32.png'
-import imgP28 from '../../imagenes/Influencers/img_33.png'
-import imgP29 from '../../imagenes/Influencers/img_35.png'
+import imgP from '../../imagenes/Influencers/img_29.png';
+import imgP1 from '../../imagenes/Influencers/img_5.png';
+import imgP2 from '../../imagenes/Influencers/img.png';
+import imgP3 from '../../imagenes/Influencers/img_6.png';
+import imgP4 from '../../imagenes/Influencers/img_7.png';
+import imgP5 from '../../imagenes/Influencers/img_3.png';
+import imgP6 from '../../imagenes/Influencers/img_4.png';
+import imgP7 from '../../imagenes/Influencers/img_8.png';
+import imgP8 from '../../imagenes/Influencers/img_9.png';
+import imgP9 from '../../imagenes/Influencers/img_10.png';
+import imgP10 from '../../imagenes/Influencers/img_11.png';
+import imgP11 from '../../imagenes/Influencers/img_12.png';
+import imgP12 from '../../imagenes/Influencers/img_13.png';
+import imgP13 from '../../imagenes/Influencers/img_14.png';
+import imgP15 from '../../imagenes/Influencers/img_16.png';
+import imgP16 from '../../imagenes/Influencers/img_17.png';
+import imgP17 from '../../imagenes/Influencers/img_20.png';
+import imgP18 from '../../imagenes/Influencers/img_19.png';
+import imgP19 from '../../imagenes/Influencers/img_23.png';
+import imgP20 from '../../imagenes/Influencers/img_22.png';
+import imgP21 from '../../imagenes/Influencers/img_24.png';
+import imgP22 from '../../imagenes/Influencers/img_25.png';
+import imgP23 from '../../imagenes/Influencers/img_26.png';
+import imgP24 from '../../imagenes/Influencers/img_27.png';
+import imgP25 from '../../imagenes/Influencers/img_28.png';
+import imgP26 from '../../imagenes/Influencers/img_31.png';
+import imgP27 from '../../imagenes/Influencers/img_32.png';
+import imgP28 from '../../imagenes/Influencers/img_33.png';
+import imgP29 from '../../imagenes/Influencers/img_35.png';
+import imgP30 from '../../imagenes/Influencers/img_37.png';
+import imgP31 from '../../imagenes/Influencers/img_38.png';
+import imgP32 from '../../imagenes/Influencers/img_39.png';
+import imgP33 from '../../imagenes/Influencers/img_40.png';
+import imgP34 from '../../imagenes/Influencers/img_41.png';
+import imgP35 from '../../imagenes/Influencers/img_42.png';
+import imgP36 from '../../imagenes/Influencers/img_43.png';
+import imgP37 from '../../imagenes/Influencers/img_44.png';
+import imgP38 from '../../imagenes/Influencers/img_45.png';
+import imgP39 from '../../imagenes/Influencers/img_46.png';
+import imgP40 from '../../imagenes/Influencers/img_47.png';
+
+
+
 import CreadoresNetworking from "./CreadoresNetworking";
 
 const Influencers = () => {
@@ -261,6 +275,73 @@ const Influencers = () => {
                             imagen: imgP29,
                             enlace: "https://www.instagram.com/reel/C3-be97OyAU/",
                             mensaje: "@abigailjaramillo_viteri se hospedo en el @fenixhotelquito , gracias a su suscripción de VisitaEcuador.com",
+                            ubicacion: "Quito, Ecuador"
+                        },
+                        {
+                            imagen: imgP30,
+                            enlace: "https://www.instagram.com/p/C9TNCN7pnDR/",
+                            mensaje: "Tuve la increíble oportunidad de conocer el @radissonguayaquil en Guayaquil gracias a @visitaecuadorcom y fue una experiencia inolvidable. 🏨✨",
+                            ubicacion: "Guayaquil, Ecuador"
+                        },
+                        {
+                            imagen: imgP31,
+                            enlace: "https://www.instagram.com/reel/C90Z1PPJgaV/",
+                            mensaje: "Descubre la elegancia y comodidad en el corazón de Guayaquil. 🌟 ✨ Gracias a @visitaecuadorcom y no olvides usar mi código ADRV1 para obtener un descuento especial.",
+                            ubicacion: "Guayaquil, Ecuador"
+                        },
+                        {
+                            imagen: imgP32,
+                            enlace: "https://www.instagram.com/reel/C-qqvsGJ9ly/",
+                            mensaje: "✨ ¡Hola a todos! Tuve una experiencia increíble en el @hotelsheratonguayaquil , y tenía que compartirlo. 🌟 💸 Lo mejor de todo es que reservé a través de @visitaecuadorcom donde conseguí precios increíbles que no encontré en otros sitios como Booking, ¡y el desayuno estaba incluido! ",
+                            ubicacion: "Guayaquil, Ecuador"
+                        },
+                        {
+                            imagen: imgP33,
+                            enlace: "https://www.instagram.com/reel/C-235qjBvv9/",
+                            mensaje: "@cristyortega22 se quedo en el @radissonguayaquil y esto paso...\n" +
+                                "#radisson #hotel #guayaquil #cris #cristina",
+                            ubicacion: "Guayaquil, Ecuador"
+                        },
+                        {
+                            imagen: imgP34,
+                            enlace: "https://www.instagram.com/reel/C8M94MuJp1k/",
+                            mensaje: "Victor León se hospedo y disfruto en el @wyndhamguayaquil gracias a su suscripción de VisitaEcuador.com.",
+                            ubicacion: "Guayaquil, Ecuador"
+                        },
+                        {
+                            imagen: imgP35,
+                            enlace: "https://www.instagram.com/reel/C-23Y49BOmT/",
+                            mensaje: "@brescianilucho se hospedo y disfruto en el @reec_machala gracias a su suscripción de VisitaEcuador.com. Resalta una atención increíble, instalaciones de lujo, el sistema ágil de reservación en la aplicación, el ahorro y el delicioso desayuno buffet ilimitado 🤩",
+                            ubicacion: "Machala, Ecuador"
+                        },
+                        {
+                            imagen: imgP36,
+                            enlace: "http://instagram.com/reel/C9P3ECYJ_tl/",
+                            mensaje: "@cristyortega22 se hospedo en el @sanjuanhotelcuenca gracias a su suscripción de VisitaEcuador.com.",
+                            ubicacion: "Cuenca, Ecuador"
+                        },
+                        {
+                            imagen: imgP37,
+                            enlace: "https://www.instagram.com/reel/C6MpX77pzN8/",
+                            mensaje: "En Ecuador, somos la mejor plataforma para reserva de hoteles TOP. Te certificamos el mejor precio ✅ ✅ Adquiere una suscripción desde nuestra aplicación Visitaecuador.com,",
+                            ubicacion: "Guayaquil, Ecuador"
+                        },
+                        {
+                            imagen: imgP38,
+                            enlace: "https://www.instagram.com/reel/C-26J-_BZw5/",
+                            mensaje: "En Ecuador, somos la mejor plataforma para reserva de hoteles TOP. Te certificamos el mejor precio ✅ ✅ Adquiere una suscripción desde nuestra aplicación Visitaecuador.com,",
+                            ubicacion: "Guayaquil, Ecuador"
+                        },
+                        {
+                            imagen: imgP39,
+                            enlace: "https://www.instagram.com/reel/C6tg7aPOqGM/",
+                            mensaje: "@brescianilucho se hospedo en el @oroverde_machala y disfrutó de instalaciones de lujo y completas, atención increíble y desayuno buffet ilimitado muy delicioso 🤩.,",
+                            ubicacion: "Machala, Ecuador"
+                        },
+                        {
+                            imagen: imgP40,
+                            enlace: "https://www.instagram.com/reel/C6q6kqFOYDR/",
+                            mensaje: "@bellnico gracias a su suscripción de VisitaEcuador.com se hospedo en el @wyndhamquito .",
                             ubicacion: "Quito, Ecuador"
                         },
                     ]}
