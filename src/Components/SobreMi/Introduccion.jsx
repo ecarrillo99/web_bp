@@ -131,21 +131,21 @@ const Introduccion = () => {
                     </div>
 
                     <div
-                        onClick={handleEmprendedorClick}
-                        className='flex flex-col items-center p-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow group cursor-pointer'
-                        title="Fundador de Full Vacations y Disney Concierge"
-                    >
-                        <Target className='text-[#769842] w-8 h-8 mb-2 group-hover:scale-110 transition-transform'/>
-                        <span className='text-sm font-semibold text-center'>Emprendedor Digital</span>
-                    </div>
-
-                    <div
                         onClick={handleReconocimientosClick}
                         className='flex flex-col items-center p-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow group cursor-pointer'
                         title="Ganador de premios nacionales e internacionales"
                     >
                         <Award className='text-[#769842] w-8 h-8 mb-2 group-hover:scale-110 transition-transform'/>
                         <span className='text-sm font-semibold text-center'>Múltiples Reconocimientos</span>
+                    </div>
+
+                    <div
+                        onClick={handleEmprendedorClick}
+                        className='flex flex-col items-center p-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow group cursor-pointer'
+                        title="Fundador de Full Vacations y Disney Concierge"
+                    >
+                        <Target className='text-[#769842] w-8 h-8 mb-2 group-hover:scale-110 transition-transform'/>
+                        <span className='text-sm font-semibold text-center'>Emprendedor Digital</span>
                     </div>
                 </div>
                 {isPortalesModalOpen && (
@@ -155,7 +155,7 @@ const Introduccion = () => {
                                 onClick={() => setIsPortalesModalOpen(false)}
                                 className='absolute top-4 right-4 text-gray-600 hover:text-gray-900'
                             >
-                                <X className='w-6 h-6' />
+                                <X className='w-6 h-6'/>
                             </button>
                             <h3 className='text-2xl font-bold mb-4'>Portales Turísticos</h3>
                             <div className='grid grid-cols-2 gap-4'>

@@ -82,7 +82,7 @@ const ContactoForm = () => {
         }
     }, [status]);
 
-    const whatsappNumber = '+593991234567'; // Cleaned up the number format
+    const whatsappNumber = '+593985862555'; // Cleaned up the number format
     const whatsappLink = `https://wa.me/${whatsappNumber.replace(/[+\s()-]/g, '')}?text=Hola,%20estoy%20interesado%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n`;
 
 
@@ -122,7 +122,7 @@ const ContactoForm = () => {
                                         className="rounded-full bg-gradient-to-r from-[#96c121] to-[#005F6B] p-2 h-9 -py-1">
                                         <span className="w-5 h-5 text-white icon-[mdi--whatsapp]"/>
                                     </div>
-                                    <span className="text-gray-700">+593 (99) 123-4567</span>
+                                    <span className="text-gray-700">+593 0985862555</span>
                                 </a>
                             </div>
                         </div>
