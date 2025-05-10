@@ -1,9 +1,22 @@
-import React from 'react';
-import Medidor from './Medidor';
-import SeguidoresRed from './SeguidoresRed';
-import SegmentacionGenero from './SegmentacionGenero';
-import SegmentacionEdad from './SegmentacionEdad';
-import SegmentacionGeografica from './SegmentacionGeografica';
+import React, { Suspense, lazy } from 'react';
+
+const Medidor = lazy(() => import('./Medidor'));
+const SeguidoresRed = lazy(() => import('./SeguidoresRed'));
+const SegmentacionGenero = lazy(() => import('./SegmentacionGenero'));
+const SegmentacionEdad = lazy(() => import('./SegmentacionEdad'));
+const SegmentacionGeografica = lazy(() => import('./SegmentacionGeografica'));
+
+const MedidorFallback = () => (
+  <div className="w-full h-64 bg-gray-200 rounded-lg animate-pulse"></div>
+);
+
+const SeguidoresRedFallback = () => (
+  <div className="w-full h-32 bg-gray-200 rounded-lg animate-pulse"></div>
+);
+
+const SegmentacionFallback = () => (
+  <div className="w-full h-80 bg-gray-200 rounded-lg animate-pulse"></div>
+);
 
 const Metricas = () => {
     return (
@@ -18,54 +31,73 @@ const Metricas = () => {
                     </p>
                 </div>
 
-                <Medidor />
+                <Suspense fallback={<MedidorFallback />}>
+                    <Medidor />
+                </Suspense>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6'>
-                    <SeguidoresRed
-                        red={"INST/FANPAGE"}
-                        color={"#db5781"}
-                        icono={"./images/instagram_icon.png"}
-                        seguidores={"140 K"}
-                    />
-                    <SeguidoresRed
-                        red={"FK/FANPAGE"}
-                        color={"#3e8ba4"}
-                        icono={"./images/facebook_icon.png"}
-                        seguidores={"34 K"}
-                    />
-                    <SeguidoresRed
-                        red={"TIK TOK"}
-                        color={"#60605f"}
-                        icono={"./images/tiktok_icon.png"}
-                        seguidores={"25,8 K"}
-                    />
-                    <SeguidoresRed
-                        red={"YOUTUBE"}
-                        color={"#e6231c"}
-                        icono={"./images/youtube_icon.png"}
-                        seguidores={"1,88 k"}
-                    />
-                    <SeguidoresRed
-                        red={"INST/PERSONAL"}
-                        color={"#e33f72"}
-                        icono={"./images/instagram_icon.png"}
-                        seguidores={"46.3 K"}
-                    />
-                    <SeguidoresRed
-                        red={"FK/PERSONAL"}
-                        color={"#35758a"}
-                        icono={"./images/facebook_icon.png"}
-                        seguidores={"6.6 K"}
-                    />
+                    {[
+                        {
+                            red: "INST/FANPAGE",
+                            color: "#db5781",
+                            icono: "./images/instagram_icon.png",
+                            seguidores: "140 K"
+                        },
+                        {
+                            red: "FK/FANPAGE",
+                            color: "#3e8ba4",
+                            icono: "./images/facebook_icon.png",
+                            seguidores: "34 K"
+                        },
+                        {
+                            red: "TIK TOK",
+                            color: "#60605f",
+                            icono: "./images/tiktok_icon.png",
+                            seguidores: "25,8 K"
+                        },
+                        {
+                            red: "YOUTUBE",
+                            color: "#e6231c",
+                            icono: "./images/youtube_icon.png",
+                            seguidores: "1,88 k"
+                        },
+                        {
+                            red: "INST/PERSONAL",
+                            color: "#e33f72",
+                            icono: "./images/instagram_icon.png",
+                            seguidores: "46.3 K"
+                        },
+                        {
+                            red: "FK/PERSONAL",
+                            color: "#35758a",
+                            icono: "./images/facebook_icon.png",
+                            seguidores: "6.6 K"
+                        }
+                    ].map((props, index) => (
+                        <Suspense key={index} fallback={<SeguidoresRedFallback />}>
+                            <SeguidoresRed
+                                red={props.red}
+                                color={props.color}
+                                icono={props.icono}
+                                seguidores={props.seguidores}
+                            />
+                        </Suspense>
+                    ))}
                 </div>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-2'>
-                    <SegmentacionGenero />
-                    <SegmentacionEdad />
+                    <Suspense fallback={<SegmentacionFallback />}>
+                        <SegmentacionGenero />
+                    </Suspense>
+                    <Suspense fallback={<SegmentacionFallback />}>
+                        <SegmentacionEdad />
+                    </Suspense>
                 </div>
 
                 <div className='mt-2'>
-                    <SegmentacionGeografica />
+                    <Suspense fallback={<SegmentacionFallback />}>
+                        <SegmentacionGeografica />
+                    </Suspense>
                 </div>
             </div>
         </div>

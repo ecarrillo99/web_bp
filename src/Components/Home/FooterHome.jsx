@@ -1,4 +1,10 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
+
+const SocialIcon = lazy(() => import('./SocialIcon'));
+
+const IconFallback = () => (
+  <div className="w-10 h-10 bg-gray-200 rounded-full animate-pulse"></div>
+);
 
 const FooterHome = () => {
     const socialLinks = [
@@ -29,20 +35,21 @@ const FooterHome = () => {
                                 aria-label={`Visita mi perfil de ${social.name}`}
                                 className="transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white rounded-full"
                             >
-                                <img
-                                    src={social.icon}
-                                    alt={social.name}
-                                    className="w-10 h-10 object-contain"
-                                />
+                                <Suspense fallback={<IconFallback />}>
+                                    <SocialIcon 
+                                        src={social.icon} 
+                                        alt={social.name} 
+                                    />
+                                </Suspense>
                             </a>
                         ))}
                     </div>
                 </div>
-
-
             </div>
         </footer>
     );
 };
+
+
 
 export default FooterHome;

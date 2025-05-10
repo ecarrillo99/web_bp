@@ -1,22 +1,68 @@
-import React, { useState, useEffect } from 'react';
-import Destacado from './Destacado';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+
+const Destacado = lazy(() => import('./Destacado'));
+
+
 import imgP from '../../imagenes/Social/instas.png';
-import imgP1 from '../../imagenes/Social/img_1.png'
-import imgP4 from '../../imagenes/Social/img_3.png'
-import imgP7 from '../../imagenes/Social/img_6.png'
-import imgP20 from '../../imagenes/img_20.png'
-import imgP21 from '../../imagenes/img_21.png'
-import imgP22 from '../../imagenes/img_22.png'
-import imgP23 from '../../imagenes/img_23.png'
-import imgP24 from '../../imagenes/img_24.png'
+import imgP1 from '../../imagenes/Social/img_1.png';
+import imgP4 from '../../imagenes/Social/img_3.png';
+import imgP7 from '../../imagenes/Social/img_6.png';
+import imgP20 from '../../imagenes/img_20.png';
+import imgP21 from '../../imagenes/img_21.png';
+import imgP22 from '../../imagenes/img_22.png';
+import imgP23 from '../../imagenes/img_23.png';
+import imgP24 from '../../imagenes/img_24.png';
+
+
+const LoadingFallback = () => (
+  <div className="w-full h-64 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center">
+    <span className="text-gray-500">Cargando publicaciones...</span>
+  </div>
+);
+
+const PlatformPosts = ({ posts }) => {
+  return (
+    <>
+      {posts.map(post => (
+        <Suspense key={post.id} fallback={<LoadingFallback />}>
+          <Destacado
+            fecha={post.fecha}
+            iconoRed={post.iconoRed}
+            colorRed={post.colorRed}
+            linkPost={post.linkPost}
+            linkPerfil={post.linkPerfil}
+            imagePost={post.imagePost}
+            mensajePost={post.mensajePost}
+          />
+        </Suspense>
+      ))}
+    </>
+  );
+};
+
+
+const AllPosts = lazy(() => Promise.resolve({ default: PlatformPosts }));
+const InstagramPosts = lazy(() => Promise.resolve({ default: PlatformPosts }));
+const FacebookPosts = lazy(() => Promise.resolve({ default: PlatformPosts }));
+const TikTokPosts = lazy(() => Promise.resolve({ default: PlatformPosts }));
+const YouTubePosts = lazy(() => Promise.resolve({ default: PlatformPosts }));
+const LinkedInPosts = lazy(() => Promise.resolve({ default: PlatformPosts }));
+const TwitterPosts = lazy(() => Promise.resolve({ default: PlatformPosts }));
 
 const Contenido = () => {
     const [activeTab, setActiveTab] = useState('all');
-    const [visiblePosts, setVisiblePosts] = useState([]);
+    const [isLoaded, setIsLoaded] = useState({
+        all: false,
+        instagram: false,
+        facebook: false,
+        tiktok: false,
+        youtube: false,
+        linkedin: false,
+        twitter: false
+    });
 
     const allPosts = [
-
-        //FACEBOOK
+        
         {
             id: 1,
             fecha: "08 de junio de 2022",
@@ -55,7 +101,6 @@ const Contenido = () => {
         },
 
 
-        //INS/FANPAGE
         {
             id: 2,
             fecha: "28 de octubre de 2024",
@@ -89,9 +134,20 @@ const Contenido = () => {
             mensajePost: "En ésta cafetería puedes crear tu obra de arte con café en mano TE VA A ENCANTAR !! 😍👩🏻‍🎨☕️🎨 #bernardopolo #visitaecuador #CafeteriaPicaMaria #turismo #arte #huecas #arte #cafe #cuenca",
             platform: "instagram"
         },
+        {
+            id: 7,
+            fecha: "06 de marzo de 2025",
+            iconoRed: <span className="icon-[mdi--instagram] h-6 w-6 text-[#dd2a7b]"></span>,
+            colorRed: "#dd2a7b",
+            linkPost: "https://www.instagram.com/reel/DFoCU7uJ71F/",
+            linkPerfil: "https://www.instagram.com/bernardopoloa/",
+            imagePost: imgP,
+            mensajePost: "Descubriendo nuevos lugares en Ecuador 🇪🇨 ¡Acompáñame en esta aventura! #Ecuador #Travel #BernardoPolo #Turismo #AventuraEcuador #VisitaEcuador #NuevoContenido #Instagram #Reels #Viajes #Descubriendo",
+            platform: "instagram"
+        },
 
 
-        //TIKTOK
+        
         {
             id: 10,
             fecha: "03 de enero de 2024",
@@ -127,7 +183,7 @@ const Contenido = () => {
         },
 
 
-        //YOUTUBE
+       
         {
             id: 4,
             fecha: "05 de marzo de 2024",
@@ -170,7 +226,7 @@ const Contenido = () => {
         },
 
 
-        //LINKEIND
+        
         {
             id: 5,
             fecha: "03 de mayo de 2024",
@@ -184,7 +240,7 @@ const Contenido = () => {
         },
 
 
-        //X
+       
         {
             id: 6,
             fecha: "01 de mayo de 2024",
@@ -196,29 +252,29 @@ const Contenido = () => {
             mensajePost: "Mis SEGUIDORES me dejan CHIRO por regalarles LANGOSTINOS del Abogado tírate un paso 🥲🦐 Dolger Velasquez PayPhone #dolgervelasquez#cuenca #cangrejoscuenca#ecuador #visitaecuador #PoliTo #visitaecuador #emprendedoresdeexito #VISITANOS #PolitoRecomienda #ElPadrinoPolito #politoteinvita #cangrejo #abogadotirateunpaso",
             platform: "twitter"
         },
-
-
-        //INS/PERSONAL
-        {
-            id: 7,
-            fecha: "06 de marzo de 2025",
-            iconoRed: <span className="icon-[mdi--instagram] h-6 w-6 text-[#dd2a7b]"></span>,
-            colorRed: "#dd2a7b",
-            linkPost: "https://www.instagram.com/reel/DFoCU7uJ71F/",
-            linkPerfil: "https://www.instagram.com/bernardopoloa/",
-            imagePost: imgP,
-            mensajePost: "Descubriendo nuevos lugares en Ecuador 🇪🇨 ¡Acompáñame en esta aventura! #Ecuador #Travel #BernardoPolo #Turismo #AventuraEcuador #VisitaEcuador #NuevoContenido #Instagram #Reels #Viajes #Descubriendo",
-            platform: "instagram"
-        }
     ];
 
-    useEffect(() => {
-        if (activeTab === 'all') {
-            setVisiblePosts(allPosts);
-        } else {
-            setVisiblePosts(allPosts.filter(post => post.platform === activeTab));
-        }
-    }, [activeTab]);
+    
+    const postsByPlatform = {
+        all: allPosts,
+        instagram: allPosts.filter(post => post.platform === 'instagram'),
+        facebook: allPosts.filter(post => post.platform === 'facebook'),
+        tiktok: allPosts.filter(post => post.platform === 'tiktok'),
+        youtube: allPosts.filter(post => post.platform === 'youtube'),
+        linkedin: allPosts.filter(post => post.platform === 'linkedin'),
+        twitter: allPosts.filter(post => post.platform === 'twitter')
+    };
+
+    
+    const handleTabChange = (tabId) => {
+        setActiveTab(tabId);
+        
+        
+        setIsLoaded(prevState => ({
+            ...prevState,
+            [tabId]: true
+        }));
+    };
 
     const platforms = [
         { id: 'all', name: 'Todo', icon: <span className="icon-[heroicons--squares-2x2] h-5 w-5"></span> },
@@ -229,6 +285,40 @@ const Contenido = () => {
         { id: 'linkedin', name: 'LinkedIn', icon: <span className="icon-[akar-icons--linkedinv2-fill] h-5 w-5 text-[#0e76a8]"></span> },
         { id: 'twitter', name: 'Twitter', icon: <span className="icon-[ph--x-logo-bold] h-5 w-5"></span> }
     ];
+
+    
+    const renderPlatformComponent = () => {
+        switch (activeTab) {
+            case 'all':
+                return isLoaded.all ? <AllPosts posts={postsByPlatform.all} /> : <SectionLoadingFallback />;
+            case 'instagram':
+                return isLoaded.instagram ? <InstagramPosts posts={postsByPlatform.instagram} /> : <SectionLoadingFallback />;
+            case 'facebook':
+                return isLoaded.facebook ? <FacebookPosts posts={postsByPlatform.facebook} /> : <SectionLoadingFallback />;
+            case 'tiktok':
+                return isLoaded.tiktok ? <TikTokPosts posts={postsByPlatform.tiktok} /> : <SectionLoadingFallback />;
+            case 'youtube':
+                return isLoaded.youtube ? <YouTubePosts posts={postsByPlatform.youtube} /> : <SectionLoadingFallback />;
+            case 'linkedin':
+                return isLoaded.linkedin ? <LinkedInPosts posts={postsByPlatform.linkedin} /> : <SectionLoadingFallback />;
+            case 'twitter':
+                return isLoaded.twitter ? <TwitterPosts posts={postsByPlatform.twitter} /> : <SectionLoadingFallback />;
+            default:
+                return <SectionLoadingFallback />;
+        }
+    };
+
+    
+    const SectionLoadingFallback = () => (
+        <div className="col-span-full py-12 text-center">
+            <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-green-500 border-r-transparent align-[-0.125em]" role="status">
+                <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                    Cargando...
+                </span>
+            </div>
+            <p className="mt-4 text-gray-600">Cargando publicaciones...</p>
+        </div>
+    );
 
     return (
         <div className="bg-gray-50 py-8" id="contenido">
@@ -245,7 +335,7 @@ const Contenido = () => {
                     {platforms.map(platform => (
                         <button
                             key={platform.id}
-                            onClick={() => setActiveTab(platform.id)}
+                            onClick={() => handleTabChange(platform.id)}
                             className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm ${
                                 activeTab === platform.id
                                     ? 'bg-gradient-to-r from-[#96c121] to-[#005F6B] text-white'
@@ -259,18 +349,9 @@ const Contenido = () => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    {visiblePosts.map(post => (
-                        <Destacado
-                            key={post.id}
-                            fecha={post.fecha}
-                            iconoRed={post.iconoRed}
-                            colorRed={post.colorRed}
-                            linkPost={post.linkPost}
-                            linkPerfil={post.linkPerfil}
-                            imagePost={post.imagePost}
-                            mensajePost={post.mensajePost}
-                        />
-                    ))}
+                    <Suspense fallback={<SectionLoadingFallback />}>
+                        {renderPlatformComponent()}
+                    </Suspense>
                 </div>
             </div>
         </div>

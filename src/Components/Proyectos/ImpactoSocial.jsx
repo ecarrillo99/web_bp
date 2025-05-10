@@ -129,7 +129,7 @@ const ImpactoSocial = () => {
                     ]}
                 />
 
-                <ProyectoSection
+                <ProyectoSection 
                     titulo="Longo de Barrio"
                     proyectos={[
                         {

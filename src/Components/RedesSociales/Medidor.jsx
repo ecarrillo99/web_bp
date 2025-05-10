@@ -4,7 +4,6 @@ const Medidor = () => {
     const [animate, setAnimate] = useState(false);
 
     useEffect(() => {
-        // Trigger animation after component mounts
         setAnimate(true);
     }, []);
 

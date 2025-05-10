@@ -1,9 +1,18 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, lazy, Suspense } from 'react';
 import { useLocation } from "react-router-dom";
 import Navbar from '../Components/Global/Navbar';
 import Footer from '../Components/Global/Footer';
-import ImpactoSocial from '../Components/Proyectos/ImpactoSocial';
-import Influencers from "../Components/Proyectos/Influencers";
+
+
+const ImpactoSocial = lazy(() => import('../Components/Proyectos/ImpactoSocial'));
+const Influencers = lazy(() => import("../Components/Proyectos/Influencers"));
+
+
+const LoadingFallback = () => (
+    <div className="w-full flex justify-center items-center py-12">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-800"></div>
+    </div>
+);
 
 const Proyectos = () => {
     const location = useLocation();
@@ -34,10 +43,14 @@ const Proyectos = () => {
             <Navbar activo={3} />
             <main className="flex-grow pt-16">
                 <div ref={socialRef} className="w-full">
-                    <ImpactoSocial />
+                    <Suspense fallback={<LoadingFallback />}>
+                        <ImpactoSocial />
+                    </Suspense>
                 </div>
                 <div ref={influencerRef} className="w-full">
-                    <Influencers />
+                    <Suspense fallback={<LoadingFallback />}>
+                        <Influencers />
+                    </Suspense>
                 </div>
             </main>
             <Footer />

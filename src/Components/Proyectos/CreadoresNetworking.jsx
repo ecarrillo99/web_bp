@@ -1,6 +1,13 @@
-import React, { useEffect, useState, useCallback, memo } from 'react';
+import React, { useEffect, useState, useCallback, memo, lazy, Suspense } from 'react';
 import { influencersData, socialIconMap } from './creadores/creators-data';
 import { getVisibleInfluencers, getResponsiveDisplayCount } from './creadores/creators-utils';
+
+
+const LoadingSpinner = () => (
+    <div className="flex items-center justify-center p-4">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#96c121]"></div>
+    </div>
+);
 
 const SocialLink = memo(({ link }) => {
     const platformInfo = socialIconMap[link.platform.toLowerCase()] || socialIconMap['default'];
@@ -25,46 +32,84 @@ const SocialLink = memo(({ link }) => {
     );
 });
 
-const InfluencerCard = memo(({ influencer, onClick }) => (
-    <div
-        className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 cursor-pointer"
-        onClick={() => onClick(influencer)}
-    >
-        <div className="relative">
-            <img
-                src={influencer.imageUrl}
-                alt={influencer.name}
-                className="w-full h-64 object-cover"
-                loading="lazy"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white">
-                <h3 className="text-xl font-bold">{influencer.name}</h3>
-                <p className="text-sm opacity-80">{influencer.role.split('\n')[0]}</p>
+const InfluencerCard = lazy(() => Promise.resolve({
+    default: memo(({ influencer, onClick }) => (
+        <div
+            className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 cursor-pointer"
+            onClick={() => onClick(influencer)}
+        >
+            <div className="relative">
+                <img
+                    src={influencer.imageUrl}
+                    alt={influencer.name}
+                    className="w-full h-64 object-cover"
+                    loading="lazy"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white">
+                    <h3 className="text-xl font-bold">{influencer.name}</h3>
+                    <p className="text-sm opacity-80">{influencer.role.split('\n')[0]}</p>
+                </div>
             </div>
         </div>
-    </div>
-));
+    ))
+}));
 
-const VideoThumbnail = memo(({ video }) => (
-    <a
-        href={video.videoUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block hover:bg-gray-200 rounded-lg transition-colors"
-    >
-        <div className="relative overflow-hidden rounded-lg">
-            <img
-                src={video.thumbnailUrl}
-                alt={video.title}
-                className="w-full h-64 mb-5 object-cover transform hover:scale-110 transition-transform"
-                loading="lazy"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                <span className="text-white text-2xl">▶️</span>
+const VideoThumbnail = lazy(() => Promise.resolve({
+    default: memo(({ video }) => (
+        <a
+            href={video.videoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block hover:bg-gray-200 rounded-lg transition-colors"
+        >
+            <div className="relative overflow-hidden rounded-lg">
+                <img
+                    src={video.thumbnailUrl}
+                    alt={video.title}
+                    className="w-full h-64 mb-5 object-cover transform hover:scale-110 transition-transform"
+                    loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                    <span className="text-white text-2xl">▶️</span>
+                </div>
             </div>
+        </a>
+    ))
+}));
+
+const BiographyTab = lazy(() => Promise.resolve({
+    default: ({ influencer }) => (
+        <div className="mb-6 border-l-4 border-[#96c121] pl-4">
+            <p className="text-gray-700 italic text-xl">
+                "{influencer.bio}"
+            </p>
         </div>
-    </a>
-));
+    )
+}));
+
+const SocialMediaTab = lazy(() => Promise.resolve({
+    default: ({ influencer }) => (
+        <div className="flex justify-center space-x-6 mb-6">
+            {influencer.socialLinks.map((link) => (
+                <SocialLink key={link.platform} link={link} />
+            ))}
+        </div>
+    )
+}));
+
+const VideosTab = lazy(() => Promise.resolve({
+    default: ({ influencer }) => influencer.videos ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {influencer.videos.map((video) => (
+                <Suspense key={video.id} fallback={<LoadingSpinner />}>
+                    <VideoThumbnail video={video} />
+                </Suspense>
+            ))}
+        </div>
+    ) : (
+        <p className="text-center text-gray-500">No hay videos disponibles</p>
+    )
+}));
 
 const CreatorsNetworking = () => {
     const [selectedInfluencer, setSelectedInfluencer] = useState(null);
@@ -154,32 +199,26 @@ const CreatorsNetworking = () => {
     }, [selectedInfluencer, closeModal, navigateToPreviousInfluencer, navigateToNextInfluencer]);
 
     const renderModalContent = () => {
+        if (!selectedInfluencer) return null;
+
         switch (activeModalTab) {
             case 'biography':
                 return (
-                    <div className="mb-6 border-l-4 border-[#96c121] pl-4">
-                        <p className="text-gray-700 italic text-xl">
-                            "{selectedInfluencer.bio}"
-                        </p>
-                    </div>
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <BiographyTab influencer={selectedInfluencer} />
+                    </Suspense>
                 );
             case 'socialMedia':
                 return (
-                    <div className="flex justify-center space-x-6 mb-6">
-                        {selectedInfluencer.socialLinks.map((link) => (
-                            <SocialLink key={link.platform} link={link} />
-                        ))}
-                    </div>
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <SocialMediaTab influencer={selectedInfluencer} />
+                    </Suspense>
                 );
             case 'videos':
-                return selectedInfluencer.videos ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {selectedInfluencer.videos.map((video) => (
-                            <VideoThumbnail key={video.id} video={video} />
-                        ))}
-                    </div>
-                ) : (
-                    <p className="text-center text-gray-500">No hay videos disponibles</p>
+                return (
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <VideosTab influencer={selectedInfluencer} />
+                    </Suspense>
                 );
             default:
                 return null;
@@ -206,11 +245,12 @@ const CreatorsNetworking = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {getVisibleInfluencers(influencersData, currentCarouselIndex, displayCount).map((influencer) => (
-                            <InfluencerCard
-                                key={influencer.id}
-                                influencer={influencer}
-                                onClick={openModal}
-                            />
+                            <Suspense key={influencer.id} fallback={<LoadingSpinner />}>
+                                <InfluencerCard
+                                    influencer={influencer}
+                                    onClick={openModal}
+                                />
+                            </Suspense>
                         ))}
                     </div>
 
@@ -235,7 +275,7 @@ const CreatorsNetworking = () => {
                             className="bg-white rounded-2xl w-full max-w-3xl mx-auto overflow-hidden shadow-2xl transform transition-all duration-300 hover:scale-[1.02] max-h-[95vh] flex flex-col relative"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            {/* Botones de navegación del modal */}
+                            
                             <button
                                 onClick={navigateToPreviousInfluencer}
                                 aria-label="Perfil anterior"
