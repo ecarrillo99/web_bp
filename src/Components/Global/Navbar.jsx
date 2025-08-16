@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 
 const Navbar = ({ activo }) => {
+    const [subVE, setSubVE] = useState(false);
     const [subSobremi, setSubSobreMi] = useState(false);
     const [subSocial, setSubSocial] = useState(false);
     const [subProyectos, setSubProyectos] = useState(false);
@@ -13,6 +14,7 @@ const Navbar = ({ activo }) => {
         "/redes-sociales",
         "/proyectos",
         "/contacto"
+
     ];
     const navigation = useNavigate();
 
@@ -56,6 +58,8 @@ const Navbar = ({ activo }) => {
                 {/* Desktop Navigation */}
                 <div className='hidden md:flex gap-4 lg:gap-10 justify-end font-bold text-base lg:text-lg'>
                     <div className={`${activo == 0 ? "text-white" : ""} border border-transparent rounded-full px-3 cursor-pointer`} onClick={() => hanldeClick(0)}>Inicio</div>
+                    <div className={` border border-transparent rounded-full px-3 cursor-pointer`} onClick={() => window.open('https://visitaecuador.com/marcablanca/PSPL1', '_blank')}>VisitaEcuador</div>
+
                     <div
                         onMouseEnter={() => setSubSobreMi(true)}
                         onMouseLeave={() => setSubSobreMi(false)}
@@ -139,6 +143,7 @@ const Navbar = ({ activo }) => {
                 <div className="md:hidden absolute top-16 left-0 right-0 bg-[#92B509] shadow-lg">
                     <div className="flex flex-col px-4 py-2 space-y-2 font-bold">
                         <div className={`${activo == 0 ? "text-white" : ""} py-2 px-3 cursor-pointer`} onClick={() => hanldeClick(0)}>Inicio</div>
+                        <div className={` py-2 px-3 cursor-pointer`} onClick={() => window.open('https://visitaecuador.com/marcablanca/PSPL1', '_blank')}>VisitaEcuador</div>
 
                         <div className={`${activo == 1 ? "text-white" : ""} py-2 px-3`}>
                             <div className="cursor-pointer" onClick={() => hanldeClick(1)}>Sobre Mí</div>
