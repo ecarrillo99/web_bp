@@ -27,10 +27,10 @@ const ImageModal = ({ src, isOpen, onClose, onNext, onPrev, images }) => {
   const modalContentRef = useRef(null);
 
   const descriptions = {
-    "./images/foto01.png": "Bernardo Polo Andrade durante una conferencia empresarial en Ciudad de México, compartiendo su visión sobre liderazgo sostenible y estrategias innovadoras para el crecimiento empresarial en Latinoamérica.",
-    "./images/foto02.png": "Entrevista exclusiva con medios locales donde Bernardo habla sobre sus proyectos recientes, futuras iniciativas y su perspectiva sobre los desafíos económicos actuales.",
-    "./images/foto03.png": "Bernardo en un evento benéfico, demostrando su compromiso con causas sociales importantes en la comunidad y su filosofía de retribuir a la sociedad a través del emprendimiento consciente.",
-    "./images/foto04.png": "Reunión estratégica con emprendedores jóvenes donde comparte consejos basados en su experiencia profesional y mentora a la próxima generación de líderes empresariales.",
+    "./images/foto01.webp": "Bernardo Polo Andrade durante una conferencia empresarial en Ciudad de México, compartiendo su visión sobre liderazgo sostenible y estrategias innovadoras para el crecimiento empresarial en Latinoamérica.",
+    "./images/foto02.webp": "Entrevista exclusiva con medios locales donde Bernardo habla sobre sus proyectos recientes, futuras iniciativas y su perspectiva sobre los desafíos económicos actuales.",
+    "./images/foto03.webp": "Bernardo en un evento benéfico, demostrando su compromiso con causas sociales importantes en la comunidad y su filosofía de retribuir a la sociedad a través del emprendimiento consciente.",
+    "./images/foto04.webp": "Reunión estratégica con emprendedores jóvenes donde comparte consejos basados en su experiencia profesional y mentora a la próxima generación de líderes empresariales.",
   };
 
   useEffect(() => {
@@ -167,17 +167,17 @@ const Fotografias = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const images = [
-    "./images/foto01.png",
-    "./images/foto02.png",
-    "./images/foto03.png",
-    "./images/foto04.png"
+    "./images/foto01.webp",
+    "./images/foto02.webp",
+    "./images/foto03.webp",
+    "./images/foto04.webp"
   ];
 
   const descriptions = {
-    "./images/foto01.png": "Conferencia empresarial",
-    "./images/foto02.png": "Entrevista con medios",
-    "./images/foto03.png": "Evento benéfico",
-    "./images/foto04.png": "Reunión con emprendedores",
+    "./images/foto01.webp": "Conferencia empresarial",
+    "./images/foto02.webp": "Entrevista con medios",
+    "./images/foto03.webp": "Evento benéfico",
+    "./images/foto04.webp": "Reunión con emprendedores",
   };
 
   const settings = {

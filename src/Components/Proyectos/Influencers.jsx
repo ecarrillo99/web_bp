@@ -99,7 +99,7 @@ const Influencers = () => {
                             ubicacion: "Los Ríos, Ecuador"
                         },
                         {
-                            imagen: "./images/proyecto_imagen01.png",
+                            imagen: "./images/proyecto_imagen01.webp",
                             enlace: "https://ejemplo.com/gastro3",
                             mensaje: "Cocinando con familias de pescadores",
                             ubicacion: "Esmeraldas, Ecuador"
@@ -137,13 +137,13 @@ const Influencers = () => {
                             ubicacion: "Santa Elena, Ecuador"
                         },
                         {
-                            imagen: "./images/proyecto_imagen01.png",
+                            imagen: "./images/proyecto_imagen01.webp",
                             enlace: "https://ejemplo.com/cultura2",
                             mensaje: "Tejidos ancestrales: técnicas y simbolismos",
                             ubicacion: "Tungurahua, Ecuador"
                         },
                         {
-                            imagen: "./images/proyecto_imagen01.png",
+                            imagen: "./images/proyecto_imagen01.webp",
                             enlace: "https://ejemplo.com/cultura3",
                             mensaje: "Lenguas originarias y su preservación cultural",
                             ubicacion: "Pastaza, Ecuador"

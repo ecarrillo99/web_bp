@@ -60,7 +60,7 @@ const Introduccion = () => {
             <div className='w-full md:w-1/2  flex flex-col gap-4 justify-center px-4 md:px-6'>
                 <div className='relative group'>
                     <img
-                        src='./images/sobre-mi.png'
+                        src='./images/sobre-mi.webp'
                         alt="Bernardo Polo Andrade"
                         className='max-w-full h-auto  shadow-2xl transform transition-transform group-hover:scale-105'
                     />

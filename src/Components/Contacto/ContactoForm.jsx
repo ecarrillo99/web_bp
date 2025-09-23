@@ -131,7 +131,7 @@ const ContactoForm = () => {
                     <div className="relative">
                         <img
                             className='h-auto max-h-[320px] object-contain mx-auto md:mx-0 drop-shadow-xl transform transition-transform hover:scale-105 duration-500'
-                            src='./images/contacto_image.png'
+                            src='./images/contacto_image.webp'
                             alt='Contacto'
                         />
                         <div

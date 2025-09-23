@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Destacado from './Destacado';
-import imgP from '../../imagenes/Social/instas.png';
-import imgP1 from '../../imagenes/Social/img_1.png'
-import imgP4 from '../../imagenes/Social/img_3.png'
-import imgP7 from '../../imagenes/Social/img_6.png'
-import imgP20 from '../../imagenes/img_20.png'
-import imgP21 from '../../imagenes/img_21.png'
-import imgP22 from '../../imagenes/img_22.png'
-import imgP23 from '../../imagenes/img_23.png'
-import imgP24 from '../../imagenes/img_24.png'
+import imgP from '../../imagenes/Social/instas.webp';
+import imgP1 from '../../imagenes/Social/img_1.webp'
+import imgP4 from '../../imagenes/Social/img_3.webp'
+import imgP7 from '../../imagenes/Social/img_6.webp'
+import imgP20 from '../../imagenes/img_20.webp'
+import imgP21 from '../../imagenes/img_21.webp'
+import imgP22 from '../../imagenes/img_22.webp'
+import imgP23 from '../../imagenes/img_23.webp'
+import imgP24 from '../../imagenes/img_24.webp'
 
 const Contenido = () => {
     const [activeTab, setActiveTab] = useState('all');
@@ -24,7 +24,7 @@ const Contenido = () => {
             colorRed: "#3b5998",
             linkPost: "https://www.facebook.com/watch/?v=691013228632325",
             linkPerfil: "https://www.facebook.com/bernardopolopolito",
-            imagePost: "./images/destacado_facebook.jpeg",
+            imagePost: "./images/destacado_facebook.webp",
             mensajePost: "Familia del Presidente LASSO - Los mejores BOLLOS de Guayaquil | Los Clásicos GYE ✅#Turismo #BernardoPolo #Huecas #NicolasMuñoz #NicoBell Guillermo Lasso TeleamazonasEcuavisa@guillermo Villalobos",
             platform: "facebook"
         },
@@ -63,7 +63,7 @@ const Contenido = () => {
             colorRed: "#dd2a7b",
             linkPost: "https://www.instagram.com/p/CkRuvyDJHdE/",
             linkPerfil: "https://www.instagram.com/bernardopolopolito/",
-            imagePost: "./images/destacado_instagram.jpg",
+            imagePost: "./images/destacado_instagram.webp",
             mensajePost: "No es de la forma que pensaban 😅 #bernardopolo #hotelesfullvacations #clubvisita #disneyconcierge #fenancaptour #yovendoazuay #yovendoguayaquil #Ecuador #Turismo #cangrejos #comida #food #mariscos #churute #guayaquil",
             platform: "instagram"
         },
@@ -99,7 +99,7 @@ const Contenido = () => {
             colorRed: "#000000",
             linkPost: "https://www.tiktok.com/@bernardopolopolito/video/7320014550873410822?_r=1&_t=8mNf0KeOx1R",
             linkPerfil: "https://www.tiktok.com/@bernardopolopolito",
-            imagePost: "./images/destacado_tiktok.jpeg",
+            imagePost: "./images/destacado_tiktok.webp",
             mensajePost: "Explorando la CASA EMBRUJADA de Cuenca..misterios PARANORMALES🧟‍🦇 @clau_ullauri @abigailjaramillo003 @phojg #cuenca #ecuador #visitaecuador #viral #Ecuador #PoliTo #visitaecuador #bernardopolo #emprendedoresdeexito #VISITANOS #viral #virals #tour #TERROR #CASAEMBRUJADA #EMBRUJADA #PARANORMAL",
             platform: "tiktok"
         },
@@ -135,7 +135,7 @@ const Contenido = () => {
             colorRed: "#c4302b",
             linkPost: "https://www.youtube.com/watch?v=AyV6vy9NyMI&t=552s",
             linkPerfil: "https://www.youtube.com/@bernardopolopolito",
-            imagePost: "./images/destacado_youtube.jpeg",
+            imagePost: "./images/destacado_youtube.webp",
             mensajePost: "De empleada domestica a EMPRESARIA 😱👏🔝 #elsalado #ecuador #azuay #cuenca #visitaecuador #viral #Ecuador #PoliTo #visitaecuador #bernardopolo #emprendedoresdeexito #VISITANOS #viral #virals #tour #PolitoRecomienda #ElPadrinoPolito #elpolitoteinvita  #morcho #estadosunidos #empoderamiento #empresaria  #mujeres",
             platform: "youtube"
         },
@@ -178,7 +178,7 @@ const Contenido = () => {
             colorRed: "#0e76a8",
             linkPost: "https://es.linkedin.com/posts/bernardo-polo-polito-70560250_acabando-con-los-saya-jeans-en-la-feria-libre-activity-7192293823203475456-mEFB?trk=public_profile",
             linkPerfil: "https://www.linkedin.com/in/bernardo-polo-polito-70560250",
-            imagePost: "./images/destacado_linkedin.jpg",
+            imagePost: "./images/destacado_linkedin.webp",
             mensajePost: "Acabando con los SAYA-JEANS en la Feria Libre 👖🤣 PayPhone #cuenca #ferialibre#visitaecuador #PoliTo #visitaecuador #bernardopolo #emprendedoresdeexito #PolitoRecomienda #fashion #jeans #moda",
             platform: "linkedin"
         },
@@ -192,7 +192,7 @@ const Contenido = () => {
             colorRed: "#000000",
             linkPost: "https://twitter.com/bernardopolo10/status/1785801895300259930?s=46&t=Gc-sy8GhHrdeEtlmQlStbQ",
             linkPerfil: "https://twitter.com/bernardopolo10",
-            imagePost: "./images/destacado_x.jpg",
+            imagePost: "./images/destacado_x.webp",
             mensajePost: "Mis SEGUIDORES me dejan CHIRO por regalarles LANGOSTINOS del Abogado tírate un paso 🥲🦐 Dolger Velasquez PayPhone #dolgervelasquez#cuenca #cangrejoscuenca#ecuador #visitaecuador #PoliTo #visitaecuador #emprendedoresdeexito #VISITANOS #PolitoRecomienda #ElPadrinoPolito #politoteinvita #cangrejo #abogadotirateunpaso",
             platform: "twitter"
         },
