@@ -14,7 +14,7 @@ const Cabecera = () => {
                 {/* Left column / Top on mobile */}
                 <div className='flex flex-col w-full md:w-1/2 items-center justify-center mb-8 md:mb-0'>
                     <div>
-                        <img className='h-28 sm:h-36' src='./images/logo_vertical.png' alt="Logo Vertical"/>
+                        <img className='h-28 sm:h-36' src='./images/logo_vertical.webp' alt="Logo Vertical"/>
                     </div>
                     <div className='h-6 sm:h-10'/>
                     <label className='text-xl sm:text-2xl font-light text-gray-700'>Hacker del Turismo</label>
@@ -26,14 +26,14 @@ const Cabecera = () => {
                         className='flex mt-3 items-center w-full max-w-md cursor-pointer'
                         onClick={() => navigateToSection('logros')}
                     >
-                        <img className='h-8 sm:h-10' src='./images/galeria_icon.png' alt="Galería"/>
+                        <img className='h-8 sm:h-10' src='./images/galeria_icon.webp' alt="Galería"/>
                         <label className='cursor-pointer ml-2'>Fotografías memorables</label>
                     </div>
                     <div
                         className='flex mt-3 items-center w-full max-w-md cursor-pointer'
                         onClick={() => navigateToSection('galeria')}
                     >
-                        <img className='h-8 sm:h-10' src='./images/entrevistas_icon.png' alt="Entrevistas"/>
+                        <img className='h-8 sm:h-10' src='./images/entrevistas_icon.webp' alt="Entrevistas"/>
                         <label className='cursor-pointer ml-2'>Entrevistas y conversaciones destacadas</label>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ const Cabecera = () => {
                 <div className='flex flex-col justify-center items-center w-full md:w-1/2'>
                     <img
                         className='h-[250px] sm:h-[300px] md:h-[370px] object-contain'
-                        src='./images/foto_inicio.png'
+                        src='./images/foto_inicio.webp'
                         alt="Foto de inicio"
                     />
                     <label className='text-xs max-w-[300px] sm:max-w-[400px] mt-4 text-gray-500 text-center'>"Se cuenta una historia, que debe ser interesante, atractiva y que perdure con los años."</label>

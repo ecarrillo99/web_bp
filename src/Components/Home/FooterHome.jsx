@@ -2,12 +2,12 @@ import React from 'react';
 
 const FooterHome = () => {
     const socialLinks = [
-        { name: 'Facebook', url: 'https://www.facebook.com/bernardopolopolito', icon: './images/facebook_icon.png' },
-        { name: 'Instagram', url: 'https://www.instagram.com/bernardopolopolito', icon: './images/instagram_icon.png' },
-        { name: 'TikTok', url: 'https://www.tiktok.com/@bernardopolopolito', icon: './images/tiktok_icon.png' },
-        { name: 'YouTube', url: 'https://youtube.com/@bernardopolopolito', icon: './images/youtube_icon.png' },
-        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/bernardo-polo-polito-70560250', icon: './images/linkedin_icon.png' },
-        { name: 'Twitter/X', url: 'https://x.com/bernardopolo10', icon: './images/x_icon.png' },
+        { name: 'Facebook', url: 'https://www.facebook.com/bernardopolopolito', icon: './images/facebook_icon.webp' },
+        { name: 'Instagram', url: 'https://www.instagram.com/bernardopolopolito', icon: './images/instagram_icon.webp' },
+        { name: 'TikTok', url: 'https://www.tiktok.com/@bernardopolopolito', icon: './images/tiktok_icon.webp' },
+        { name: 'YouTube', url: 'https://youtube.com/@bernardopolopolito', icon: './images/youtube_icon.webp' },
+        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/bernardo-polo-polito-70560250', icon: './images/linkedin_icon.webp' },
+        { name: 'Twitter/X', url: 'https://x.com/bernardopolo10', icon: './images/x_icon.webp' },
     ];
 
     return (

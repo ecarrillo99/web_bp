@@ -2,15 +2,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, { useState, useRef, useEffect } from 'react';
 import Slider from "react-slick";
-import imgP from "../../imagenes/img_28.png"
-import imgP1 from "../../imagenes/the bizz 2012.png"
-import imgP2 from "../../imagenes/galardon.png"
-import imgP3 from "../../imagenes/turismo ecuador 2008.png"
-import imgP4 from "../../imagenes/diario lideres.png"
-import imgP5 from "../../imagenes/sabe2008.png"
-import imgP6 from "../../imagenes/sabe2009.png"
-import imgP7 from "../../imagenes/afiliado.png"
-import imgP8 from "../../imagenes/fuckup.png"
+import imgP from "../../imagenes/img_28.webp"
+import imgP1 from "../../imagenes/the_bizz_2012.webp"
+import imgP2 from "../../imagenes/galardon.webp"
+import imgP3 from "../../imagenes/turismo_ecuador_2008.webp"
+import imgP4 from "../../imagenes/diariolideres.webp"
+import imgP5 from "../../imagenes/sabe2008.webp"
+import imgP6 from "../../imagenes/sabe2009.webp"
+import imgP7 from "../../imagenes/afiliado.webp"
+import imgP8 from "../../imagenes/fuckup.webp"
 
 const ReconocimientoModal = ({ isOpen, onClose, reconocimiento, reconocimientosData, onNavigate }) => {
 
@@ -243,7 +243,7 @@ const Reconocimientos = () => {
     const reconocimientosData = [
         {
             id: 1,
-            icono: "./images/sanantonio-icon.png",
+            icono: "./images/sanantonio-icon.webp",
             titulo: "Reconocimiento San Antonio",
             imagenes: ["https://traveler.marriott.com/es/wp-content/uploads/sites/2/2019/05/GI_200440484-001_SanAntonio_Riverwalk.jpg", "https://digital.ihg.com/is/image/ihg/intercontinental-san-antonio-9528480000-2x1", "https://res.cloudinary.com/simpleview/image/upload/v1706826303/clients/sanantoniotx/River_Walk_Daytime_VSA_Real_True_2022_5551229a-7671-432f-9f31-72e7e4e4bb7d.jpg"],
             historia: "En 2018, Bernardo Polo recibió el prestigioso reconocimiento de San Antonio por su destacada contribución al desarrollo turístico sostenible. Este galardón reconoce su visión innovadora y compromiso con la preservación cultural mientras promueve el crecimiento económico de la región.",
@@ -252,7 +252,7 @@ const Reconocimientos = () => {
         },
         {
             id: 2,
-            icono: "./images/prefectura-icon.png",
+            icono: "./images/prefectura-icon.webp",
             titulo: "Medalla de Honor - Prefectura Regional",
             imagenes: ["https://lh5.googleusercontent.com/p/AF1QipNqXwjOJZDXtq4n43YYNFGgLdX3xP17TXcWXF_a=w675-h390-n-k-no", "https://lh5.googleusercontent.com/p/AF1QipO5SfLw8ysB6_x8AR5rPsYYuDdh6PZJyi707K9e=w675-h390-n-k-no", "https://lh5.googleusercontent.com/p/AF1QipOE8Pa9Kz27qnWYLSjLoA2AtjrnqLDUNkBoU4II=w675-h390-n-k-no"],
             historia: "La Prefectura Regional otorgó a Bernardo Polo la Medalla de Honor por su liderazgo excepcional en el desarrollo de iniciativas que han transformado la industria turística local y generado oportunidades de empleo para cientos de familias en la región.",
@@ -261,7 +261,7 @@ const Reconocimientos = () => {
         },
         {
             id: 3,
-            icono: "./images/infotour-icon.png",
+            icono: "./images/infotour-icon.webp",
             titulo: "Premio Infotour a la Excelencia",
             imagenes: ["https://infoturlatam.com/wp-content/uploads/2024/01/fitur-ecuador-1.jpg", "https://infoturlatam.com/wp-content/uploads/2023/02/ecuador-cuenca.jpg"],
             historia: "El Premio Infotour a la Excelencia fue otorgado a Bernardo Polo en reconocimiento a sus innovadores programas de promoción turística que han posicionado a Venezuela como un destino de clase mundial, implementando estrategias digitales pioneras en el sector.",
@@ -270,7 +270,7 @@ const Reconocimientos = () => {
         },
         {
             id: 4,
-            icono: "./images/world-icon.png",
+            icono: "./images/world-icon.webp",
             titulo: "Reconocimiento Internacional de Turismo",
             imagenes: ["https://gk.city/wp-content/uploads/2024/03/ministro-turismo-niels-olsen.webp", "https://imagenes.primicias.ec/files/image_480_270/uploads/2024/05/26/6653484cf40a3.jpeg", "https://www.turismo.gob.ec/wp-content/uploads/2025/01/ROTATIVO-campan%CC%83a%20nacional%2013%2001%202025.png"],
             historia: "La Organización Mundial de Turismo reconoció a Bernardo Polo por su visión global y enfoque colaborativo que ha fortalecido las relaciones internacionales y ha atraído inversiones significativas al sector turístico venezolano.",
@@ -279,7 +279,7 @@ const Reconocimientos = () => {
         },
         {
             id: 5,
-            icono: "./images/mintur-icon.png",
+            icono: "./images/mintur-icon.webp",
             titulo: "Condecoración Ministerio de Turismo",
             imagenes: ["https://www.visitaecuador.com/ve/img/contenido/informacion/hall/ministerio-turismo_02.jpg", "https://www.turismo.gob.ec/wp-content/uploads/2019/10/cuenca-tw22.jpg", "https://imagenes.primicias.ec/files/image_480_270/uploads/2024/05/26/6653484cf40a3.jpeg"],
             historia: "El Ministerio de Turismo otorgó a Bernardo Polo su más alta condecoración por su contribución extraordinaria al desarrollo de políticas públicas que han revitalizado destinos históricos y creado nuevas rutas turísticas de gran impacto cultural y económico.",
@@ -288,7 +288,7 @@ const Reconocimientos = () => {
         },
         {
             id: 6,
-            icono: "./images/chordeleg-icon.png",
+            icono: "./images/chordeleg-icon.webp",
             titulo: "Llave de la Ciudad de Chordeleg",
             imagenes: ["https://lh5.googleusercontent.com/p/AF1QipMh7qqspV48tCfQHftbVYCY4V4Y1q7nJwnO4Nda=w540-h312-n-k-no", "https://lh5.googleusercontent.com/p/AF1QipP_SivlPesJ50XWFEpXOC1hUwg3pMXlhjyvKH62=w540-h312-n-k-no", "https://lh5.googleusercontent.com/p/AF1QipONnIFwmSRkOcqnF7hAs0dLL_NSipxHxASwcLrC=w540-h312-n-k-no"],
             historia: "La ciudad de Chordeleg entregó a Bernardo Polo la Llave de la Ciudad, el máximo honor otorgado a un ciudadano, por su dedicación a la promoción de la artesanía local y el desarrollo de programas de capacitación que han preservado técnicas tradicionales mientras abren nuevos mercados internacionales.",

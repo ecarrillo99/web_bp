@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Destacado from './Destacado';
-import imgP from '../../imagenes/Social/instas.png';
-import imgP1 from '../../imagenes/Social/img_1.png'
-import imgP4 from '../../imagenes/Social/img_3.png'
-import imgP7 from '../../imagenes/Social/img_6.png'
-import imgP20 from '../../imagenes/img_20.png'
-import imgP21 from '../../imagenes/img_21.png'
-import imgP22 from '../../imagenes/img_22.png'
-import imgP23 from '../../imagenes/img_23.png'
-import imgP24 from '../../imagenes/img_24.png'
+import imgP from '../../imagenes/Social/instas.webp';
+import imgP1 from '../../imagenes/Social/img_1.webp'
+import imgP4 from '../../imagenes/Social/img_3.webp'
+import imgP7 from '../../imagenes/Social/img_6.webp'
+import imgP20 from '../../imagenes/img_20.webp'
+import imgP21 from '../../imagenes/img_21.webp'
+import imgP22 from '../../imagenes/img_22.webp'
+import imgP23 from '../../imagenes/img_23.webp'
+import imgP24 from '../../imagenes/img_24.webp'
 
 const Contenido = () => {
     const [activeTab, setActiveTab] = useState('all');

@@ -5,14 +5,14 @@ import Slider from "react-slick";
 import { saveAs } from 'file-saver';
 import Logo from "../../imagenes/logo_verde.png";
 import { motion, AnimatePresence } from "framer-motion";
-import imgP1 from "../../imagenes/the bizz 2012.png"
-import imgP2 from "../../imagenes/galardon.png"
-import imgP3 from "../../imagenes/turismo ecuador 2008.png"
-import imgP4 from "../../imagenes/diario lideres.png"
-import imgP5 from "../../imagenes/sabe2008.png"
-import imgP6 from "../../imagenes/sabe2009.png"
-import imgP7 from "../../imagenes/afiliado.png"
-import imgP8 from "../../imagenes/fuckup.png"
+import imgP1 from "../../imagenes/the_bizz_2012.webp"
+import imgP2 from "../../imagenes/galardon.webp"
+import imgP3 from "../../imagenes/turismo_ecuador_2008.webp"
+import imgP4 from "../../imagenes/diariolideres.webp"
+import imgP5 from "../../imagenes/sabe2008.webp"
+import imgP6 from "../../imagenes/sabe2009.webp"
+import imgP7 from "../../imagenes/afiliado.webp"
+import imgP8 from "../../imagenes/fuckup.webp"
 
 const CustomNextArrow = (props) => {
     return (

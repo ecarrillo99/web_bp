@@ -39,7 +39,7 @@ const Navbar = ({ activo }) => {
     return (
         <div className='fixed top-0 left-0 right-0 z-50 flex bg-[#92B509] h-16 items-center shadow-md'>
             <div className='flex flex-row justify-between mx-auto max-w-6xl py-2 px-4 sm:px-6 lg:px-8 w-full items-center'>
-                <img src='./images/logo_horizontal.png' onClick={handleC} className="cursor-pointer h-10 md:h-auto" alt="Logo" />
+                <img src='./images/logo_horizontal.webp' onClick={handleC} className="cursor-pointer h-10 md:h-auto" alt="Logo" />
 
                 {/* Mobile Menu Button */}
                 <button
