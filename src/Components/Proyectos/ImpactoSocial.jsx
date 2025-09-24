@@ -1,6 +1,6 @@
 import React from 'react';
 import ProyectoSection from './ProyectoSection';
-import imgP from '../../imagenes/Social/instas.png'
+import imgP from '../../imagenes/img_1.png'
 import imgP1 from '../../imagenes/Social/img_1.png'
 import imgP2 from '../../imagenes/Social/img.png'
 import imgP3 from '../../imagenes/Social/img_2.png'
@@ -46,7 +46,7 @@ const ImpactoSocial = () => {
                     proyectos={[
                         {
                             imagen: imgP,
-                            enlace: "https://www.instagram.com/reel/DFoCU7uJ71F/",
+                            enlace: "https://www.instagram.com/reel/DOKE1aFEYdy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
                             mensaje: "PONLE TÚ SELLO PERSONAL !! Así crean tu estilo único en Zombie Kater",
                             ubicacion: "Cuenca, Ecuador"
                         },

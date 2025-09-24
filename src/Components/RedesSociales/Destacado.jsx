@@ -38,7 +38,7 @@ const Destacado = ({ fecha, linkPost, imagePost, mensajePost, linkPerfil, iconoR
                 onMouseLeave={() => setIsHovered(false)}
             >
                 <img
-                    className='w-full h-60 object-cover'
+                    className='w-full h-96 object-cover'
                     src={imagePost}
                     alt="Post content"
                 />
