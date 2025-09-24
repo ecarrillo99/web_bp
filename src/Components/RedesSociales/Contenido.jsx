@@ -63,7 +63,7 @@ const Contenido = () => {
             colorRed: "#dd2a7b",
             linkPost: "https://www.instagram.com/p/CkRuvyDJHdE/",
             linkPerfil: "https://www.instagram.com/bernardopolopolito/",
-            imagePost: "./images/destacado_instagram.jpg",
+            imagePost: "./images/destacado_instagram.webp",
             mensajePost: "No es de la forma que pensaban 😅 #bernardopolo #hotelesfullvacations #clubvisita #disneyconcierge #fenancaptour #yovendoazuay #yovendoguayaquil #Ecuador #Turismo #cangrejos #comida #food #mariscos #churute #guayaquil",
             platform: "instagram"
         },
@@ -135,7 +135,7 @@ const Contenido = () => {
             colorRed: "#c4302b",
             linkPost: "https://www.youtube.com/watch?v=AyV6vy9NyMI&t=552s",
             linkPerfil: "https://www.youtube.com/@bernardopolopolito",
-            imagePost: "./images/destacado_youtube.jpeg",
+            imagePost: "./images/destacado_youtube.webp",
             mensajePost: "De empleada domestica a EMPRESARIA 😱👏🔝 #elsalado #ecuador #azuay #cuenca #visitaecuador #viral #Ecuador #PoliTo #visitaecuador #bernardopolo #emprendedoresdeexito #VISITANOS #viral #virals #tour #PolitoRecomienda #ElPadrinoPolito #elpolitoteinvita  #morcho #estadosunidos #empoderamiento #empresaria  #mujeres",
             platform: "youtube"
         },
@@ -178,7 +178,7 @@ const Contenido = () => {
             colorRed: "#0e76a8",
             linkPost: "https://es.linkedin.com/posts/bernardo-polo-polito-70560250_acabando-con-los-saya-jeans-en-la-feria-libre-activity-7192293823203475456-mEFB?trk=public_profile",
             linkPerfil: "https://www.linkedin.com/in/bernardo-polo-polito-70560250",
-            imagePost: "./images/destacado_linkedin.jpg",
+            imagePost: "./images/destacado_linkedin.webp",
             mensajePost: "Acabando con los SAYA-JEANS en la Feria Libre 👖🤣 PayPhone #cuenca #ferialibre#visitaecuador #PoliTo #visitaecuador #bernardopolo #emprendedoresdeexito #PolitoRecomienda #fashion #jeans #moda",
             platform: "linkedin"
         },
@@ -192,7 +192,7 @@ const Contenido = () => {
             colorRed: "#000000",
             linkPost: "https://twitter.com/bernardopolo10/status/1785801895300259930?s=46&t=Gc-sy8GhHrdeEtlmQlStbQ",
             linkPerfil: "https://twitter.com/bernardopolo10",
-            imagePost: "./images/destacado_x.jpg",
+            imagePost: "./images/destacado_x.webp",
             mensajePost: "Mis SEGUIDORES me dejan CHIRO por regalarles LANGOSTINOS del Abogado tírate un paso 🥲🦐 Dolger Velasquez PayPhone #dolgervelasquez#cuenca #cangrejoscuenca#ecuador #visitaecuador #PoliTo #visitaecuador #emprendedoresdeexito #VISITANOS #PolitoRecomienda #ElPadrinoPolito #politoteinvita #cangrejo #abogadotirateunpaso",
             platform: "twitter"
         },
