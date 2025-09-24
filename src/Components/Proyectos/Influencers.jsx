@@ -40,6 +40,9 @@ import imgP37 from '../../imagenes/Influencers/img_44.webp';
 import imgP38 from '../../imagenes/Influencers/img_45.webp';
 import imgP39 from '../../imagenes/Influencers/img_46.webp';
 import imgP40 from '../../imagenes/Influencers/img_47.webp';
+import imgP41 from '../../imagenes/Influencers/img.png';
+import imgP42 from '../../imagenes/Influencers/img_1.png';
+import imgP43 from '../../imagenes/Influencers/img_2.png';
 
 
 
@@ -67,6 +70,20 @@ const Influencers = () => {
                 <ProyectoSection
                     titulo="Gastronomía Local"
                     proyectos={[
+                        {
+                            imagen: imgP42,
+                            enlace: "https://www.instagram.com/reel/DJnLG9zxadu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+                            mensaje: "😱 Caldo de Salchicha con 🦀 \n" +
+                                "Estas cosas solo se las encuentran en Guayaquil tu que Opinas, te gustaría Probarlo?\n" +
+                                "#caldodesalchica #caldodecangrejo #caldo #guayaquil #polito #bernardopolo",
+                            ubicacion: "Guayaquil, Ecuador"
+                        },
+                        {
+                            imagen: imgP43,
+                            enlace: "https://www.instagram.com/reel/DIzpXE0xtUi/",
+                            mensaje: "Las tripas del gordo y la suca ¿La mejor chanfaina  de Cuenca? #BernardoPolo #VisitaEcuador #huecas #chanfaina #comida #viral #tripas",
+                            ubicacion: "Cuenca, Ecuador"
+                        },
                         {
                             imagen: imgP9,
                             enlace: "https://www.tiktok.com/@visitaecuadorinfl/video/7327353822030892294?_r=1&_t=ZM-8uxEcSeIWu5",
@@ -99,10 +116,14 @@ const Influencers = () => {
                             ubicacion: "Los Ríos, Ecuador"
                         },
                         {
-                            imagen: "./images/proyecto_imagen01.webp",
-                            enlace: "https://ejemplo.com/gastro3",
-                            mensaje: "Cocinando con familias de pescadores",
-                            ubicacion: "Esmeraldas, Ecuador"
+                            imagen: imgP41,
+                            enlace: "https://www.instagram.com/reel/DL5sYy2oOoD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+                            mensaje: "Ñaño, la sazón de Cevicheria 7 Palos está como para chuparse los dedos 🦐💥\n" +
+                                "¡Ponte pilas!\n" +
+                                "@cevicheria7_palos \n" +
+                                "\n" +
+                                "#cuencaecuador #bernardopolopolito #cevicheria7palos #gastronomia #comidacosteña #visitaecuador #comidaecuatoriana #foodlover #PoliTo",
+                            ubicacion: "Cuenca, Ecuador"
                         }
                     ]}
                 />

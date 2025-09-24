@@ -23,7 +23,7 @@ import imgP19 from '../../imagenes/Social/img_18.webp'
 import imgP20 from '../../imagenes/Social/img_19.webp'
 import imgP21 from '../../imagenes/Social/img_3.png'
 import imgP22 from '../../imagenes/Social/img_26.webp'
-import imgP23 from '../../imagenes/Social/img_27.webp'
+import imgP23 from '../../imagenes/Social/img_4.png'
 
 const ImpactoSocial = () => {
     return (
@@ -95,6 +95,12 @@ const ImpactoSocial = () => {
                 <ProyectoSection
                     titulo="La Sazón De"
                     proyectos={[
+                        {
+                            imagen: imgP1,
+                            enlace: "https://www.instagram.com/reel/DNrJAeJUhxX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+                            mensaje: "El MEJOR bollo que he probado ñaño 🤤😮‍💨 Llegué en mi @cuencataxi a comer en Q’ RIKO BOLLO y ñaño… está como para chuparse los dedos 💥 ",
+                            ubicacion: "Cuenca, Ecuador"
+                        },
                         {
                             imagen: imgP3,
                             enlace: "https://www.instagram.com/reel/DGEWygVp6QK/",
